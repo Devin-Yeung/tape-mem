@@ -1,0 +1,8 @@
+# serializer version: 1
+# name: test_example_template_snapshot
+  '''
+  Dialogue between User and Assistant {time_stamp}\n<User> The following context is the documents I have read: 
+  {context}
+   <Assistant> I have learned the documents and I will answer the question you ask.
+  '''
+# ---

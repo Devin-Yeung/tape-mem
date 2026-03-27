@@ -300,7 +300,7 @@ pygments==2.19.2
 pymdown-extensions==10.21
     # via zensical
 pytest==9.0.2
-    # via tape-mem
+    # via syrupy
 python-dateutil==2.9.0.post0
     # via
     #   arrow
@@ -366,6 +366,7 @@ soupsieve==2.8.3
     # via beautifulsoup4
 stack-data==0.6.3
     # via ipython
+syrupy==5.1.0
 terminado==0.18.1
     # via
     #   jupyter-server
