@@ -55,6 +55,7 @@ colorama==0.4.6 ; sys_platform == 'win32'
     # via
     #   click
     #   ipython
+    #   pytest
     #   tqdm
 comm==0.2.3
     # via
@@ -112,6 +113,8 @@ idna==3.11
     #   jsonschema
     #   requests
     #   yarl
+iniconfig==2.3.0
+    # via pytest
 ipykernel==7.2.0
     # via
     #   jupyter
@@ -250,6 +253,7 @@ packaging==26.0
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   pytest
 pandas==3.0.1
     # via datasets
 pandocfilters==1.5.1
@@ -260,6 +264,8 @@ pexpect==4.9.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via ipython
 platformdirs==4.9.4
     # via jupyter-core
+pluggy==1.6.0
+    # via pytest
 prometheus-client==0.24.1
     # via jupyter-server
 prompt-toolkit==3.0.52
@@ -288,10 +294,13 @@ pygments==2.19.2
     #   ipython-pygments-lexers
     #   jupyter-console
     #   nbconvert
+    #   pytest
     #   rich
     #   zensical
 pymdown-extensions==10.21
     # via zensical
+pytest==9.0.2
+    # via tape-mem
 python-dateutil==2.9.0.post0
     # via
     #   arrow
