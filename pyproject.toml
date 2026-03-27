@@ -6,5 +6,12 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = ["datasets>=4.8.4"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tape_mem"]
+
+[tool.uv]
+package = true
+
 [dependency-groups]
 dev = ["jupyter>=1.1.1", "ruff>=0.15.7", "ty>=0.0.24", "zensical>=0.0.29"]
