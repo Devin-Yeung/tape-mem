@@ -9,6 +9,7 @@
 {
   imports = [
     ./devenv/astral
+    ./devenv/jupyter-notebook.nix
   ];
 
   # https://devenv.sh/packages/
