@@ -63,13 +63,17 @@ def test_dataset_mapping_values_match_base_templates_keys():
 # ==============================================================================
 
 
-@pytest.mark.parametrize("agent", ["rag", "Long_context_agent", "Agentic_memory"])
+@pytest.mark.parametrize(
+    "agent", ["rag_agent", "long_context_agent", "agentic_memory_agent"]
+)
 def test_system_template(agent):
     # system template is a plain string, not agent-specific
     assert get_template("ruler_hqa", "system", agent) == SYSTEM_MESSAGE
 
 
-@pytest.mark.parametrize("agent", ["rag", "Long_context_agent", "Agentic_memory"])
+@pytest.mark.parametrize(
+    "agent", ["rag_agent", "long_context_agent", "agentic_memory_agent"]
+)
 def test_memorize_template(agent):
     # memorize template is a plain string, not agent-specific
     result = get_template("ruler_hqa", "memorize", agent)
@@ -78,19 +82,19 @@ def test_memorize_template(agent):
 
 
 def test_query_template_rag_agent():
-    result = get_template("ruler_hqa", "query", "rag")
+    result = get_template("ruler_hqa", "query", "rag_agent")
     assert isinstance(result, str)
     assert "Answer the question" in result
 
 
 def test_query_template_long_context_agent():
-    result = get_template("ruler_hqa", "query", "Long_context_agent")
+    result = get_template("ruler_hqa", "query", "long_context_agent")
     assert isinstance(result, str)
     assert "memorized documents" in result
 
 
 def test_query_template_agentic_memory():
-    result = get_template("ruler_hqa", "query", "Agentic_memory")
+    result = get_template("ruler_hqa", "query", "agentic_memory_agent")
     assert isinstance(result, str)
     assert "Archival Memory" in result
 
@@ -108,7 +112,9 @@ def test_query_template_agentic_memory():
         "detective_qa",
     ],
 )
-@pytest.mark.parametrize("agent", ["rag", "Long_context_agent", "Agentic_memory"])
+@pytest.mark.parametrize(
+    "agent", ["rag_agent", "long_context_agent", "agentic_memory_agent"]
+)
 @pytest.mark.parametrize("tpl_type", ["system", "memorize", "query"])
 def test_all_datasets_have_all_template_types(ds, agent, tpl_type):
     result = get_template(ds, tpl_type, agent)

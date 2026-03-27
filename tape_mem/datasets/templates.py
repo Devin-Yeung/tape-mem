@@ -1,4 +1,5 @@
 # source: https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/main/utils/templates.py
+from typing import Literal
 
 # System message used across all templates
 SYSTEM_MESSAGE = "You are a helpful assistant that can read the context and memorize it for future retrieval."
@@ -99,17 +100,7 @@ DATASET_MAPPING = {
 }
 
 
-def _normalize_agent_name(agent_name):
-    """Normalize agent name to standard form."""
-    for pattern, normalized_name in AGENT_TYPE_MAPPING.items():
-        if pattern in agent_name:
-            return normalized_name
-    raise NotImplementedError(
-        f"Unknown agent type: {agent_name}. Valid: {list(AGENT_TYPE_MAPPING.keys())}"
-    )
-
-
-def _normalize_dataset_name(sub_dataset):
+def _normalize_dataset_name(sub_dataset) -> str:
     """Normalize dataset name to standard form."""
     for patterns, normalized_name in DATASET_MAPPING.items():
         if all(pattern in sub_dataset for pattern in patterns):
@@ -119,7 +110,11 @@ def _normalize_dataset_name(sub_dataset):
     )
 
 
-def get_template(sub_dataset, template_name, agent_name):
+def get_template(
+    sub_dataset,
+    template_name: Literal["system", "memorize", "query"],
+    agent_name: Literal["rag_agent", "long_context_agent", "agentic_memory_agent"],
+) -> str:
     """
     Get template for specified agent, dataset, and template type.
 
@@ -132,7 +127,6 @@ def get_template(sub_dataset, template_name, agent_name):
         Template string
     """
     # Normalize names
-    normalized_agent = _normalize_agent_name(agent_name)
     normalized_dataset = _normalize_dataset_name(sub_dataset)
 
     # Get base template
@@ -140,6 +134,6 @@ def get_template(sub_dataset, template_name, agent_name):
 
     # Return appropriate template based on type
     if isinstance(base_template, dict):
-        return base_template[normalized_agent]
+        return base_template[agent_name]
     else:
         return base_template
