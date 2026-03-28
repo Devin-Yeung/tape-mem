@@ -206,6 +206,8 @@ markupsafe==3.0.3
     # via
     #   jinja2
     #   nbconvert
+mashumaro==3.20
+    # via tape-mem
 matplotlib-inline==0.2.1
     # via
     #   ipykernel
@@ -407,6 +409,7 @@ typing-extensions==4.15.0
     # via
     #   beautifulsoup4
     #   huggingface-hub
+    #   mashumaro
 tzdata==2025.3
     # via
     #   arrow
