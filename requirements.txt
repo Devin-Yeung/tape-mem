@@ -49,6 +49,7 @@ charset-normalizer==3.4.6
     # via requests
 click==8.3.1
     # via
+    #   nltk
     #   typer
     #   zensical
 colorama==0.4.6 ; sys_platform == 'win32'
@@ -139,6 +140,8 @@ jinja2==3.1.6
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+joblib==1.5.3
+    # via nltk
 json5==0.13.0
     # via jupyterlab-server
 jsonpointer==3.1.1
@@ -235,6 +238,8 @@ nbformat==5.10.4
     #   nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
+nltk==3.9.4
+    # via tape-mem
 notebook==7.5.5
     # via jupyter
 notebook-shim==0.2.4
@@ -333,10 +338,15 @@ referencing==0.37.0
     #   jsonschema
     #   jsonschema-specifications
     #   jupyter-events
+regex==2026.3.32
+    # via
+    #   nltk
+    #   tiktoken
 requests==2.33.0
     # via
     #   datasets
     #   jupyterlab-server
+    #   tiktoken
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -373,6 +383,8 @@ terminado==0.18.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
+tiktoken==0.12.0
+    # via tape-mem
 tinycss2==1.4.0
     # via bleach
 tornado==6.5.5
@@ -387,6 +399,7 @@ tqdm==4.67.3
     # via
     #   datasets
     #   huggingface-hub
+    #   nltk
 traitlets==5.14.3
     # via
     #   ipykernel
