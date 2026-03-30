@@ -1,5 +1,5 @@
 from attr import dataclass
-from typing import List
+from typing import List, assert_never
 
 from openai import OpenAI
 from openai.types.chat import (
@@ -62,8 +62,7 @@ class OpenAIChat(LLM):
                     }
                     msgs.append(msg)
                 case _:
-                    # unreachable
-                    pass
+                    assert_never(message.role)
 
         response = self._client.chat.completions.create(
             model=self._model,
