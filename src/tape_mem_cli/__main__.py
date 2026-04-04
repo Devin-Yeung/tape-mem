@@ -1,3 +1,4 @@
+from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
 from tape_mem.dataset.eventqa import naive_eventqa_example
@@ -29,7 +30,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     chunker = SentenceAwareChunker()
 
     # prepare the agent
-    agent = FullContextAgent(dataset_name=eventqa.variant, model=model)
+    agent = FullContextAgent(model=model, template=EventQATemplate())
 
     # chunk context and let agent memorize
     for chunk in chunker.chunk(eventqa.context):

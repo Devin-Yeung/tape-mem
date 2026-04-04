@@ -1,6 +1,4 @@
-from typing import Protocol, runtime_checkable, Literal
-
-type AgentVariant = Literal["long_context_agent", "rag_agent", "agentic_memory_agent"]
+from typing import Protocol, runtime_checkable
 
 
 @runtime_checkable
