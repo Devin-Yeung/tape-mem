@@ -1,7 +1,0 @@
-# serializer version: 1
-# name: test_turn_serialization_with_metadata
-  '{"user": "Hello", "agent": "Hi there!", "metadata": {"memorize": false}}'
-# ---
-# name: test_turn_serialization_without_metadata
-  '{"user": "Hello", "agent": "Hi there!"}'
-# ---
