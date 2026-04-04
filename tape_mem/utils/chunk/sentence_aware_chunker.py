@@ -73,4 +73,6 @@ class SentenceAwareChunker:
         if current_chunk_sentences:
             text_chunks.append(" ".join(current_chunk_sentences))
 
+        # text chunk should never return empty strings
+        text_chunks = [chunk for chunk in text_chunks if chunk.strip()]
         return text_chunks

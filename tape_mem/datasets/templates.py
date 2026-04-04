@@ -111,7 +111,16 @@ def _normalize_dataset_name(sub_dataset) -> str:
 
 
 def get_template(
-    sub_dataset,
+    sub_dataset: Literal[
+        "ruler_qa",
+        "longmemeval",
+        "eventqa",
+        "in_context_learning",
+        "recsys_redial",
+        "infbench_sum",
+        "detective_qa",
+        "factconsolidation",
+    ],
     template_name: Literal["system", "memorize", "query"],
     agent_name: Literal["rag_agent", "long_context_agent", "agentic_memory_agent"],
 ) -> str:

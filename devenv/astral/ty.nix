@@ -20,7 +20,7 @@
         entry = "ty check";
         types = [ "python" ];
         language = "system";
-        pass_filenames = false;
+        pass_filenames = true;
       };
     };
   };

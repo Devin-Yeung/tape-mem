@@ -1,6 +1,9 @@
-from typing import Protocol
+from typing import Protocol, runtime_checkable, Literal
+
+type AgentVariant = Literal["long_context_agent", "rag_agent", "agentic_memory_agent"]
 
 
+@runtime_checkable
 class Agent(Protocol):
     """A protocol defining the interface for a memory-augmented agent.
 
