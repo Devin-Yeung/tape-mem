@@ -12,10 +12,6 @@ dependencies = [
   "tiktoken>=0.12.0",
 ]
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["tape_mem"]
-
 [tool.uv]
 package = true
 exclude-newer = "7 days"
@@ -31,4 +27,4 @@ dev = [
 ]
 
 [project.scripts]
-tape-mem = "tape_mem.__main__:main"
+tape-mem = "tape_mem_cli.__main__:main"
