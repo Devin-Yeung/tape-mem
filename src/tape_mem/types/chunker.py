@@ -7,7 +7,7 @@ class Chunker(Protocol):
     A text chunking strategy that splits long context into smaller, manageable pieces.
 
     Implementors decide how to segment text — by tokens, sentences, paragraphs, or
-    semantic boundaries — while respecting the contract that each chunker fits within
+    semantic boundaries — while respecting the contract that each chunk fits within
     model context limits.
     """
 
@@ -19,6 +19,6 @@ class Chunker(Protocol):
             context: The text to be split into chunks.
 
         Returns:
-            A list of text segments, each representing a chunker of the input.
+            A list of text segments, each representing a chunk of the input.
         """
         ...

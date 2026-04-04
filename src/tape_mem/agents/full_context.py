@@ -6,7 +6,7 @@ from tape_mem.types.agent import AgentVariant
 
 
 class FullContextAgent(Agent):
-    """A v0 baseline agent that replays every memorized chunker on each query."""
+    """A v0 baseline agent that replays every memorized chunk on each query."""
 
     def __init__(
         self,
