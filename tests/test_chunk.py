@@ -2,7 +2,7 @@ import pytest
 
 import nltk
 
-from tape_mem.utils.chunk import SentenceAwareChunker
+from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.types.chunker import Chunker
 
 

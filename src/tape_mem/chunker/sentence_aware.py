@@ -22,7 +22,7 @@ class SentenceAwareChunker:
 
         Args:
             model_name: The tokenizer model name for token counting (default: gpt-4o-mini)
-            chunk_size: Maximum number of tokens allowed per chunk (default: 4096)
+            chunk_size: Maximum number of tokens allowed per chunker (default: 4096)
         """
         self._model_name = model_name
         self._chunk_size = chunk_size
@@ -61,7 +61,7 @@ class SentenceAwareChunker:
             sentence_token_count = len(sentence_tokens)
 
             if current_chunk_token_count + sentence_token_count > self._chunk_size:
-                # Finalize current chunk and start new one
+                # Finalize current chunker and start new one
                 text_chunks.append(" ".join(current_chunk_sentences))
                 current_chunk_sentences = [sentence]
                 current_chunk_token_count = sentence_token_count
@@ -69,10 +69,10 @@ class SentenceAwareChunker:
                 current_chunk_sentences.append(sentence)
                 current_chunk_token_count += sentence_token_count
 
-        # Add final chunk if it contains any sentences
+        # Add final chunker if it contains any sentences
         if current_chunk_sentences:
             text_chunks.append(" ".join(current_chunk_sentences))
 
-        # text chunk should never return empty strings
+        # text chunker should never return empty strings
         text_chunks = [chunk for chunk in text_chunks if chunk.strip()]
         return text_chunks

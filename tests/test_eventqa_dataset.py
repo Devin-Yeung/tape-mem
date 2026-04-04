@@ -1,4 +1,4 @@
-from tape_mem.datasets import load_eventqa_examples
+from tape_mem.dataset import load_eventqa_examples
 
 
 def test_load_eventqa_examples_smoke():

@@ -1,6 +1,6 @@
 import pytest
 
-from tape_mem.datasets.templates import get_template
+from tape_mem.dataset.templates import get_template
 
 
 def test_example_template_snapshot(snapshot):

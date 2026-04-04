@@ -18,16 +18,16 @@ class Agent(Protocol):
     def memorize(self, chunk: str) -> None:
         """Add a piece of information to the agent's memory store.
 
-        The agent should append or index the chunk so it can be retrieved
+        The agent should append or index the chunker so it can be retrieved
         later via query(). Implementations may choose to deduplicate or
         merge semantically similar chunks.
         """
         ...
 
     def forget(self, chunk: str) -> None:
-        """Remove a previously memorized chunk from the agent's memory.
+        """Remove a previously memorized chunker from the agent's memory.
 
-        If the exact chunk is not found, implementations should silently
+        If the exact chunker is not found, implementations should silently
         succeed (no-op) rather than raise an error. Not all implementations
         may support precise forgetting — in that case, this method may raise
         NotImplementedError.

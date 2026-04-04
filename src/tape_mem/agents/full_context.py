@@ -1,12 +1,12 @@
 from typing import Literal
 
-from tape_mem.datasets.templates import get_template
+from tape_mem.dataset.templates import get_template
 from tape_mem.types import Agent, LLM, Message
 from tape_mem.types.agent import AgentVariant
 
 
 class FullContextAgent(Agent):
-    """A v0 baseline agent that replays every memorized chunk on each query."""
+    """A v0 baseline agent that replays every memorized chunker on each query."""
 
     def __init__(
         self,
