@@ -82,6 +82,8 @@ dill==0.4.1
     #   multiprocess
 distro==1.9.0
     # via openai
+docstring-parser==0.17.0
+    # via mirascope
 executing==2.2.1
     # via stack-data
 fastjsonschema==2.21.2
@@ -111,6 +113,7 @@ httpx==0.28.1
     #   datasets
     #   huggingface-hub
     #   jupyterlab
+    #   mirascope
     #   openai
 huggingface-hub==1.8.0
     # via datasets
@@ -148,7 +151,9 @@ jinja2==3.1.6
     #   jupyterlab-server
     #   nbconvert
 jiter==0.13.0
-    # via openai
+    # via
+    #   mirascope
+    #   openai
 joblib==1.5.3
     # via nltk
 json5==0.13.0
@@ -228,6 +233,8 @@ matplotlib-inline==0.2.1
     #   ipython
 mdurl==0.1.2
     # via markdown-it-py
+mirascope @ git+https://github.com/Devin-Yeung/mirascope@53080795b295d620cfbeea93c22fcdc60424ce7a#subdirectory=python
+    # via tape-mem
 mistune==3.2.0
     # via nbconvert
 multidict==6.7.1
@@ -310,6 +317,7 @@ pycparser==3.0 ; implementation_name != 'PyPy'
     # via cffi
 pydantic==2.12.5
     # via
+    #   mirascope
     #   openai
     #   pydantic-settings
 pydantic-core==2.41.5
@@ -449,6 +457,7 @@ typing-extensions==4.15.0
     #   beautifulsoup4
     #   huggingface-hub
     #   mashumaro
+    #   mirascope
     #   openai
     #   pydantic
     #   pydantic-core

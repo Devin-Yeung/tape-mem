@@ -8,6 +8,7 @@ dependencies = [
   "datasets>=4.8.4",
   "loguru>=0.7.3",
   "mashumaro>=3.20",
+  "mirascope @ git+https://github.com/Devin-Yeung/mirascope@fix-model-id#subdirectory=python",
   "nltk>=3.9.4",
   "openai>=2.30.0",
   "pydantic-settings>=2.13.1",
