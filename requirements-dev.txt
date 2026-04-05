@@ -3,7 +3,7 @@
 -e .
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.13.3
+aiohttp==3.13.4
     # via fsspec
 aiosignal==1.4.0
     # via aiohttp
@@ -156,7 +156,7 @@ jiter==0.13.0
     #   openai
 joblib==1.5.3
     # via nltk
-json5==0.13.0
+json5==0.14.0
     # via jupyterlab-server
 jsonpointer==3.1.1
     # via jsonschema
@@ -344,7 +344,7 @@ python-dateutil==2.9.0.post0
     #   pandas
 python-dotenv==1.2.2
     # via pydantic-settings
-python-json-logger==4.0.0
+python-json-logger==4.1.0
     # via jupyter-events
 pywinpty==3.0.3 ; os_name == 'nt'
     # via
@@ -369,7 +369,7 @@ referencing==0.37.0
     #   jsonschema
     #   jsonschema-specifications
     #   jupyter-events
-regex==2026.2.28
+regex==2026.3.32
     # via
     #   nltk
     #   tiktoken
@@ -492,4 +492,4 @@ xxhash==3.6.0
     # via datasets
 yarl==1.23.0
     # via aiohttp
-zensical==0.0.29
+zensical==0.0.30
