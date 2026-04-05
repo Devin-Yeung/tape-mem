@@ -30,6 +30,6 @@ class EventQATemplate:
     def query_template(self, question: str) -> List[llm.Message]:
         return [
             llm.messages.user(
-                f"Answer the question based on the memorized documents.Only give me the answer and do not output any other words.\nQuestion: {question}"
+                f"Answer the question based on the memorized documents. Give me the answer directly without any explanation.\nQuestion: {question}"
             )
         ]

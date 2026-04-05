@@ -1,9 +1,15 @@
+from pydantic import BaseModel
+
 from tape_mem.dataset.templates import SYSTEM_MESSAGE, Template
 from typing import List
 
 from tape_mem.types import Agent
-from mirascope.llm import Message
+from mirascope.llm import Message, Response
 from mirascope import llm
+
+
+class QueryResponse(BaseModel):
+    answer: str
 
 
 class FullContextAgent(Agent):
@@ -32,10 +38,9 @@ class FullContextAgent(Agent):
         msg.extend(self._mem)
         msg.extend(self._template.query_template(question))
 
-        resp = self._model.call(msg)
+        resp: Response[QueryResponse] = self._model.call(
+            msg, format=llm.format(QueryResponse, mode="json")
+        )  # ty:ignore[invalid-assignment]
+        result, resp = resp.validate(max_retries=3)
 
-        # todo: only return the first text msg?
-        for text in resp.texts:
-            return text.text
-
-        return ""
+        return result.answer
