@@ -1,4 +1,7 @@
 import os
+
+from tqdm import tqdm
+
 from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
@@ -8,6 +11,9 @@ from mirascope import llm
 
 from .settings.env import Env
 from loguru import logger
+
+from rich.console import Console
+from rich.table import Table
 
 
 # The CLI package owns the command surface so the library package can stay
@@ -43,10 +49,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     for chunk in chunker.chunk(eventqa.context):
         agent.memorize(chunk)
 
+    console = Console()
+
+    table = Table(title="Result", show_lines=True)
+
+    table.add_column("Query")
+    table.add_column("Answer")
+
     # ask agent for question
-    for question in eventqa.questions:
+    for question in tqdm(eventqa.questions):
         resp = agent.query(question.text)
-        print(f"{'=' * 40}\n{resp}\n{'=' * 40}")
+        table.add_row(question.text, resp)
+
+    console.print(table)
 
     return 0
 

@@ -8,7 +8,7 @@ resolution-markers = [
 ]
 
 [options]
-exclude-newer = "2026-03-29T07:44:26.573558Z"
+exclude-newer = "2026-03-30T07:20:02.09161Z"
 exclude-newer-span = "P7D"
 
 [[package]]
@@ -2080,7 +2080,9 @@ dependencies = [
     { name = "nltk" },
     { name = "openai" },
     { name = "pydantic-settings" },
+    { name = "rich" },
     { name = "tiktoken" },
+    { name = "tqdm" },
 ]
 
 [package.dev-dependencies]
@@ -2102,7 +2104,9 @@ requires-dist = [
     { name = "nltk", specifier = ">=3.9.4" },
     { name = "openai", specifier = ">=2.30.0" },
     { name = "pydantic-settings", specifier = ">=2.13.1" },
+    { name = "rich", specifier = ">=14.3.3" },
     { name = "tiktoken", specifier = ">=0.12.0" },
+    { name = "tqdm", specifier = ">=4.67.3" },
 ]
 
 [package.metadata.requires-dev]

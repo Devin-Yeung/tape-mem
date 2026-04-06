@@ -389,7 +389,9 @@ rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
     # via jsonschema
 rich==14.3.3
-    # via typer
+    # via
+    #   tape-mem
+    #   typer
 rpds-py==0.30.0
     # via
     #   jsonschema
@@ -434,6 +436,7 @@ tqdm==4.67.3
     #   huggingface-hub
     #   nltk
     #   openai
+    #   tape-mem
 traitlets==5.14.3
     # via
     #   ipykernel
