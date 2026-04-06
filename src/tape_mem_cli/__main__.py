@@ -59,7 +59,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     # ask agent for question
     for question in tqdm(eventqa.questions):
         resp = agent.query(question.text)
-        table.add_row(question.text, resp)
+        table.add_row(question.text, resp.answer)
 
     console.print(table)
 

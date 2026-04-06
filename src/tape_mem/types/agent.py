@@ -1,4 +1,36 @@
+from dataclasses import dataclass
 from typing import Protocol, runtime_checkable
+
+from mashumaro.config import BaseConfig
+from mashumaro.mixins.json import DataClassJSONMixin
+
+
+@dataclass(frozen=True)
+class Stats(DataClassJSONMixin):
+    estimated_context_tokens: int | None = None
+    total_tokens_used: int | None = None
+    tokens_hit_cache: int | None = None
+
+    class Config(BaseConfig):
+        omit_none = True
+
+
+@dataclass(frozen=True)
+class QueryMetadata(DataClassJSONMixin):
+    stats: Stats | None = None
+    model_name: str | None = None
+
+    class Config(BaseConfig):
+        omit_none = True
+
+
+@dataclass(frozen=True)
+class AgentResponse(DataClassJSONMixin):
+    answer: str
+    metadata: QueryMetadata | None = None
+
+    class Config(BaseConfig):
+        omit_none = True
 
 
 @runtime_checkable
@@ -32,7 +64,7 @@ class Agent(Protocol):
         """
         ...
 
-    def query(self, question: str) -> str:
+    def query(self, question: str) -> AgentResponse:
         """Ask the agent a question using its accumulated memory as context.
 
         The agent should answer based on information previously stored via

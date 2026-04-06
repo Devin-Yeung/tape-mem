@@ -7,6 +7,8 @@ from tape_mem.types import Agent
 from mirascope.llm import Message, Response
 from mirascope import llm
 
+from tape_mem.types.agent import AgentResponse
+
 
 class QueryResponse(BaseModel):
     answer: str
@@ -32,7 +34,7 @@ class FullContextAgent(Agent):
         # TODO: implement forget
         raise NotImplementedError()
 
-    def query(self, question: str) -> str:
+    def query(self, question: str) -> AgentResponse:
         msg: List[llm.Message] = []
 
         msg.extend(self._mem)
@@ -43,4 +45,4 @@ class FullContextAgent(Agent):
         )  # ty:ignore[invalid-assignment]
         result, resp = resp.validate(max_retries=3)
 
-        return result.answer
+        return AgentResponse(answer=result.answer)
