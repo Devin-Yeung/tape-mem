@@ -7,6 +7,8 @@
 }:
 
 {
+  env.HF_HOME = "${config.devenv.state}/hf";
+
   imports = [
     ./devenv/astral
     ./devenv/jupyter-notebook.nix

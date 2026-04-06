@@ -1,3 +1,4 @@
+import os
 from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
@@ -13,6 +14,12 @@ from loguru import logger
 # import-focused under the new two-package src layout.
 def main(argv: Sequence[str] | None = None) -> int:
     env = Env()  # ty:ignore[missing-argument]
+
+    if os.environ.get("HF_ENDPOINT") is None:
+        # use mirror by default
+        os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+    logger.info(f"using hugging face endpoint: {os.environ['HF_ENDPOINT']}")
+
     logger.info(f"using llm endpoint: {env.openai_compatible_base_url}")
     logger.info(f"using llm model: {env.llm_model}")
 
