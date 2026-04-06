@@ -12,4 +12,3 @@ If you are new to the repository, use these pages in order:
   schema, and evaluation caveats that matter when you load the benchmark.
 - [Development Environment Setup](development/setup-python.md) shows the
   recommended `uv` workflow and the fallback `pip` + `venv` setup.
-

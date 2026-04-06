@@ -12,6 +12,7 @@
   imports = [
     ./devenv/astral
     ./devenv/jupyter-notebook.nix
+    ./devenv/markdown-fmt.nix
   ];
 
   # https://devenv.sh/packages/

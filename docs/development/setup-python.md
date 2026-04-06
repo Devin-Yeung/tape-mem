@@ -2,8 +2,8 @@
 
 This project targets Python `3.14`.
 
-The recommended workflow uses `uv` since it provides a more modern and streamlined experience for managing Python environments and dependencies. 
-However,  we still keep `requirements.txt` and `requirements-dev.txt` for `pip` + `venv` compatibility.
+The recommended workflow uses `uv` since it provides a more modern and streamlined experience for managing Python environments and dependencies.
+However, we still keep `requirements.txt` and `requirements-dev.txt` for `pip` + `venv` compatibility.
 
 ## Recommended Setup
 
