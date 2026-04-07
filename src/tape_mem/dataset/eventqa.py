@@ -1,3 +1,4 @@
+from mashumaro.mixins.json import DataClassJSONMixin
 from dataclasses import dataclass
 from typing import Any, Callable, Iterable, Literal, TypeAlias, cast
 
@@ -25,7 +26,7 @@ class EventQADatasetError(ValueError):
 
 
 @dataclass(frozen=True)
-class EventQAQuestion:
+class EventQAQuestion(DataClassJSONMixin):
     """One aligned EventQA question together with its accepted gold answers."""
 
     question_id: str

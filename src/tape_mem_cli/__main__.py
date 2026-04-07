@@ -1,3 +1,4 @@
+from tape_mem.types.experiment import EventQAQueryResult, EventQAExperiment
 import os
 
 from tqdm import tqdm
@@ -6,7 +7,7 @@ from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
 from tape_mem.dataset.eventqa import naive_eventqa_example
-from typing import Sequence
+from typing import Sequence, List
 from mirascope import llm
 
 from .settings.env import Env
@@ -56,10 +57,25 @@ def main(argv: Sequence[str] | None = None) -> int:
     table.add_column("Query")
     table.add_column("Answer")
 
+    results: List[EventQAQueryResult] = []
+
     # ask agent for question
     for question in tqdm(eventqa.questions):
         resp = agent.query(question.text)
         table.add_row(question.text, resp.answer)
+        results.append(
+            EventQAQueryResult(
+                question=question,
+                response=resp,
+            )
+        )
+
+    experiment = EventQAExperiment(results=results)
+    json = experiment.to_json()
+
+    with open("result.json", "w") as f:
+        if isinstance(json, str):
+            f.write(json)
 
     console.print(table)
 
