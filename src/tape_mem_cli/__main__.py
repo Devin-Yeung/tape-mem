@@ -1,4 +1,6 @@
+from tape_mem.dataset import load_eventqa_examples
 import click
+from typing import Literal
 
 from tape_mem.types.experiment import EventQAQueryResult, EventQAExperiment
 import os
@@ -8,15 +10,11 @@ from tqdm import tqdm
 from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
-from tape_mem.dataset.eventqa import naive_eventqa_example
 from typing import List
 from mirascope import llm
 
 from .settings.env import Env
 from loguru import logger
-
-from rich.console import Console
-from rich.table import Table
 
 
 @click.command()
@@ -26,7 +24,18 @@ from rich.table import Table
     default=None,
     help="LLM model name, overrides env LLM_MODEL",
 )
-def main(model_override: str | None):
+@click.option(
+    "--variant",
+    type=click.Choice(
+        ["eventqa_full", "eventqa_65536", "eventqa_131072"], case_sensitive=False
+    ),
+    default=None,
+    help="Experiment variant to run",
+)
+def main(
+    model_override: str | None,
+    variant: Literal["eventqa_full", "eventqa_65536", "eventqa_131072"],
+) -> int:
     env = Env()  # ty:ignore[missing-argument]
 
     if os.environ.get("HF_ENDPOINT") is None:
@@ -49,45 +58,41 @@ def main(model_override: str | None):
 
     model = llm.Model(f"custom/{llm_model}")
 
-    # prepare the dataset example
-    eventqa = naive_eventqa_example()
+    # setup chunker
     chunker = SentenceAwareChunker()
+    logger.info(f"using chunker: {chunker}")
+
+    # prepare the dataset example
+    eventqa = load_eventqa_examples()
+    eventqa = [e for e in eventqa if e.variant == variant]
 
     # prepare the agent
     agent = FullContextAgent(model=model, template=EventQATemplate())
 
-    # chunk context and let agent memorize
-    for chunk in chunker.chunk(eventqa.context):
-        agent.memorize(chunk)
+    for subset_idx, subset in enumerate(tqdm(eventqa)):
+        logger.info(f"processing {subset_idx} th subset of {variant}")
+        results: List[EventQAQueryResult] = []
+        # chunk context and let agent memorize
+        for chunk in chunker.chunk(subset.context):
+            agent.memorize(chunk)
 
-    console = Console()
-
-    table = Table(title="Result", show_lines=True)
-
-    table.add_column("Query")
-    table.add_column("Answer")
-
-    results: List[EventQAQueryResult] = []
-
-    # ask agent for question
-    for question in tqdm(eventqa.questions):
-        resp = agent.query(question.text)
-        table.add_row(question.text, resp.answer)
-        results.append(
-            EventQAQueryResult(
-                question=question,
-                response=resp,
+        # ask agent for question
+        for i, question in enumerate(tqdm(subset.questions)):
+            logger.debug(f"processing question {i}")
+            resp = agent.query(question.text)
+            results.append(
+                EventQAQueryResult(
+                    question=question,
+                    response=resp,
+                )
             )
-        )
 
-    experiment = EventQAExperiment(results=results)
-    json = experiment.to_json()
+        experiment = EventQAExperiment(results=results)
+        json = experiment.to_json()
 
-    with open("result.json", "w") as f:
-        if isinstance(json, str):
-            f.write(json)
-
-    console.print(table)
+        with open(f"{variant}-{subset_idx}-result.json", "w") as f:
+            if isinstance(json, str):
+                f.write(json)
 
     return 0
 
