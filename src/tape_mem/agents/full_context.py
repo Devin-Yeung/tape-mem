@@ -7,7 +7,7 @@ from tape_mem.types import Agent
 from mirascope.llm import Message, Response
 from mirascope import llm
 
-from tape_mem.types.agent import AgentResponse
+from tape_mem.types.agent import AgentResponse, QueryMetadata, Stats
 
 
 class QueryResponse(BaseModel):
@@ -45,4 +45,17 @@ class FullContextAgent(Agent):
         )  # ty:ignore[invalid-assignment]
         result, resp = resp.validate(max_retries=3)
 
-        return AgentResponse(answer=result.answer)
+        usage = resp.usage
+
+        if usage is None:
+            return AgentResponse(answer=result.answer)
+
+        return AgentResponse(
+            answer=result.answer,
+            metadata=QueryMetadata(
+                stats=Stats(
+                    total_input_tokens=usage.input_tokens,
+                    cache_read_tokens=usage.cache_read_tokens,
+                )
+            ),
+        )

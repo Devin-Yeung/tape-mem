@@ -8,8 +8,8 @@ from mashumaro.mixins.json import DataClassJSONMixin
 @dataclass(frozen=True)
 class Stats(DataClassJSONMixin):
     estimated_context_tokens: int | None = None
-    total_tokens_used: int | None = None
-    tokens_hit_cache: int | None = None
+    total_input_tokens: int | None = None
+    cache_read_tokens: int | None = None
 
     class Config(BaseConfig):
         omit_none = True
