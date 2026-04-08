@@ -1,3 +1,5 @@
+import click
+
 from tape_mem.types.experiment import EventQAQueryResult, EventQAExperiment
 import os
 
@@ -7,7 +9,7 @@ from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
 from tape_mem.dataset.eventqa import naive_eventqa_example
-from typing import Sequence, List
+from typing import List
 from mirascope import llm
 
 from .settings.env import Env
@@ -17,9 +19,14 @@ from rich.console import Console
 from rich.table import Table
 
 
-# The CLI package owns the command surface so the library package can stay
-# import-focused under the new two-package src layout.
-def main(argv: Sequence[str] | None = None) -> int:
+@click.command()
+@click.option(
+    "--model",
+    "model_override",
+    default=None,
+    help="LLM model name, overrides env LLM_MODEL",
+)
+def main(model_override: str | None):
     env = Env()  # ty:ignore[missing-argument]
 
     if os.environ.get("HF_ENDPOINT") is None:
@@ -27,8 +34,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
     logger.info(f"using hugging face endpoint: {os.environ['HF_ENDPOINT']}")
 
+    # CLI --model takes precedence over env var
+    llm_model = model_override or env.llm_model
+
     logger.info(f"using llm endpoint: {env.openai_compatible_base_url}")
-    logger.info(f"using llm model: {env.llm_model}")
+    logger.info(f"using llm model: {llm_model}")
 
     llm.register_provider(
         "openai",
@@ -37,7 +47,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         api_key=env.openai_compatible_api_key,
     )
 
-    model = llm.Model(f"custom/{env.llm_model}")
+    model = llm.Model(f"custom/{llm_model}")
 
     # prepare the dataset example
     eventqa = naive_eventqa_example()

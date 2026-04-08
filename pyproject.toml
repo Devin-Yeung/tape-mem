@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+  "click>=8.3.1",
   "datasets>=4.8.4",
   "loguru>=0.7.3",
   "mashumaro>=3.20",
