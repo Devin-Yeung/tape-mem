@@ -1,0 +1,20 @@
+# serializer version: 1
+# name: test_load_eventqa_examples_smoke
+  list([
+    'eventqa_full_0',
+    'eventqa_full_1',
+    'eventqa_full_2',
+    'eventqa_full_3',
+    'eventqa_full_4',
+    'eventqa_65536_0',
+    'eventqa_65536_1',
+    'eventqa_65536_2',
+    'eventqa_65536_3',
+    'eventqa_65536_4',
+    'eventqa_131072_0',
+    'eventqa_131072_1',
+    'eventqa_131072_2',
+    'eventqa_131072_3',
+    'eventqa_131072_4',
+  ])
+# ---

@@ -1,6 +1,6 @@
 from mashumaro.mixins.json import DataClassJSONMixin
 from dataclasses import dataclass
-from typing import Any, Callable, Iterable, Literal, TypeAlias, cast
+from typing import Any, Callable, Iterable, Literal, TypeAlias, cast, Dict
 
 from datasets import load_dataset
 
@@ -108,17 +108,21 @@ def load_eventqa_examples(
 
     examples: list[EventQAExample] = []
 
+    counter: Dict[str, int] = {}
+
     for row_index, row in enumerate(rows):
         variant = _read_variant(row)
         if variant is None:
             continue
+
+        counter[variant] = counter.get(variant, -1) + 1
 
         questions = _build_questions(row)
         context = _require_string(row, "context")
 
         examples.append(
             EventQAExample(
-                example_id=f"{variant}:{row_index}",
+                example_id=f"{variant}_{counter[variant]}",
                 variant=variant,
                 context=context,
                 questions=questions,
