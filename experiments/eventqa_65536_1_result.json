@@ -1,0 +1,184 @@
+{
+  "results": [
+    {
+      "question": {
+        "question_id": "eventqa_65536_no81",
+        "text": "These are the events that have already occurred:\n\n...\n78. Humphrey Waylon opened the window to examine the garden.\n79. Humphrey Waylon decided to leave his room and prepared to do so.\n80. Humphrey Waylon took a miner's candlestick from his knapsack.\n81. Humphrey Waylon listened at the door of the Bishop's room.\n82. Humphrey Waylon pushed open the door to the Bishop's room.\n\n\nBelow is a list of possible subsequent events:\n\n['Humphrey Waylon hesitated after sensing the shift in the atmosphere around him.', 'Humphrey Waylon lingered when he caught the glint of something shiny on the floor.', 'Humphrey Waylon froze as he felt the sudden chill sweep through the room.', \"Humphrey Waylon paused when he noticed the flicker of the candle's flame.\", \"Humphrey Waylon halted after hearing the noise from the door's hinge.\", 'Humphrey Waylon stopped abruptly upon detecting the rustle of leaves outside the window.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Humphrey Waylon halted after hearing the noise from the door's hinge."
+        ]
+      },
+      "response": {
+        "answer": "Humphrey Waylon halted after hearing the noise from the door's hinge.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66486,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no14",
+        "text": "These are the events that have already occurred:\n\n...\n11. The man revealed that he had money to pay for food and lodging.\n12. The host informed the man that he could not receive him.\n13. The man insisted on being accommodated despite the host's objections.\n14. The host revealed that the food was engaged by the wagoners.\n15. The man stated that he would remain at the inn despite the host's refusal.\n\n\nBelow is a list of possible subsequent events:\n\n['The host warned the man to go away.', 'The supervisor urged the child to step back from the edge.', 'The coordinator cautioned the artist to refrain from using bright colors.', 'The manager insisted the woman to leave the premises.', 'The director ordered the team to vacate the area promptly.', 'The leader encouraged the participant to abandon the task immediately.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The host warned the man to go away."
+        ]
+      },
+      "response": {
+        "answer": "The host warned the man to go away.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66444,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no3",
+        "text": "These are the events that have already occurred:\n\n1. M. Alton was appointed Bishop of D\u2014\u2014.\n2. The Bishop expressed glacial feelings towards Napoleon during his decline.\n3. The Bishop refused to see Napoleon when he passed through on his return from Elba.\n4. The Bishop abstained from ordering public prayers for Napoleon during the Hundred Days.\n\n\nBelow is a list of possible subsequent events:\n\n['A person of tattered attire stumbled into the hamlet of F\u2014\u2014.', 'A man of wretched appearance entered the town of D\u2014\u2014.', 'A stranger of unsettling appearance crossed into the perimeter of G\u2014\u2014.', 'A traveler of peculiar demeanor arrived at the village of B\u2014\u2014.', 'An individual with disheveled clothing appeared on the outskirts of C\u2014\u2014.', 'A figure of suspicious demeanor wandered into the region of E\u2014\u2014.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "A man of wretched appearance entered the town of D\u2014\u2014."
+        ]
+      },
+      "response": {
+        "answer": "A man of wretched appearance entered the town of D\u2014\u2014.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66445,
+            "cache_read_tokens": 66176
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no94",
+        "text": "These are the events that have already occurred:\n\n...\n91. Humphrey Waylon opened the cupboard and seized the basket of silverware.\n92. Humphrey Waylon crossed the chamber with long strides, ignoring the noise.\n93. Humphrey Waylon put the silver into his knapsack after opening the window.\n94. Humphrey Waylon fled after throwing away the basket.\n95. Madame Magloire ran to the Bishop in utter consternation about the stolen silver.\n\n\nBelow is a list of possible subsequent events:\n\n['Madame Magloire reported that the keys were borrowed by Humphrey Waylon.', 'Madame Magloire claimed that the jewels were misplaced by Humphrey Waylon.', 'Madame Magloire announced that the gold was hidden by Humphrey Waylon.', 'Madame Magloire insisted that the painting was destroyed by Humphrey Waylon.', 'Madame Magloire asserted that the documents were forged by Humphrey Waylon.', 'Madame Magloire exclaimed that the silver was stolen by Humphrey Waylon.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Madame Magloire exclaimed that the silver was stolen by Humphrey Waylon."
+        ]
+      },
+      "response": {
+        "answer": "Madame Magloire exclaimed that the silver was stolen by Humphrey Waylon.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66487,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no35",
+        "text": "These are the events that have already occurred:\n\n...\n32. The man expressed despair, saying he was not even a dog.\n33. The man resumed his walk out of the town in search of shelter.\n34. The man shook his fist at the church as he passed through Cathedral Square.\n35. The man lay down on a stone bench outside a printing office.\n36. The man received four sous from Madame de R\u2014\u2014.\n\n\nBelow is a list of possible subsequent events:\n\n['Madame de R\u2014\u2014 suggested the man knock at a different house for help.', 'Humphrey Waylon advised the group to consider an alternative route for their journey.', 'Humphrey Waylon urged the participants to investigate another venue for the event.', 'Humphrey Waylon recommended they consult a different source for the necessary information.', 'Humphrey Waylon encouraged the attendees to reach out to another expert for guidance.', 'Humphrey Waylon proposed that the team explore a second option for their project.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Madame de R\u2014\u2014 suggested the man knock at a different house for help."
+        ]
+      },
+      "response": {
+        "answer": "Madame de R\u2014\u2014 suggested the man knock at a different house for help.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66475,
+            "cache_read_tokens": 66176
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no31",
+        "text": "These are the events that have already occurred:\n\n...\n28. The man asked a peasant for food and shelter in exchange for money.\n29. The peasant expressed distrust towards the man.\n30. The man crawled into a dog kennel seeking warmth and shelter.\n31. The man was chased out of the dog kennel by a ferocious dog.\n32. The man expressed despair, saying he was not even a dog.\n\n\nBelow is a list of possible subsequent events:\n\n['The man ventured back into the city in hopes of distraction.', 'The man stepped forward onto the path in search of adventure.', 'The man resumed his walk out of the town in search of shelter.', 'The man pressed on down the road in search of companionship.', 'The man wandered along the beach in quest of inspiration.', 'The man continued his journey through the forest in pursuit of solace.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The man resumed his walk out of the town in search of shelter."
+        ]
+      },
+      "response": {
+        "answer": "The man resumed his walk out of the town in search of shelter.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66449,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no28",
+        "text": "These are the events that have already occurred:\n\n...\n25. The man knocked at the prison door and requested admission for the night.\n26. The man looked through a window of a house and saw a happy family.\n27. The man knocked at the window of the house but was not heard.\n28. The man asked a peasant for food and shelter in exchange for money.\n29. The peasant expressed distrust towards the man.\n\n\nBelow is a list of possible subsequent events:\n\n['The penguin waddled into a beach tent seeking refuge from the blazing sun.', 'The cat squeezed into a cardboard box wanting to escape the rainy weather.', 'The woman slipped into a garden shed searching for her lost gardening gloves.', 'The boy nestled into an old suitcase dreaming of adventures and distant lands.', 'The man crawled into a dog kennel seeking warmth and shelter.', 'The child climbed into a laundry basket hoping to find misplaced toys.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The man crawled into a dog kennel seeking warmth and shelter."
+        ]
+      },
+      "response": {
+        "answer": "The man crawled into a dog kennel seeking warmth and shelter.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66461,
+            "cache_read_tokens": 66176
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no17",
+        "text": "These are the events that have already occurred:\n\n...\n14. The host revealed that the food was engaged by the wagoners.\n15. The man stated that he would remain at the inn despite the host's refusal.\n16. The host warned the man to go away.\n17. The host identified the man as Humphrey Waylon.\n18. The man picked up his knapsack and departed from the inn.\n\n\nBelow is a list of possible subsequent events:\n\n['The cyclist pedaled steadily forth, gliding along the winding paths.', 'The man walked straight on, keeping close to the houses.', 'The woman strolled leisurely by, wandering through the quiet gardens.', 'The cat crept stealthily away, slipping through the narrow alleys.', 'The dog trotted happily along, bounding towards the nearby park.', 'The boy jogged swiftly past, darting between the parked cars.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The man walked straight on, keeping close to the houses."
+        ]
+      },
+      "response": {
+        "answer": "The man walked straight on, keeping close to the houses.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66453,
+            "cache_read_tokens": 66176
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no13",
+        "text": "These are the events that have already occurred:\n\n...\n10. The man requested food and lodging from the host.\n11. The man revealed that he had money to pay for food and lodging.\n12. The host informed the man that he could not receive him.\n13. The man insisted on being accommodated despite the host's objections.\n14. The host revealed that the food was engaged by the wagoners.\n\n\nBelow is a list of possible subsequent events:\n\n[\"The man stated that he would remain at the inn despite the host's refusal.\", \"The woman claimed that she would stay in the village even after the mayor's objections.\", \"The scholar announced that he would present his findings at the conference despite the committee's skepticism.\", \"The child insisted that he would play in the park despite the parent's warnings.\", \"The artist declared that she would showcase her work at the gallery regardless of the curator's disapproval.\", \"The traveler vowed that he would explore the ruins even after the guide's cautions.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The man stated that he would remain at the inn despite the host's refusal."
+        ]
+      },
+      "response": {
+        "answer": "The man stated that he would remain at the inn despite the host's refusal.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66474,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no86",
+        "text": "These are the events that have already occurred:\n\n...\n83. Humphrey Waylon halted after hearing the noise from the door's hinge.\n84. Humphrey Waylon remained petrified after hearing the noise from the door's hinge.\n85. Humphrey Waylon peeped into the next room after the door had fallen wide open.\n86. Humphrey Waylon entered the room where the Bishop was sleeping.\n87. Humphrey Waylon halted near the Bishop's bed.\n\n\nBelow is a list of possible subsequent events:\n\n['Humphrey Waylon adjusted his glasses as he greeted the mayor.', 'Humphrey Waylon folded the letter as he sat at the conference table.', 'Humphrey Waylon placed his hands on the podium as he addressed the crowd.', 'Humphrey Waylon cleaned his shoes as he prepared to enter the theatre.', 'Humphrey Waylon lit a candle as he entered the dimly lit chapel.', 'Humphrey Waylon took off his cap as he stood before the Bishop.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Humphrey Waylon took off his cap as he stood before the Bishop."
+        ]
+      },
+      "response": {
+        "answer": "Humphrey Waylon took off his cap as he stood before the Bishop.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 66481,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    }
+  ]
+}

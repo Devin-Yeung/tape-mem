@@ -1,0 +1,364 @@
+{
+  "results": [
+    {
+      "question": {
+        "question_id": "eventqa_65536_no0",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie sported a lovely yellow paisley wrap that accompanied her flip-flops.', 'Debbie dressed in a vibrant orange spotted tunic that suited her canvas shoes.', 'Debbie adorned herself in a sleek purple chequered blouse that paired with her loafers.', 'Debbie wore a bright blue polka-dotted kimono that complemented her sandals.', 'Debbie wore a new green flowered-muslin dress that matched her slippers.', 'Debbie donned a chic red striped sundress that highlighted her espadrilles.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie wore a new green flowered-muslin dress that matched her slippers."
+        ]
+      },
+      "response": {
+        "answer": "Debbie wore a new green flowered-muslin dress that matched her slippers.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65448,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no1",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie expressed her boredom with the talk of war.', 'Debbie remarked on her weariness with the ongoing debates about social media trends.', 'Debbie conveyed her dissatisfaction with the chatter about political scandals.', 'Debbie lamented her disinterest in the discussion about climate change.', 'Debbie shared her frustration with the obsession over celebrity gossip.', 'Debbie revealed her annoyance with the focus on economic forecasts.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie expressed her boredom with the talk of war."
+        ]
+      },
+      "response": {
+        "answer": "Debbie expressed her boredom with the talk of war.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65437,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no2",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n3. Debbie expressed her boredom with the talk of war.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\", \"Debbie highlighted her brother, Lucian O'Kerry, throughout the discussion.\", \"Debbie referenced her cousin, Lucian O'Kerry, while reminiscing about childhood memories.\", \"Debbie recalled her uncle, Lucian O'Kerry, while sharing a funny anecdote.\", \"Debbie spoke fondly of her father, Lucian O'Kerry, during the meeting.\", \"Debbie described her grandfather, Lucian O'Kerry, while telling a family story.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie mentioned her mother, Lucian O'Kerry, during the conversation."
+        ]
+      },
+      "response": {
+        "answer": "None of these events occur next in the book excerpt. The conversation shifted to asking about the twins' mother (Mrs. Tarleton), not Debbie's mother (Lucian O'Kerry).",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65482,
+            "cache_read_tokens": 65403
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no3",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n3. Debbie expressed her boredom with the talk of war.\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Stuart's cousin, Beatrice Tarleton, showcased the champion stallion at the event.\", \"Debbie's uncle, Brent Hargrove, sold the beautiful gelding at the market.\", \"Beatrice's sister, Brent Hargrove, groomed the wild filly in the barn.\", \"Debbie's father, Stuart Tarleton, auctioned the prized mare at the fair.\", \"Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\", \"Brent's brother, Stuart Hargrove, trained the young colt in the paddock.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable."
+        ]
+      },
+      "response": {
+        "answer": "Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65510,
+            "cache_read_tokens": 65403
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no4",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n3. Debbie expressed her boredom with the talk of war.\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie anticipated it wouldn\u2019t be windy on the day of the outdoor concert.', 'Debbie worried it wouldn\u2019t be warm on the day of the beach outing.', 'Debbie feared it wouldn\u2019t be sunny on the day of the parade.', 'Debbie hoped it would not rain on the day of the barbecue.', 'Debbie wished it wouldn\u2019t snow on the day of the picnic.', 'Debbie prayed it wouldn\u2019t hail on the day of the family reunion.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie hoped it would not rain on the day of the barbecue."
+        ]
+      },
+      "response": {
+        "answer": "Debbie hoped it would not rain on the day of the barbecue.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65446,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no5",
+        "text": "These are the events that have already occurred:\n\n...\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n3. Debbie expressed her boredom with the talk of war.\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n6. Debbie hoped it would not rain on the day of the barbecue.\n\n\nBelow is a list of possible subsequent events:\n\n['Brent and Stuart persuaded Debbie to assure them tickets to the game.', 'Brent and Stuart convinced Debbie to vow them seats at the concert.', 'Brent and Stuart asked Debbie to promise them dances at the ball.', 'Brent and Stuart asked Debbie to commit to sharing stories at the gathering.', 'Brent and Stuart requested Debbie to pledge them rides to the festival.', 'Brent and Stuart urged Debbie to guarantee them meals at the banquet.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Brent and Stuart asked Debbie to promise them dances at the ball."
+        ]
+      },
+      "response": {
+        "answer": "Brent and Stuart asked Debbie to promise them dances at the ball.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65440,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no6",
+        "text": "These are the events that have already occurred:\n\n...\n3. Debbie expressed her boredom with the talk of war.\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n6. Debbie hoped it would not rain on the day of the barbecue.\n7. Brent and Stuart asked Debbie to promise them dances at the ball.\n\n\nBelow is a list of possible subsequent events:\n\n['Stuart noticed the travel itinerary changes while reviewing his emails at home.', 'Debbie received the promotion details during the networking event last week.', 'Debbie learned about the engagement announcement during the ball.', 'Stuart stumbled upon the surprise birthday invitation while browsing at the caf\u00e9.', 'Brent found out about the scholarship award during the outdoor ceremony.', 'Debbie discovered the unexpected reunion news while attending the gala.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie learned about the engagement announcement during the ball."
+        ]
+      },
+      "response": {
+        "answer": "Debbie learned about the engagement announcement during the ball.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65428,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no7",
+        "text": "These are the events that have already occurred:\n\n...\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n6. Debbie hoped it would not rain on the day of the barbecue.\n7. Brent and Stuart asked Debbie to promise them dances at the ball.\n8. Debbie learned about the engagement announcement during the ball.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Stuart revealed the engagement announcement for Kali to Charlie's sister.\", \"Stuart disclosed the vacation plans for Debbie to Brent's cousin.\", \"Stuart announced the promotion celebration for Debbie to Charlie's brother.\", \"Stuart revealed the surprise party details for Brent to Debbie's aunt.\", \"Stuart unveiled the charity event information for Kali to Brent's mother.\", \"Stuart shared the graduation news for Brent to Debbie's best friend.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Stuart revealed the engagement announcement for Kali to Charlie's sister."
+        ]
+      },
+      "response": {
+        "answer": "Stuart revealed the engagement announcement for Kali to Charlie's sister.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65428,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no8",
+        "text": "These are the events that have already occurred:\n\n...\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n6. Debbie hoped it would not rain on the day of the barbecue.\n7. Brent and Stuart asked Debbie to promise them dances at the ball.\n8. Debbie learned about the engagement announcement during the ball.\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n\n\nBelow is a list of possible subsequent events:\n\n['Stuart arranged to meet the Tarleton twins for a game night.', 'Brent invited the Tarleton twins to join him for a picnic.', 'Debbie promised to help the Tarleton twins with their homework.', 'Debbie decided to watch a movie with the Tarleton twins.', 'Debbie agreed to eat supper with the Tarleton twins.', 'Stuart planned to attend a concert with the Tarleton twins.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie agreed to eat supper with the Tarleton twins."
+        ]
+      },
+      "response": {
+        "answer": "Debbie agreed to eat supper with the Tarleton twins.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65432,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no9",
+        "text": "These are the events that have already occurred:\n\n...\n6. Debbie hoped it would not rain on the day of the barbecue.\n7. Brent and Stuart asked Debbie to promise them dances at the ball.\n8. Debbie learned about the engagement announcement during the ball.\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n10. Debbie agreed to eat supper with the Tarleton twins.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie vowed to sing every ballad with the Anderson sisters.', 'Debbie promised to dance all the waltzes with the Tarleton twins.', 'Stuart agreed to ride every rollercoaster with the Murphy triplets.', 'Stuart announced his intention to race all the boats with the Thompson brothers.', 'Debbie committed to bake all the pies with the Harrington cousins.', 'Brent declared he would paint all the portraits with the Lawson siblings.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie promised to dance all the waltzes with the Tarleton twins."
+        ]
+      },
+      "response": {
+        "answer": "Debbie promised to dance all the waltzes with the Tarleton twins.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65426,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no10",
+        "text": "These are the events that have already occurred:\n\n...\n7. Brent and Stuart asked Debbie to promise them dances at the ball.\n8. Debbie learned about the engagement announcement during the ball.\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n10. Debbie agreed to eat supper with the Tarleton twins.\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n\n\nBelow is a list of possible subsequent events:\n\n[\"The Tarleton twins told Stuart they planned to stop by the Edwards' before dinner time.\", \"The Tarleton twins assured Stuart they would visit the Harmons' later in the evening.\", \"The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\", \"The Tarleton twins mentioned to Debbie they would swing by the Parkers' right after lunch.\", \"The Tarleton twins promised Brent they would join him at the Johnsons' on Saturday morning.\", \"The Tarleton twins informed Brent they would arrive at the Mulligans' house late in the afternoon.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning."
+        ]
+      },
+      "response": {
+        "answer": "The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65468,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no11",
+        "text": "These are the events that have already occurred:\n\n...\n8. Debbie learned about the engagement announcement during the ball.\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n10. Debbie agreed to eat supper with the Tarleton twins.\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n\n\nBelow is a list of possible subsequent events:\n\n['Brent questioned why Debbie chose to leave the party early without saying goodbye.', 'Brent wondered what prompted Debbie to avoid discussing their plans for the weekend.', \"Brent remarked on how strange it was that Debbie didn't invite them to the movie night.\", \"Brent voiced his confusion over Debbie's decision not to include them in the group outing.\", 'Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.', 'Brent reflected on why Debbie seemed uninterested in their conversation during lunch.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Brent expressed his puzzlement about why Debbie did not ask them to stay for supper."
+        ]
+      },
+      "response": {
+        "answer": "Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65455,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no12",
+        "text": "These are the events that have already occurred:\n\n...\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n10. Debbie agreed to eat supper with the Tarleton twins.\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n13. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n\n\nBelow is a list of possible subsequent events:\n\n['Kali mentioned that it seemed Stuart had forgotten to notify Brent about the travel plans.', 'Brent noted that maybe Debbie had failed to update Kali about the vacation itinerary.', \"Stuart remarked that it was possible that Kali hadn't shared the news with Debbie about the new project.\", 'Brent speculated that perhaps Debbie had not informed Kali about the surprise party.', 'Debbie implied that potentially Brent had overlooked telling Stuart regarding the meeting schedule.', 'Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Stuart suggested that maybe Kali had not told Debbie about the engagement announcement."
+        ]
+      },
+      "response": {
+        "answer": "Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65515,
+            "cache_read_tokens": 65403
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no13",
+        "text": "These are the events that have already occurred:\n\n...\n10. Debbie agreed to eat supper with the Tarleton twins.\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n13. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n14. Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.\n\n\nBelow is a list of possible subsequent events:\n\n[\"The Tarleton twins strikingly remembered when they were captivated by Brent's guitar skills during a local concert.\", \"The Tarleton twins recounted the evening they were enchanted by Stuart's photography at an art show.\", \"The Tarleton twins reflected on how they both discovered Brent's storytelling talent during a family reunion.\", \"The Tarleton twins vividly described the time they were impressed by Debbie's cooking at a neighborhood potluck.\", \"The Tarleton twins reminisced about the moment they first noticed Stuart's dance moves at a charity gala.\", \"The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking."
+        ]
+      },
+      "response": {
+        "answer": "The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65490,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no14",
+        "text": "These are the events that have already occurred:\n\n...\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n13. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n14. Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.\n15. The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\n\n\nBelow is a list of possible subsequent events:\n\n['Kali Abrianna was selected as the keynote speaker at the youth summit.', 'Kali Abrianna was elected captain of the Troop.', 'Kali Abrianna received the prestigious community service award.', 'Kali Abrianna won the first prize in the annual art competition.', 'Kali Abrianna earned a scholarship for her exceptional academic achievements.', 'Kali Abrianna was appointed leader of the environmental committee.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Kali Abrianna was elected captain of the Troop."
+        ]
+      },
+      "response": {
+        "answer": "Kali Abrianna was elected captain of the Troop.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65456,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no15",
+        "text": "These are the events that have already occurred:\n\n...\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n13. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n14. Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.\n15. The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\n16. Kali Abrianna was elected captain of the Troop.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Debbie's father, John Abrianna, organized a fundraising dinner to support the troop.\", \"Debbie's father, John Abrianna, arranged for the troop to receive a grant for new uniforms.\", \"Debbie's father, John Abrianna, hosted a workshop to teach the troop essential survival techniques.\", \"Debbie's father, John Abrianna, contributed money to outfit the Troop.\", \"Debbie's father, John Abrianna, volunteered his time to mentor the troop members.\", \"Debbie's father, John Abrianna, donated equipment to enhance the troop's outdoor skills.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie's father, John Abrianna, contributed money to outfit the Troop."
+        ]
+      },
+      "response": {
+        "answer": "Debbie's father, John Abrianna, contributed money to outfit the Troop.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65548,
+            "cache_read_tokens": 65403
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no16",
+        "text": "These are the events that have already occurred:\n\n...\n13. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n14. Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.\n15. The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\n16. Kali Abrianna was elected captain of the Troop.\n17. Debbie's father, John Abrianna, contributed money to outfit the Troop.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie was struck by an overwhelming sense of doubt and chaos when the neighborhood dogs all began barking in unison.', 'Debbie found herself engulfed in frustration and disbelief following the surprise announcement of her promotion.', \"Debbie experienced a wave of confusion and despair after the unexpected arrival of Aunt Marge's parrot.\", \"Debbie felt an unsettling mix of sadness and uncertainty when she discovered the library's new policy on late returns.\", \"Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit.\", \"Debbie was flooded with a feeling of discomfort and perplexity after her friend revealed a secret she wasn't ready to hear.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit."
+        ]
+      },
+      "response": {
+        "answer": "Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65549,
+            "cache_read_tokens": 65403
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no17",
+        "text": "These are the events that have already occurred:\n\n...\n14. Stuart suggested that maybe Kali had not told Debbie about the engagement announcement.\n15. The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\n16. Kali Abrianna was elected captain of the Troop.\n17. Debbie's father, John Abrianna, contributed money to outfit the Troop.\n18. Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie recalled her feelings of love for Kali.', 'Debbie reminisced about her passionate moments with Kali.', 'Debbie cherished the memories of laughter shared with Kali.', 'Debbie reflected on her deep admiration for Kali.', 'Debbie pondered her unforgettable adventures alongside Kali.', 'Debbie thought back to the warm evenings spent with Kali.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie recalled her feelings of love for Kali."
+        ]
+      },
+      "response": {
+        "answer": "Debbie recalled her feelings of love for Kali.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65427,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no18",
+        "text": "These are the events that have already occurred:\n\n...\n15. The Tarleton twins recalled how they both became aware of Debbie's charms during a political speaking.\n16. Kali Abrianna was elected captain of the Troop.\n17. Debbie's father, John Abrianna, contributed money to outfit the Troop.\n18. Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit.\n19. Debbie recalled her feelings of love for Kali.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie sat on the porch swing, hoping her mother would return from the store.', 'Debbie gazed out the window, eager to see her friend arrive from across the street.', 'Debbie paced in the garden, counting the minutes until her sister finally came home.', 'Debbie listened intently as her brother picked up his guitar, anticipating his new song.', 'Debbie waited for her father at the end of the driveway.', \"Debbie leaned against the fence, excitedly watching for her neighbor's dog to come play.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie waited for her father at the end of the driveway."
+        ]
+      },
+      "response": {
+        "answer": "Debbie waited for her father at the end of the driveway.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65459,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no19",
+        "text": "These are the events that have already occurred:\n\n...\n16. Kali Abrianna was elected captain of the Troop.\n17. Debbie's father, John Abrianna, contributed money to outfit the Troop.\n18. Debbie felt a sense of misery and bewilderment after the Tarleton twins' visit.\n19. Debbie recalled her feelings of love for Kali.\n20. Debbie waited for her father at the end of the driveway.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Debbie's spirit soared with excitement as she reminisced about Kali.\", \"Debbie's soul danced with delight as she visualized Kali\u2019s embrace.\", 'Debbie\u2019s mind raced with anticipation as she daydreamed about Kali.', \"Debbie's heart swelled with hope as she thought about Kali.\", \"Debbie's cheeks flushed with warmth as she recalled Kali's smile.\", 'Debbie\u2019s eyes sparkled with joy as she remembered Kali\u2019s laughter.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie's heart swelled with hope as she thought about Kali."
+        ]
+      },
+      "response": {
+        "answer": "Debbie's mind raced with anticipation as she daydreamed about Kali.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 65435,
+            "cache_read_tokens": 64955
+          }
+        }
+      }
+    }
+  ]
+}
