@@ -1,20 +1,38 @@
-from tape_mem.dataset import load_eventqa_examples
-import click
-from typing import Literal
-
-from tape_mem.types.experiment import EventQAQueryResult, EventQAExperiment
 import os
+from typing import Literal
+from typing import List
 
+import click
+from loguru import logger
+from mirascope import llm
 from tqdm import tqdm
 
-from tape_mem.dataset.templates import EventQATemplate
-from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.agents import FullContextAgent
-from typing import List
-from mirascope import llm
-
+from tape_mem.chunker import SentenceAwareChunker
+from tape_mem.dataset import load_eventqa_examples
+from tape_mem.dataset.templates import EventQATemplate
+from tape_mem.types.experiment import EventQAExperiment
+from tape_mem.types.experiment import EventQAQueryResult
+import questionary
 from .settings.env import Env
-from loguru import logger
+
+VARIANTS = [
+    "eventqa_full_0",
+    "eventqa_full_1",
+    "eventqa_full_2",
+    "eventqa_full_3",
+    "eventqa_full_4",
+    "eventqa_65536_0",
+    "eventqa_65536_1",
+    "eventqa_65536_2",
+    "eventqa_65536_3",
+    "eventqa_65536_4",
+    "eventqa_131072_0",
+    "eventqa_131072_1",
+    "eventqa_131072_2",
+    "eventqa_131072_3",
+    "eventqa_131072_4",
+]
 
 
 @click.command()
@@ -26,15 +44,44 @@ from loguru import logger
 )
 @click.option(
     "--variant",
-    type=click.Choice(
-        ["eventqa_full", "eventqa_65536", "eventqa_131072"], case_sensitive=False
-    ),
+    type=click.Choice(VARIANTS, case_sensitive=False),
     default=None,
     help="Experiment variant to run",
 )
+@click.option(
+    "--question-percent",
+    type=click.FloatRange(0.0, 100.0),
+    default=10.0,
+    show_default=True,
+    help="Percent of the eligible questions to run for each subset",
+)
+@click.option(
+    "--seed",
+    default="default",
+    show_default=True,
+)
 def main(
     model_override: str | None,
-    variant: Literal["eventqa_full", "eventqa_65536", "eventqa_131072"],
+    variant: Literal[
+        "eventqa_full_0",
+        "eventqa_full_1",
+        "eventqa_full_2",
+        "eventqa_full_3",
+        "eventqa_full_4",
+        "eventqa_65536_0",
+        "eventqa_65536_1",
+        "eventqa_65536_2",
+        "eventqa_65536_3",
+        "eventqa_65536_4",
+        "eventqa_131072_0",
+        "eventqa_131072_1",
+        "eventqa_131072_2",
+        "eventqa_131072_3",
+        "eventqa_131072_4",
+    ]
+    | None,
+    question_percent: float,
+    seed: int,
 ) -> int:
     env = Env()  # ty:ignore[missing-argument]
 
@@ -64,7 +111,15 @@ def main(
 
     # prepare the dataset example
     eventqa = load_eventqa_examples()
-    eventqa = [e for e in eventqa if e.variant == variant]
+
+    if variant is None:
+        variant = questionary.select(
+            "Select a variant to run:",
+            choices=VARIANTS,
+        ).ask()
+
+    logger.info(f"running experiment on {variant}")
+    eventqa = [e for e in eventqa if e.example_id == variant]
 
     # prepare the agent
     agent = FullContextAgent(model=model, template=EventQATemplate())
