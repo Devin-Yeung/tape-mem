@@ -1,4 +1,5 @@
 import os
+import random
 from typing import Literal
 from typing import List
 
@@ -57,7 +58,7 @@ VARIANTS = [
 )
 @click.option(
     "--seed",
-    default="default",
+    default=42,
     show_default=True,
 )
 def main(
@@ -131,8 +132,14 @@ def main(
         for chunk in chunker.chunk(subset.context):
             agent.memorize(chunk)
 
+        # sample questions
+        n_selected = int(len(subset.questions) * (question_percent / 100.0))
+        logger.info(f"selected {n_selected} questions")
+        rng = random.Random(seed)
+        selected = rng.sample(subset.questions, n_selected)
+
         # ask agent for question
-        for i, question in enumerate(tqdm(subset.questions)):
+        for i, question in enumerate(tqdm(selected)):
             logger.debug(f"processing question {i}")
             resp = agent.query(question.text)
             results.append(
@@ -145,7 +152,7 @@ def main(
         experiment = EventQAExperiment(results=results)
         json = experiment.to_json()
 
-        with open(f"{variant}-{subset_idx}-result.json", "w") as f:
+        with open(f"{variant}_result.json", "w") as f:
             if isinstance(json, str):
                 f.write(json)
 
