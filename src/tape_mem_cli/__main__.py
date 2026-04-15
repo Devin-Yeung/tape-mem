@@ -9,12 +9,12 @@ from mirascope import llm
 from tqdm import tqdm
 
 from tape_mem.agents import FullContextAgent
+from tape_mem.agents.rag import RagAgent
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.dataset import load_eventqa_examples
 from tape_mem.dataset.templates import EventQATemplate
 from tape_mem.types.experiment import EventQAExperiment
 from tape_mem.types.experiment import EventQAQueryResult
-import questionary
 from .settings.env import Env
 
 VARIANTS = [
@@ -50,6 +50,14 @@ VARIANTS = [
     help="Experiment variant to run",
 )
 @click.option(
+    "--agent",
+    "agent_kind",
+    type=click.Choice(["full", "rag"], case_sensitive=False),
+    default="full",
+    show_default=True,
+    help="Agent implementation to run",
+)
+@click.option(
     "--question-percent",
     type=click.FloatRange(0.0, 100.0),
     default=10.0,
@@ -81,6 +89,7 @@ def main(
         "eventqa_131072_4",
     ]
     | None,
+    agent_kind: Literal["full", "rag"],
     question_percent: float,
     seed: int,
 ) -> int:
@@ -114,6 +123,14 @@ def main(
     eventqa = load_eventqa_examples()
 
     if variant is None:
+        try:
+            import questionary  # type: ignore
+        except ModuleNotFoundError as e:
+            raise click.ClickException(
+                "缺少可选依赖 `questionary`，仅在不传 `--variant` 需要交互选择时才需要。\n"
+                "解决办法：安装 `questionary` 或者直接传 `--variant <name>`。"
+            ) from e
+
         variant = questionary.select(
             "Select a variant to run:",
             choices=VARIANTS,
@@ -123,7 +140,11 @@ def main(
     eventqa = [e for e in eventqa if e.example_id == variant]
 
     # prepare the agent
-    agent = FullContextAgent(model=model, template=EventQATemplate())
+    if agent_kind == "rag":
+        agent = RagAgent(model=model, template=EventQATemplate())
+    else:
+        agent = FullContextAgent(model=model, template=EventQATemplate())
+    logger.info(f"using agent: {agent.__class__.__name__}")
 
     for subset_idx, subset in enumerate(tqdm(eventqa)):
         logger.info(f"processing {subset_idx} th subset of {variant}")
