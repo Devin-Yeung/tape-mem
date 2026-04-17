@@ -218,4 +218,3 @@ class RagAgent(Agent):
 
         metadata = QueryMetadata(stats=stats, model_name=self._model_name())
         return AgentResponse(answer=result.answer, metadata=metadata)
-

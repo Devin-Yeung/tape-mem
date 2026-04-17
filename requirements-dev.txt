@@ -234,7 +234,8 @@ matplotlib-inline==0.2.1
     #   ipython
 mdurl==0.1.2
     # via markdown-it-py
-mirascope @ git+https://github.com/Devin-Yeung/mirascope@fix-model-id#subdirectory=python    # via tape-mem
+mirascope @ git+https://github.com/Devin-Yeung/mirascope@53080795b295d620cfbeea93c22fcdc60424ce7a#subdirectory=python
+    # via tape-mem
 mistune==3.2.0
     # via nbconvert
 multidict==6.7.1
