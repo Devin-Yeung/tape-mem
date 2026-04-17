@@ -2,6 +2,7 @@ import os
 import random
 from typing import Literal
 from typing import List
+import questionary
 
 import click
 from loguru import logger
@@ -123,14 +124,6 @@ def main(
     eventqa = load_eventqa_examples()
 
     if variant is None:
-        try:
-            import questionary  # type: ignore
-        except ModuleNotFoundError as e:
-            raise click.ClickException(
-                "缺少可选依赖 `questionary`，仅在不传 `--variant` 需要交互选择时才需要。\n"
-                "解决办法：安装 `questionary` 或者直接传 `--variant <name>`。"
-            ) from e
-
         variant = questionary.select(
             "Select a variant to run:",
             choices=VARIANTS,
