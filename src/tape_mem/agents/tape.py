@@ -7,7 +7,7 @@ from republic import LLM, TapeEntry
 
 from tape_mem.dataset.templates import Template
 from tape_mem.types import Agent
-from tape_mem.types.agent import AgentResponse
+from tape_mem.types.agent import AgentResponse, Stats, QueryMetadata
 from tape_mem.types.provider import ProviderConfig
 
 
@@ -271,5 +271,19 @@ class TapeAgent(Agent):
             }
         )
 
-        resp = self._llm.chat(messages=messages)
-        return AgentResponse(resp)
+        stream = self._llm.stream(messages=messages)
+        resp = "".join(list(stream))
+
+        usage = stream.usage
+        if usage:
+            logger.debug("token usage: {}", usage)
+            stats = Stats(
+                total_input_tokens=(usage.get("input_tokens")),
+                cache_read_tokens=(
+                    usage.get("input_tokens_details", {}).get("cached_tokens", 0)
+                ),
+            )
+            meta = QueryMetadata(stats=stats)
+            return AgentResponse(resp, meta)
+        else:
+            return AgentResponse(resp)
