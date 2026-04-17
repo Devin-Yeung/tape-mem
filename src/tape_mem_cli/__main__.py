@@ -142,7 +142,7 @@ def main(
             agent = RagAgent(model=model, template=EventQATemplate())
         case "tape":
             provider = ProviderConfig(
-                model=env.llm_model,
+                model=llm_model,
                 base_url=env.openai_compatible_base_url,
                 api_key=env.openai_compatible_api_key,
             )
