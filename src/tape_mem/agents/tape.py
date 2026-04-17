@@ -1,3 +1,4 @@
+import tiktoken
 import re
 from collections.abc import Iterable
 
@@ -122,6 +123,9 @@ class TapeAgent(Agent):
         logger.info(f"using model: {model}")
         logger.info(f"using base url: {provider.base_url}")
 
+        # for token usage metric estimation
+        self._tokenizor = tiktoken.get_encoding("o200k_base")
+
         # create a new tape and write on it
         self._active_tape = self._llm.tape("main")
         self._counter: int = 0
@@ -245,6 +249,7 @@ class TapeAgent(Agent):
 
         if retrieved_chunks:
             tagged_context = _format_context_chunks(retrieved_chunks)
+            context_token_count = len(self._tokenizor.encode(tagged_context))
             messages.append(
                 {
                     "role": "user",
@@ -259,6 +264,7 @@ class TapeAgent(Agent):
             # TODO: Fall back to a broader scan or semantic retrieval when no chunk
             # clears these lexical heuristics. For now we leave the omission
             # explicit so low-recall cases are easier to reason about.
+            context_token_count = 0
             logger.debug("no retrieved chunks matched question: {}", question)
 
         messages.append(
@@ -278,6 +284,7 @@ class TapeAgent(Agent):
         if usage:
             logger.debug("token usage: {}", usage)
             stats = Stats(
+                estimated_context_tokens=context_token_count,
                 total_input_tokens=(usage.get("input_tokens")),
                 cache_read_tokens=(
                     usage.get("input_tokens_details", {}).get("cached_tokens", 0)
