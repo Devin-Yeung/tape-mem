@@ -91,6 +91,20 @@ def _dedupe_preserving_order(tokens: Iterable[str]) -> list[str]:
     return result
 
 
+def _format_context_chunks(chunks: list[str]) -> str:
+    # Anthropic-style XML tags make context boundaries explicit, which reduces
+    # ambiguity when multiple retrieved chunks are packed into one prompt.
+    formatted_chunks = [
+        f'<chunk index="{idx}">\n{chunk}\n</chunk>'
+        for idx, chunk in enumerate(chunks, start=1)
+    ]
+    return (
+        "<retrieved_context>\n"
+        + "\n\n".join(formatted_chunks)
+        + "\n</retrieved_context>"
+    )
+
+
 class TapeAgent(Agent):
     def __init__(self, provider: ProviderConfig, template: Template):
         self._template = template
@@ -230,16 +244,14 @@ class TapeAgent(Agent):
         ]
 
         if retrieved_chunks:
-            joined_context = "\n\n".join(
-                f"Context {idx}:\n{chunk}"
-                for idx, chunk in enumerate(retrieved_chunks, start=1)
-            )
+            tagged_context = _format_context_chunks(retrieved_chunks)
             messages.append(
                 {
                     "role": "user",
                     "content": (
                         "The following memorized context was retrieved because it may be "
-                        f"relevant to the question.\n\n{joined_context}"
+                        "relevant to the question. Each chunk is wrapped in XML tags so "
+                        f"its boundaries stay explicit.\n\n{tagged_context}"
                     ),
                 }
             )
