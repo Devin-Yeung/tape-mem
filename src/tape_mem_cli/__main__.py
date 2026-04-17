@@ -1,3 +1,4 @@
+from tape_mem.types.provider import ProviderConfig
 import os
 import random
 from typing import Literal
@@ -11,6 +12,7 @@ from tqdm import tqdm
 
 from tape_mem.agents import FullContextAgent
 from tape_mem.agents.rag import RagAgent
+from tape_mem.agents.tape import TapeAgent
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.dataset import load_eventqa_examples
 from tape_mem.dataset.templates import EventQATemplate
@@ -53,7 +55,7 @@ VARIANTS = [
 @click.option(
     "--agent",
     "agent_kind",
-    type=click.Choice(["full", "rag"], case_sensitive=False),
+    type=click.Choice(["full", "rag", "tape"], case_sensitive=False),
     default="full",
     show_default=True,
     help="Agent implementation to run",
@@ -90,7 +92,7 @@ def main(
         "eventqa_131072_4",
     ]
     | None,
-    agent_kind: Literal["full", "rag"],
+    agent_kind: Literal["full", "rag", "tape"],
     question_percent: float,
     seed: int,
 ) -> int:
@@ -133,10 +135,19 @@ def main(
     eventqa = [e for e in eventqa if e.example_id == variant]
 
     # prepare the agent
-    if agent_kind == "rag":
-        agent = RagAgent(model=model, template=EventQATemplate())
-    else:
-        agent = FullContextAgent(model=model, template=EventQATemplate())
+    match agent_kind:
+        case "full":
+            agent = FullContextAgent(model=model, template=EventQATemplate())
+        case "rag":
+            agent = RagAgent(model=model, template=EventQATemplate())
+        case "tape":
+            provider = ProviderConfig(
+                model=env.llm_model,
+                base_url=env.openai_compatible_base_url,
+                api_key=env.openai_compatible_api_key,
+            )
+            agent = TapeAgent(provider, template=EventQATemplate())
+
     logger.info(f"using agent: {agent.__class__.__name__}")
 
     for subset_idx, subset in enumerate(tqdm(eventqa)):

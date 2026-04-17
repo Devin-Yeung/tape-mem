@@ -3,16 +3,25 @@ from tape_mem.types import Agent
 from tape_mem.types.agent import AgentResponse
 from tape_mem.types.provider import ProviderConfig
 from republic import LLM, TapeEntry
+from loguru import logger
 
 
 class TapeAgent(Agent):
     def __init__(self, provider: ProviderConfig, template: Template):
         self._template = template
+
+        model = f"openai:{provider.model}"
         self._llm = LLM(
-            model=f"openai:{provider.model}",
-            api_key=provider.api_key,
-            api_base=provider.base_url,
+            model=model,
+            api_key={
+                "openai": provider.api_key,
+            },
+            api_base={
+                "openai": provider.base_url,
+            },
         )
+        logger.info(f"using model: {model}")
+        logger.info(f"using base url: {provider.base_url}")
 
         # create a new tape and write on it
         self._active_tape = self._llm.tape("main")
@@ -34,7 +43,7 @@ class TapeAgent(Agent):
             TapeEntry.message(
                 # todo: using template (blocking by template refactoring)
                 {
-                    "role": "user",
+                    "role": "assistant",
                     "content": "I have learned the documents and I will answer the question you ask.",
                 }
             )
@@ -44,4 +53,5 @@ class TapeAgent(Agent):
         raise NotImplementedError
 
     def query(self, question: str) -> AgentResponse:
-        raise NotImplementedError
+        resp = self._active_tape.chat(question)
+        return AgentResponse(resp)
