@@ -1,0 +1,184 @@
+{
+  "results": [
+    {
+      "question": {
+        "question_id": "eventqa_131072_no81",
+        "text": "These are the events that have already occurred:\n\n...\n78. Debbie felt embarrassed for being the only person who gave nothing during the collection.\n79. Debbie felt irritated at Melly's misconstrued motives.\n80. Debbie expressed anger at Madelyn Yelena's mockery.\n81. Dr. Meade proposed a surprise involving dancing and auctioning.\n82. The doctor whispered something to Madelyn Yelena regarding Debbie's mourning.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie approached Madelyn Yelena, her eyes gleaming with mischief.', 'Madelyn Yelena advanced towards Debbie with a mocking smile.', 'Madelyn Yelena stepped closer to Debbie, a sly grin playing on her lips.', 'Madelyn Yelena leaned in towards Debbie, a playful smirk lighting her face.', 'Debbie crossed her arms defiantly, staring at Madelyn Yelena with a raised eyebrow.', 'Debbie flicked her hair over her shoulder, glancing at Madelyn Yelena with feigned innocence.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Madelyn Yelena advanced towards Debbie with a mocking smile."
+        ]
+      },
+      "response": {
+        "answer": "Madelyn Yelena advanced towards Debbie with a mocking smile.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132273,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no14",
+        "text": "These are the events that have already occurred:\n\n...\n11. Debbie felt admiration for her mother Lucian's calm demeanor.\n12. Marianne left home with his mother\u2019s kiss and blessing.\n13. Marianne proposed a game of poker to the stranger.\n14. Marianne cleared fields and planted cotton on his plantation.\n15. Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.\n\n\nBelow is a list of possible subsequent events:\n\n['Marianne described the Claudias as poor white and lacking respect.', 'Marianne labeled the Maxwells as uneducated and overly ambitious.', 'Marianne portrayed the Petersons as wealthy but morally corrupt.', 'Marianne criticized the Fairchilds as arrogant and out of touch with reality.', 'Marianne characterized the Thatchers as privileged yet painfully insecure.', 'Marianne condemned the Harringtons as pretentious and disconnected from their roots.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne described the Claudias as poor white and lacking respect."
+        ]
+      },
+      "response": {
+        "answer": "Marianne described the Claudias as poor white and lacking respect.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132245,
+            "cache_read_tokens": 131968
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no3",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n3. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n4. Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Debbie's father, John Abrianna, donated equipment to enhance the troop's outdoor skills.\", \"Debbie's father, John Abrianna, contributed money to outfit the Troop.\", \"Debbie's father, John Abrianna, arranged for the troop to receive a grant for new uniforms.\", \"Debbie's father, John Abrianna, volunteered his time to mentor the troop members.\", \"Debbie's father, John Abrianna, organized a fundraising dinner to support the troop.\", \"Debbie's father, John Abrianna, hosted a workshop to teach the troop essential survival techniques.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie's father, John Abrianna, contributed money to outfit the Troop."
+        ]
+      },
+      "response": {
+        "answer": "Debbie's father, John Abrianna, contributed money to outfit the Troop.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132273,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no94",
+        "text": "These are the events that have already occurred:\n\n...\n91. Debbie overheard Marianne singing in a drunken state upon returning home.\n92. Debbie decided to keep the incident of the lost money from her mother.\n93. Debbie slipped quietly into Edgar's room and turned the key in the lock.\n94. Debbie thought about Lucian and her mother's potential reaction to her reading Kali's letters.\n95. Debbie began singing 'When This Cruel War Is Over' halfway down the stairs.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie hosted game nights and laughed, acting as she did before settling down.', 'Debbie attended parties and danced, behaving as she did before her marriage.', 'Debbie trained for marathons and cheered, celebrating as she did before finding a partner.', 'Debbie traveled to festivals and sang, enjoying herself as she did before becoming a wife.', 'Debbie joined book clubs and debated, engaging as she did before her commitment.', 'Debbie visited art galleries and mingled, expressing herself as she did before tying the knot.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie attended parties and danced, behaving as she did before her marriage."
+        ]
+      },
+      "response": {
+        "answer": "Debbie attended parties and danced, behaving as she did before her marriage.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132275,
+            "cache_read_tokens": 131968
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no35",
+        "text": "These are the events that have already occurred:\n\n...\n32. Debbie envisioned herself marrying Kali and living at Twelve Oaks.\n33. Debbie felt a surge of affection for her father.\n34. Marianne expressed interest in Mrs. Tarleton's foal.\n35. Debbie observed the guests and atmosphere at Twelve Oaks as they arrived.\n36. Debbie noticed families arriving from various locations, including Lovejoy and Atlanta.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie revealed her enthusiasm about hiking trails with Kamala.', 'Debbie mentioned her thrill about attending a concert with Kamala.', 'Debbie expressed excitement about eating barbecue with Kamala.', 'Debbie conveyed her delight in baking cookies with Kamala.', 'Debbie shared her joy about painting pottery with Kamala.', 'Debbie disclosed her eagerness for gardening together with Kamala.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie expressed excitement about eating barbecue with Kamala."
+        ]
+      },
+      "response": {
+        "answer": "Debbie expressed excitement about eating barbecue with Kamala.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132230,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no31",
+        "text": "These are the events that have already occurred:\n\n...\n28. Marianne expressed concern about finding a new overseer.\n29. Debbie imagined herself as Mrs. Kali Abrianna.\n30. Debbie argued with Sue about her eating habits.\n31. Debbie sopped the wheat cake in gravy and put it in her mouth.\n32. Debbie envisioned herself marrying Kali and living at Twelve Oaks.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie encountered a sense of tranquility while meditating at the park.', 'Debbie felt a surge of affection for her father.', 'Debbie experienced an overwhelming nostalgia while browsing through old family photographs.', 'Debbie realized her passion for painting during a spontaneous art class.', 'Debbie found herself captivated by the melodies played at the local music festival.', 'Debbie discovered an unexpected talent for gardening over the weekend.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie felt a surge of affection for her father."
+        ]
+      },
+      "response": {
+        "answer": "Debbie felt a surge of affection for her father.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132230,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no28",
+        "text": "These are the events that have already occurred:\n\n...\n25. Debbie associated the fragrance of lemon verbena sachet with her mother.\n26. Sue firmly insisted that Lucian should eat supper before praying.\n27. Debbie reflected on her feelings for Kali during prayers.\n28. Marianne expressed concern about finding a new overseer.\n29. Debbie imagined herself as Mrs. Kali Abrianna.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie confronted Sue over her sleeping patterns.', 'Debbie critiqued Sue on her study techniques.', 'Debbie argued with Sue about her eating habits.', 'Debbie debated with Sue regarding her workout routine.', 'Debbie questioned Sue about her travel preferences.', 'Debbie discussed with Sue concerning her spending choices.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie argued with Sue about her eating habits."
+        ]
+      },
+      "response": {
+        "answer": "Debbie argued with Sue about her eating habits.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132212,
+            "cache_read_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no17",
+        "text": "These are the events that have already occurred:\n\n...\n14. Marianne cleared fields and planted cotton on his plantation.\n15. Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.\n16. Marianne described the Claudias as poor white and lacking respect.\n17. Marianne rode his horse to visit neighbors, receiving smiles and signals for drinks.\n18. Marianne expressed his interest in Miss Lucian Robillard.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Lucian's best friend secretly envied his bond with Marianne.\", \"Lucian's siblings openly dismissed her relationship with Marianne.\", \"Lucian's aunt unexpectedly celebrated their engagement with Marianne.\", \"Lucian's mother cautiously supported his decision to be with Marianne.\", \"Lucian's father reluctantly accepted her marriage to Marianne.\", \"Lucian's cousin quietly questioned his choice of Marianne as partner.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Lucian's father reluctantly accepted her marriage to Marianne."
+        ]
+      },
+      "response": {
+        "answer": "Lucian's mother cautiously supported his decision to be with Marianne.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132238,
+            "cache_read_tokens": 131968
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no13",
+        "text": "These are the events that have already occurred:\n\n...\n10. Debbie defended Kali against Marianne's criticisms.\n11. Debbie felt admiration for her mother Lucian's calm demeanor.\n12. Marianne left home with his mother\u2019s kiss and blessing.\n13. Marianne proposed a game of poker to the stranger.\n14. Marianne cleared fields and planted cotton on his plantation.\n\n\nBelow is a list of possible subsequent events:\n\n['Marianne had a solid rapport with most residents, but the Dicksons and the Taylors were notable exceptions.', \"Marianne was quite popular among her peers, except for the Rileys and the O'Neills.\", 'Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.', 'Marianne maintained cordial connections throughout the town, barring the Smiths and the Johnsons.', 'Marianne enjoyed friendly relations with almost everyone, save for the Andersons and the Lincolns.', 'Marianne was well-liked in the community, with the exception of the Thompsons and the Garcias.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias."
+        ]
+      },
+      "response": {
+        "answer": "Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132274,
+            "cache_read_tokens": 131968
+          }
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_131072_no86",
+        "text": "These are the events that have already occurred:\n\n...\n83. Madelyn Yelena advanced towards Debbie with a mocking smile.\n84. Debbie expressed her desire to dance despite her mourning.\n85. Debbie defended Captain Yelena's bravery while criticizing his motives.\n86. Edgar reassured Debbie after the false alarm about Kali.\n87. Debbie scowled at Lucian's letter regarding her conduct.\n\n\nBelow is a list of possible subsequent events:\n\n['Marla announced her decision to bake cookies all afternoon to avoid her neighbor.', 'Marla declared her intention to lie down all day to avoid her father.', \"Marla stated her goal to paint her room all day to sidestep her friend's drama.\", 'Debbie expressed her intent to watch movies all weekend to escape the family gathering.', \"Marla affirmed her plan to organize her closet all morning to dodge her sister's questions.\", 'Debbie proclaimed her wish to read novels all week to evade her responsibilities.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marla declared her intention to lie down all day to avoid her father."
+        ]
+      },
+      "response": {
+        "answer": "Marla declared her intention to lie down all day to avoid her father.",
+        "metadata": {
+          "stats": {
+            "total_input_tokens": 132254,
+            "cache_read_tokens": 131968
+          }
+        }
+      }
+    }
+  ]
+}
