@@ -33,3 +33,25 @@ class EventQATemplate:
                 f"Answer the question based on the memorized documents. Give me the answer directly without any explanation.\nQuestion: {question}"
             )
         ]
+
+
+class LongMemEvalTemplate:
+    def memorize_template(self, chunk: str) -> List[llm.Message]:
+        """Generate the memorize template for LongMemEval dataset with conversation sessions."""
+        return [
+            llm.messages.user(
+                f"The following is a conversation history with a personal assistant:\n{chunk}"
+            ),
+            llm.messages.assistant(
+                "I have learned the conversation history and I will answer the question you ask.",
+                model_id=None,
+                provider_id=None,
+            ),
+        ]
+
+    def query_template(self, question: str) -> List[llm.Message]:
+        return [
+            llm.messages.user(
+                f"Based on the conversation history above, answer the following question directly without any explanation.\nQuestion: {question}"
+            )
+        ]

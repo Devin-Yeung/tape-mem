@@ -1,0 +1,16 @@
+# serializer version: 1
+# name: test_load_longmemeval_examples_smoke
+  list([
+    'longmemeval_s*_0',
+    'longmemeval_s*_1',
+    'longmemeval_s*_2',
+    'longmemeval_s*_3',
+    'longmemeval_s*_4',
+  ])
+# ---
+# name: test_load_longmemeval_one_session
+  'Chat Time: 2022/11/17 (Thu) 12:04'
+# ---
+# name: test_load_longmemeval_one_session.1
+  "I'm planning a trip to Miami and I want to redeem "
+# ---

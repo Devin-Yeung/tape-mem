@@ -3,7 +3,7 @@ from typing import Generic, List, TypeVar
 from mashumaro.mixins.json import DataClassJSONMixin
 
 from .agent import AgentResponse
-from ..dataset import EventQAQuestion
+from ..dataset import EventQAQuestion, LongMemEvalQuestion
 
 T = TypeVar("T")
 
@@ -36,3 +36,15 @@ class EventQAExperiment(Experiment[EventQAQuestion]):
     """Concrete experiment artifact for EventQA benchmark runs."""
 
     results: List[EventQAQueryResult]
+
+
+@dataclass(frozen=True)
+class LongMemEvalQueryResult(QueryResult[LongMemEvalQuestion]):
+    """Concrete query record so mashumaro can serialize LongMemEval questions."""
+
+
+@dataclass(frozen=True)
+class LongMemEvalExperiment(Experiment[LongMemEvalQuestion]):
+    """Concrete experiment artifact for LongMemEval benchmark runs."""
+
+    results: List[LongMemEvalQueryResult]
