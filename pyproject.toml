@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+  "chromadb>=1.5.8",
   "click>=8.3.1",
   "datasets>=4.8.4",
   "loguru>=0.7.3",
@@ -14,7 +15,6 @@ dependencies = [
   "openai>=2.30.0",
   "pydantic-settings>=2.13.1",
   "questionary>=2.1.1",
-  "rank-bm25>=0.2.2",
   "republic>=0.5.7",
   "rich>=14.3.3",
   "tiktoken>=0.12.0",

@@ -21,6 +21,7 @@ anyio==4.13.0
     #   httpx
     #   jupyter-server
     #   openai
+    #   watchfiles
 appnope==0.1.4 ; sys_platform == 'darwin'
     # via ipykernel
 argon2-cffi==25.1.0
@@ -42,14 +43,19 @@ authlib==1.6.9
     # via republic
 babel==2.18.0
     # via jupyterlab-server
+bcrypt==5.0.0
+    # via chromadb
 beautifulsoup4==4.14.3
     # via nbconvert
 bleach==6.3.0
     # via nbconvert
+build==1.4.4
+    # via chromadb
 certifi==2026.2.25
     # via
     #   httpcore
     #   httpx
+    #   kubernetes
     #   requests
 cffi==2.0.0
     # via
@@ -58,19 +64,24 @@ cffi==2.0.0
     #   pyzmq
 charset-normalizer==3.4.6
     # via requests
+chromadb==1.5.8
+    # via tape-mem
 click==8.3.1
     # via
     #   nltk
     #   tape-mem
     #   typer
+    #   uvicorn
     #   zensical
-colorama==0.4.6 ; sys_platform == 'win32'
+colorama==0.4.6 ; os_name == 'nt' or sys_platform == 'win32'
     # via
+    #   build
     #   click
     #   ipython
     #   loguru
     #   pytest
     #   tqdm
+    #   uvicorn
 comm==0.2.3
     # via
     #   ipykernel
@@ -99,6 +110,8 @@ docstring-parser==0.17.0
     # via
     #   anthropic
     #   mirascope
+durationpy==0.10
+    # via kubernetes
 executing==2.2.1
     # via stack-data
 fastjsonschema==2.21.2
@@ -107,6 +120,8 @@ filelock==3.25.2
     # via
     #   datasets
     #   huggingface-hub
+flatbuffers==25.12.19
+    # via onnxruntime
 fqdn==1.5.1
     # via jsonschema
 frozenlist==1.8.0
@@ -117,16 +132,27 @@ fsspec==2026.2.0
     # via
     #   datasets
     #   huggingface-hub
+googleapis-common-protos==1.74.0
+    # via opentelemetry-exporter-otlp-proto-grpc
+grpcio==1.80.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
 h11==0.16.0
-    # via httpcore
+    # via
+    #   httpcore
+    #   uvicorn
 hf-xet==1.4.2 ; platform_machine == 'AMD64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'
     # via huggingface-hub
 httpcore==1.0.9
     # via httpx
+httptools==0.7.1
+    # via uvicorn
 httpx==0.28.1
     # via
     #   anthropic
     #   any-llm-sdk
+    #   chromadb
     #   datasets
     #   huggingface-hub
     #   jupyterlab
@@ -134,7 +160,9 @@ httpx==0.28.1
     #   openai
     #   republic
 huggingface-hub==1.8.0
-    # via datasets
+    # via
+    #   datasets
+    #   tokenizers
 idna==3.11
     # via
     #   anyio
@@ -142,6 +170,10 @@ idna==3.11
     #   jsonschema
     #   requests
     #   yarl
+importlib-metadata==8.7.1
+    # via opentelemetry-api
+importlib-resources==7.1.0
+    # via chromadb
 iniconfig==2.3.0
     # via pytest
 ipykernel==7.2.0
@@ -181,6 +213,7 @@ jsonpointer==3.1.1
     # via jsonschema
 jsonschema==4.26.0
     # via
+    #   chromadb
     #   jupyter-events
     #   jupyterlab-server
     #   nbformat
@@ -230,6 +263,8 @@ jupyterlab-server==2.28.0
     #   notebook
 jupyterlab-widgets==3.0.16
     # via ipywidgets
+kubernetes==35.0.0
+    # via chromadb
 lark==1.3.1
     # via rfc3987-syntax
 loguru==0.7.3
@@ -256,6 +291,8 @@ mirascope @ git+https://github.com/Devin-Yeung/mirascope@53080795b295d620cfbeea9
     # via tape-mem
 mistune==3.2.0
     # via nbconvert
+mmh3==5.2.1
+    # via chromadb
 multidict==6.7.1
     # via
     #   aiohttp
@@ -285,17 +322,47 @@ notebook-shim==0.2.4
     #   notebook
 numpy==2.4.3
     # via
+    #   chromadb
     #   datasets
+    #   onnxruntime
     #   pandas
-    #   rank-bm25
+oauthlib==3.3.1
+    # via requests-oauthlib
+onnxruntime==1.25.0
+    # via chromadb
 openai==2.30.0
     # via
     #   any-llm-sdk
     #   tape-mem
 openresponses-types==2.3.0.post1
     # via any-llm-sdk
+opentelemetry-api==1.41.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
+opentelemetry-exporter-otlp-proto-common==1.41.0
+    # via opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-exporter-otlp-proto-grpc==1.41.0
+    # via chromadb
+opentelemetry-proto==1.41.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-common
+    #   opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-sdk==1.41.0
+    # via
+    #   chromadb
+    #   opentelemetry-exporter-otlp-proto-grpc
+opentelemetry-semantic-conventions==0.62b0
+    # via opentelemetry-sdk
+orjson==3.11.8
+    # via chromadb
+overrides==7.7.0
+    # via chromadb
 packaging==26.0
     # via
+    #   build
     #   datasets
     #   huggingface-hub
     #   ipykernel
@@ -304,6 +371,7 @@ packaging==26.0
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   onnxruntime
     #   pytest
 pandas==3.0.1
     # via datasets
@@ -328,6 +396,11 @@ propcache==0.4.1
     # via
     #   aiohttp
     #   yarl
+protobuf==6.33.6
+    # via
+    #   googleapis-common-protos
+    #   onnxruntime
+    #   opentelemetry-proto
 psutil==7.2.2
     # via ipykernel
 ptyprocess==0.7.0 ; os_name != 'nt' or (sys_platform != 'emscripten' and sys_platform != 'win32')
@@ -338,12 +411,15 @@ pure-eval==0.2.3
     # via stack-data
 pyarrow==23.0.1
     # via datasets
+pybase64==1.4.3
+    # via chromadb
 pycparser==3.0 ; implementation_name != 'PyPy'
     # via cffi
 pydantic==2.12.5
     # via
     #   anthropic
     #   any-llm-sdk
+    #   chromadb
     #   mirascope
     #   openai
     #   openresponses-types
@@ -352,7 +428,9 @@ pydantic==2.12.5
 pydantic-core==2.41.5
     # via pydantic
 pydantic-settings==2.13.1
-    # via tape-mem
+    # via
+    #   chromadb
+    #   tape-mem
 pygments==2.19.2
     # via
     #   ipython
@@ -364,15 +442,22 @@ pygments==2.19.2
     #   zensical
 pymdown-extensions==10.21
     # via zensical
+pypika==0.51.1
+    # via chromadb
+pyproject-hooks==1.2.0
+    # via build
 pytest==9.0.2
     # via syrupy
 python-dateutil==2.9.0.post0
     # via
     #   arrow
     #   jupyter-client
+    #   kubernetes
     #   pandas
 python-dotenv==1.2.2
-    # via pydantic-settings
+    # via
+    #   pydantic-settings
+    #   uvicorn
 python-json-logger==4.1.0
     # via jupyter-events
 pywinpty==3.0.3 ; os_name == 'nt'
@@ -382,10 +467,13 @@ pywinpty==3.0.3 ; os_name == 'nt'
     #   terminado
 pyyaml==6.0.3
     # via
+    #   chromadb
     #   datasets
     #   huggingface-hub
     #   jupyter-events
+    #   kubernetes
     #   pymdown-extensions
+    #   uvicorn
     #   zensical
 pyzmq==27.1.0
     # via
@@ -394,8 +482,6 @@ pyzmq==27.1.0
     #   jupyter-console
     #   jupyter-server
 questionary==2.1.1
-    # via tape-mem
-rank-bm25==0.2.2
     # via tape-mem
 referencing==0.37.0
     # via
@@ -412,7 +498,11 @@ requests==2.33.0
     # via
     #   datasets
     #   jupyterlab-server
+    #   kubernetes
+    #   requests-oauthlib
     #   tiktoken
+requests-oauthlib==2.0.0
+    # via kubernetes
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -426,6 +516,7 @@ rfc3987-syntax==1.1.0
 rich==14.3.3
     # via
     #   any-llm-sdk
+    #   chromadb
     #   tape-mem
     #   typer
 rpds-py==0.30.0
@@ -441,6 +532,7 @@ shellingham==1.5.4
     # via typer
 six==1.17.0
     # via
+    #   kubernetes
     #   python-dateutil
     #   rfc3339-validator
 sniffio==1.3.1
@@ -452,6 +544,8 @@ soupsieve==2.8.3
 stack-data==0.6.3
     # via ipython
 syrupy==5.1.0
+tenacity==9.1.4
+    # via chromadb
 terminado==0.18.1
     # via
     #   jupyter-server
@@ -460,6 +554,8 @@ tiktoken==0.12.0
     # via tape-mem
 tinycss2==1.4.0
     # via bleach
+tokenizers==0.22.2
+    # via chromadb
 tornado==6.5.5
     # via
     #   ipykernel
@@ -470,6 +566,7 @@ tornado==6.5.5
     #   terminado
 tqdm==4.67.3
     # via
+    #   chromadb
     #   datasets
     #   huggingface-hub
     #   nltk
@@ -492,16 +589,24 @@ traitlets==5.14.3
     #   nbformat
 ty==0.0.26
 typer==0.24.1
-    # via huggingface-hub
+    # via
+    #   chromadb
+    #   huggingface-hub
 typing-extensions==4.15.0
     # via
     #   anthropic
     #   any-llm-sdk
     #   beautifulsoup4
+    #   chromadb
+    #   grpcio
     #   huggingface-hub
     #   mashumaro
     #   mirascope
     #   openai
+    #   opentelemetry-api
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
     #   pydantic
     #   pydantic-core
     #   typing-inspection
@@ -516,7 +621,15 @@ tzdata==2025.3
 uri-template==1.3.0
     # via jsonschema
 urllib3==2.6.3
-    # via requests
+    # via
+    #   kubernetes
+    #   requests
+uvicorn==0.46.0
+    # via chromadb
+uvloop==0.22.1 ; platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'
+    # via uvicorn
+watchfiles==1.1.1
+    # via uvicorn
 wcwidth==0.6.0
     # via prompt-toolkit
 webcolors==25.10.0
@@ -526,7 +639,11 @@ webencodings==0.5.1
     #   bleach
     #   tinycss2
 websocket-client==1.9.0
-    # via jupyter-server
+    # via
+    #   jupyter-server
+    #   kubernetes
+websockets==16.0
+    # via uvicorn
 widgetsnbextension==4.0.15
     # via ipywidgets
 win32-setctime==1.2.0 ; sys_platform == 'win32'
@@ -536,3 +653,5 @@ xxhash==3.6.0
 yarl==1.23.0
     # via aiohttp
 zensical==0.0.30
+zipp==3.23.1
+    # via importlib-metadata
