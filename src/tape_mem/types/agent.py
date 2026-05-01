@@ -1,10 +1,11 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Literal, Protocol, runtime_checkable
+from typing import Literal, Protocol, runtime_checkable, Iterable
 
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.json import DataClassJSONMixin
+
 
 # ==============================================================================
 # Conversation Data Protocols
@@ -20,8 +21,11 @@ class ConversationMessage(Protocol):
     The `role` is one of the common chat roles.
     """
 
-    role: Literal["user", "assistant", "system"]
-    content: str
+    @property
+    def role(self) -> Literal["user", "assistant", "system"]: ...
+
+    @property
+    def content(self) -> str: ...
 
 
 class ConversationSession(Protocol):
@@ -32,8 +36,11 @@ class ConversationSession(Protocol):
     convert to `datetime` as needed.
     """
 
-    chat_time: datetime
-    messages: Sequence[ConversationMessage]
+    @property
+    def chat_time(self) -> datetime: ...
+
+    @property
+    def messages(self) -> Iterable[ConversationMessage]: ...
 
 
 @dataclass(frozen=True)
