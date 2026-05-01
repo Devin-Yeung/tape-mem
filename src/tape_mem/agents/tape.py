@@ -183,8 +183,8 @@ class TapeAgent(Agent):
         """Memorize structured conversation sessions using handoff for session boundaries.
 
         Each session gets its own handoff anchor. Messages are stored individually
-        with their role and content preserved. The session's chat_time is embedded
-        in each message's content for retrieval purposes.
+        with their role and content preserved. The session's chat_time is stored
+        in each message's metadata for clean separation.
 
         Args:
             sessions: Structured conversation sessions. Each session must have
@@ -201,12 +201,13 @@ class TapeAgent(Agent):
             )
             self._counter += 1
 
-            # Store each message with chat_time embedded in content
-            # This allows retrieval to include session context
+            # Store each message with chat_time in metadata for cleaner separation
             for msg in session.messages:
-                content = f"[Session: {session.chat_time}]\n{msg.role}: {msg.content}"
                 self._active_tape.append(
-                    TapeEntry.message({"role": msg.role, "content": content})
+                    TapeEntry.message(
+                        {"role": msg.role, "content": msg.content},
+                        chat_time=session.chat_time,
+                    )
                 )
             # Add assistant acknowledgment
             self._active_tape.append(
@@ -250,29 +251,12 @@ class TapeAgent(Agent):
             if not isinstance(content, str) or not content.strip():
                 continue
 
-            # Parse chat_time from content prefix: "[Session: {chat_time}]\n..."
-            chat_time = ""
-            if content.startswith("[Session:"):
-                end_idx = content.find("]\n")
-                if end_idx != -1:
-                    chat_time = content[
-                        9:end_idx
-                    ]  # Extract text between "[Session: " and "]\n"
-                    # Also extract the actual message content after the prefix
-                    content = content[end_idx + 2 :]
-
-            # Also parse role from content if present: "{role}: {actual_content}"
-            role = payload.get("role", "user")
-            if content and ": " in content:
-                role_part, _, actual_content = content.partition(": ")
-                # Only override role if it looks like a valid role name
-                if role_part in ("user", "assistant", "system"):
-                    role = role_part
-                    content = actual_content
+            # Get chat_time from entry metadata (cleaner than content embedding)
+            chat_time = entry.meta.get("chat_time", "") if entry.meta else ""
 
             chunks.append(
                 {
-                    "role": role,
+                    "role": payload.get("role", "user"),
                     "content": content,
                     "chat_time": chat_time,
                 }
