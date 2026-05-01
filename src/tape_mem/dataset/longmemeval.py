@@ -1,12 +1,13 @@
+import ast
+import re
 from dataclasses import dataclass
+from datetime import date, datetime
+from datetime import time as dt_time
 from typing import Any, Iterable, Literal, TypeAlias, cast
 
-import ast
-
-from mashumaro.mixins.json import DataClassJSONMixin
-
 from datasets import load_dataset
-
+from loguru import logger
+from mashumaro.mixins.json import DataClassJSONMixin
 
 LongMemEvalVariant: TypeAlias = Literal["longmemeval_s*"]
 
@@ -29,7 +30,8 @@ class LongMemEvalMessage(DataClassJSONMixin):
 class LongMemEvalSession(DataClassJSONMixin):
     """One chat session identified by a timestamp."""
 
-    chat_time: str
+    # Preserve full datetime (date + time) when available.
+    chat_time: datetime
     messages: tuple[LongMemEvalMessage, ...]
 
 
@@ -114,6 +116,55 @@ def _read_variant(row: dict[str, Any]) -> str | None:
     return source
 
 
+def _parse_chat_time(header: str) -> datetime:
+    """Parse a chat header string and return a datetime.
+
+    This parser only accepts the canonical form observed in the dataset:
+      "Chat Time: 2022/11/17 (Thu) 12:04"
+
+    Both a YYYY/MM/DD date and an H:MM time must be present. If either is
+    missing or unparseable, a LongMemEvalDatasetError is raised.
+    """
+    # Extract a date in YYYY/MM/DD form
+    date_match = re.search(r"(\d{4}/\d{1,2}/\d{1,2})", header)
+    if not date_match:
+        raise LongMemEvalDatasetError(
+            f"Expected header to include a date in YYYY/MM/DD form: {header!r}"
+        )
+
+    date_str = date_match.group(1)
+    try:
+        y, m, d = [int(p) for p in date_str.split("/")]
+        parsed_date = date(y, m, d)
+    except Exception as exc:  # pragma: no cover - defensive
+        raise LongMemEvalDatasetError(
+            f"Unable to parse date portion {date_str!r} from header {header!r}"
+        ) from exc
+
+    # Extract time portion (require HH:MM or H:MM)
+    time_match = re.search(r"(\d{1,2}:\d{2})", header)
+    if not time_match:
+        raise LongMemEvalDatasetError(
+            f"Expected header to include a time in H:MM form: {header!r}"
+        )
+
+    time_str = time_match.group(1)
+    try:
+        t = dt_time.fromisoformat(time_str)
+    except Exception:
+        parts = time_str.split(":")
+        try:
+            h = int(parts[0])
+            minute = int(parts[1])
+            t = dt_time(h, minute)
+        except Exception as exc:  # pragma: no cover - defensive
+            raise LongMemEvalDatasetError(
+                f"Unable to parse time portion {time_str!r} from header {header!r}"
+            ) from exc
+
+    return datetime.combine(parsed_date, t)
+
+
 def _build_sessions(row: dict[str, Any]) -> tuple[LongMemEvalSession, ...]:
     """Parse the context string into structured sessions.
 
@@ -153,8 +204,16 @@ def _build_sessions(row: dict[str, Any]) -> tuple[LongMemEvalSession, ...]:
                 messages.append(LongMemEvalMessage(role=role, content=content))
 
         if messages:
+            try:
+                parsed_time = _parse_chat_time(header)
+            except LongMemEvalDatasetError:
+                # If parsing fails, skip this session as it cannot be reliably mapped
+                # to a time value.
+                logger.error("Failed to parse chat time: %s", header)
+                continue
+
             sessions.append(
-                LongMemEvalSession(chat_time=header, messages=tuple(messages))
+                LongMemEvalSession(chat_time=parsed_time, messages=tuple(messages))
             )
 
     return tuple(sessions)

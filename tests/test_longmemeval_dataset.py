@@ -14,7 +14,8 @@ def test_load_longmemeval_one_session(snapshot):
     session = example.sessions[0]
 
     # Snapshot the session header and first message
-    assert session.chat_time == snapshot
+    # chat_time is represented as a datetime.time now, compare as ISO string
+    assert session.chat_time.isoformat() == snapshot
     assert session.messages[0].content[:50] == snapshot
 
 
