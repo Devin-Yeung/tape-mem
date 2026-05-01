@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, cast
 import chromadb
 from chromadb.api import ClientAPI
 
@@ -107,13 +107,47 @@ class TapeAgent(Agent):
                 logger.debug(
                     f"adding message to chroma db: id={msg_id}, role={msg.role}"
                 )
-                # store in the chroma db
+                # store in the chroma db with metadata for session mapping
+                # chat_time must be string for chromadb - datetime not accepted
                 self._collection.add(
                     ids=msg_id,
                     documents=msg.content,
+                    metadatas={
+                        "session_id": session_id,
+                        "chat_time": str(session.chat_time),
+                        "role": msg.role,
+                    },
                 )
 
-    def query(self, question: str) -> AgentResponse:
+    def query(self, question: str, top_k: int = 10) -> AgentResponse:
+        # 1. Query ChromaDB for relevant messages
+        results = self._collection.query(
+            query_texts=[question],
+            n_results=top_k,
+        )
+
+        # 2. Extract unique session_ids from metadata
+        session_ids: set[str] = set()
+        if results["metadatas"] and results["metadatas"][0]:
+            for meta in results["metadatas"][0]:
+                session_ids.add(cast(str, meta["session_id"]))
+
+        logger.debug(
+            f"retrieved {len(results['metadatas'][0]) if results['metadatas'] and results['metadatas'][0] else 0} messages from {len(session_ids)} sessions"
+        )
+
+        # 3. For each session_id, fetch full session from tape to preserve locality
+        context_messages: list[dict[str, str]] = []
+        for sid in session_ids:
+            entries = self._active_tape.query.after_anchor(sid).kinds("message").all()
+            for entry in entries:
+                context_messages.append(entry.payload)
+
+        # 4. Estimate context token count
+        context_str = "\n".join(m["content"] for m in context_messages)
+        context_token_count = len(self._tokenizor.encode(context_str))
+
+        # 5. Build messages with context prepended
         messages: list[dict[str, str]] = [
             {
                 "role": "system",
@@ -121,36 +155,28 @@ class TapeAgent(Agent):
                     "You are a helpful assistant that answers questions using only the "
                     "memorized context when it is relevant."
                 ),
-            }
-        ]
-
-        # TODO: retrieve context
-        context_token_count: int = 0
-
-        messages.append(
+            },
             {
                 "role": "user",
-                "content": (
-                    "Answer the question based on the memorized documents. Give me the "
-                    f"answer directly without any explanation.\nQuestion: {question}"
-                ),
-            }
-        )
+                "content": f"Context:\n{context_str}\n\nQuestion: {question}",
+            },
+        ]
 
+        # 6. Stream response
         stream = self._llm.stream(messages=messages)
         resp = "".join(list(stream))
 
+        # 7. Return with stats
         usage = stream.usage
         if usage:
             logger.debug("token usage: {}", usage)
             stats = Stats(
                 estimated_context_tokens=context_token_count,
-                total_input_tokens=(usage.get("input_tokens")),
+                total_input_tokens=usage.get("input_tokens"),
                 cache_read_tokens=(
                     usage.get("input_tokens_details", {}).get("cached_tokens", 0)
                 ),
             )
-            meta = QueryMetadata(stats=stats)
-            return AgentResponse(resp, meta)
+            return AgentResponse(resp, QueryMetadata(stats=stats))
         else:
             return AgentResponse(resp)

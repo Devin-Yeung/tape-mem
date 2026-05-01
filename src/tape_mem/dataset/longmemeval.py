@@ -9,6 +9,7 @@ from datasets import load_dataset
 from loguru import logger
 from mashumaro.mixins.json import DataClassJSONMixin
 
+
 LongMemEvalVariant: TypeAlias = Literal["longmemeval_s*"]
 
 SUPPORTED_LONGMEMEVAL_VARIANTS: tuple[LongMemEvalVariant, ...] = ("longmemeval_s*",)
@@ -22,7 +23,7 @@ class LongMemEvalDatasetError(ValueError):
 class LongMemEvalMessage(DataClassJSONMixin):
     """One message in a conversation session."""
 
-    role: str
+    role: Literal["user", "assistant", "system"]
     content: str
 
 
