@@ -15,12 +15,14 @@ from tape_mem.agents.rag import RagAgent
 from tape_mem.agents.tape import TapeAgent
 from tape_mem.chunker import SentenceAwareChunker
 from tape_mem.dataset import load_eventqa_examples
+from tape_mem.dataset import load_longmemeval_examples
 from tape_mem.dataset.templates import EventQATemplate
-from tape_mem.types.experiment import EventQAExperiment
-from tape_mem.types.experiment import EventQAQueryResult
+from tape_mem.dataset.templates import LongMemEvalTemplate
+from tape_mem.types.experiment import LongMemEvalExperiment
+from tape_mem.types.experiment import LongMemEvalQueryResult
 from .settings.env import Env
 
-VARIANTS = [
+EVENTQA_VARIANTS = [
     "eventqa_full_0",
     "eventqa_full_1",
     "eventqa_full_2",
@@ -38,6 +40,14 @@ VARIANTS = [
     "eventqa_131072_4",
 ]
 
+LONGMEMEVAL_VARIANTS = [
+    "longmemeval_s*_0",
+    "longmemeval_s*_1",
+    "longmemeval_s*_2",
+    "longmemeval_s*_3",
+    "longmemeval_s*_4",
+]
+
 
 @click.command()
 @click.option(
@@ -47,10 +57,18 @@ VARIANTS = [
     help="LLM model name, overrides env LLM_MODEL",
 )
 @click.option(
+    "--dataset",
+    "dataset_kind",
+    type=click.Choice(["eventqa", "longmemeval"], case_sensitive=False),
+    default="eventqa",
+    show_default=True,
+    help="Dataset to use for the experiment",
+)
+@click.option(
     "--variant",
-    type=click.Choice(VARIANTS, case_sensitive=False),
+    type=str,
     default=None,
-    help="Experiment variant to run",
+    help="Experiment variant to run (filtered by dataset)",
 )
 @click.option(
     "--agent",
@@ -74,24 +92,8 @@ VARIANTS = [
 )
 def main(
     model_override: str | None,
-    variant: Literal[
-        "eventqa_full_0",
-        "eventqa_full_1",
-        "eventqa_full_2",
-        "eventqa_full_3",
-        "eventqa_full_4",
-        "eventqa_65536_0",
-        "eventqa_65536_1",
-        "eventqa_65536_2",
-        "eventqa_65536_3",
-        "eventqa_65536_4",
-        "eventqa_131072_0",
-        "eventqa_131072_1",
-        "eventqa_131072_2",
-        "eventqa_131072_3",
-        "eventqa_131072_4",
-    ]
-    | None,
+    dataset_kind: Literal["eventqa", "longmemeval"],
+    variant: str | None,
     agent_kind: Literal["full", "rag", "tape"],
     question_percent: float,
     seed: int,
@@ -122,40 +124,56 @@ def main(
     chunker = SentenceAwareChunker()
     logger.info(f"using chunker: {chunker}")
 
-    # prepare the dataset example
-    eventqa = load_eventqa_examples()
+    # prepare variants based on dataset
+    variants = EVENTQA_VARIANTS if dataset_kind == "eventqa" else LONGMEMEVAL_VARIANTS
 
     if variant is None:
         variant = questionary.select(
-            "Select a variant to run:",
-            choices=VARIANTS,
+            f"Select a {dataset_kind} variant to run:",
+            choices=variants,
         ).ask()
 
     logger.info(f"running experiment on {variant}")
-    eventqa = [e for e in eventqa if e.example_id == variant]
+
+    # load dataset based on type
+    if dataset_kind == "eventqa":
+        examples = load_eventqa_examples()
+        examples = [e for e in examples if e.example_id == variant]
+        template = EventQATemplate()
+        use_conversation = False
+    else:
+        examples = load_longmemeval_examples()
+        examples = [e for e in examples if e.example_id == variant]
+        template = LongMemEvalTemplate()
+        use_conversation = True
 
     # prepare the agent
     match agent_kind:
         case "full":
-            agent = FullContextAgent(model=model, template=EventQATemplate())
+            agent = FullContextAgent(model=model, template=template)
         case "rag":
-            agent = RagAgent(model=model, template=EventQATemplate())
+            agent = RagAgent(model=model, template=template)
         case "tape":
             provider = ProviderConfig(
                 model=llm_model,
                 base_url=env.openai_compatible_base_url,
                 api_key=env.openai_compatible_api_key,
             )
-            agent = TapeAgent(provider, template=EventQATemplate())
+            agent = TapeAgent(provider, template=template)
 
     logger.info(f"using agent: {agent.__class__.__name__}")
 
-    for subset_idx, subset in enumerate(tqdm(eventqa)):
+    for subset_idx, subset in enumerate(tqdm(examples)):
         logger.info(f"processing {subset_idx} th subset of {variant}")
-        results: List[EventQAQueryResult] = []
-        # chunk context and let agent memorize
-        for chunk in chunker.chunk(subset.context):
-            agent.memorize(chunk)
+
+        # memorize context based on dataset type
+        if use_conversation:
+            results: List[LongMemEvalQueryResult] = []
+            agent.memorize_conversation(list(subset.sessions))
+        else:
+            results = []
+            for chunk in chunker.chunk(subset.context):
+                agent.memorize(chunk)
 
         # sample questions
         n_selected = int(len(subset.questions) * (question_percent / 100.0))
@@ -166,15 +184,15 @@ def main(
         # ask agent for question
         for i, question in enumerate(tqdm(selected)):
             logger.debug(f"processing question {i}")
-            resp = agent.query(question.text)
+            resp = agent.query(question.question_text)
             results.append(
-                EventQAQueryResult(
+                LongMemEvalQueryResult(
                     question=question,
                     response=resp,
                 )
             )
 
-        experiment = EventQAExperiment(results=results)
+        experiment = LongMemEvalExperiment(results=results)
         json = experiment.to_json()
 
         with open(f"{variant}_result.json", "w") as f:

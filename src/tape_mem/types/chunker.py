@@ -1,4 +1,6 @@
-from typing import Protocol, List, runtime_checkable
+from __future__ import annotations
+
+from typing import List, Protocol, runtime_checkable
 
 
 @runtime_checkable

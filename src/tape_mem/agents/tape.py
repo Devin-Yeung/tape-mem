@@ -1,6 +1,6 @@
 import tiktoken
 import re
-from collections.abc import Iterable
+from collections.abc import Iterable, Sequence
 
 from loguru import logger
 from rank_bm25 import BM25Okapi
@@ -8,7 +8,12 @@ from republic import LLM, TapeEntry
 
 from tape_mem.dataset.templates import Template
 from tape_mem.types import Agent
-from tape_mem.types.agent import AgentResponse, Stats, QueryMetadata
+from tape_mem.types.agent import (
+    AgentResponse,
+    ConversationSession,
+    Stats,
+    QueryMetadata,
+)
 from tape_mem.types.provider import ProviderConfig
 
 
@@ -27,6 +32,7 @@ from tape_mem.types.provider import ProviderConfig
 # 3. Rebuild a prompt from the top-scoring chunks and answer the original question.
 #
 # This keeps the retrieval model easy to explain and debug.
+
 
 _WORD_PATTERN = re.compile(r"[a-z0-9_/-]+")
 _STOP_WORDS = {
@@ -92,13 +98,31 @@ def _dedupe_preserving_order(tokens: Iterable[str]) -> list[str]:
     return result
 
 
-def _format_context_chunks(chunks: list[str]) -> str:
-    # Anthropic-style XML tags make context boundaries explicit, which reduces
-    # ambiguity when multiple retrieved chunks are packed into one prompt.
-    formatted_chunks = [
-        f'<chunk index="{idx}">\n{chunk}\n</chunk>'
-        for idx, chunk in enumerate(chunks, start=1)
-    ]
+def _format_context_chunks(chunks: list[dict]) -> str:
+    """Format retrieved chunks with role and session information preserved.
+
+    Each chunk is a dict with keys: role, content, chat_time.
+    """
+    formatted_chunks = []
+    for idx, chunk in enumerate(chunks, start=1):
+        role = chunk.get("role", "user")
+        content = chunk.get("content", "")
+        chat_time = chunk.get("chat_time", "")
+
+        # Include session header if available
+        if chat_time:
+            header = f"[Session: {chat_time}]"
+        else:
+            header = ""
+
+        # Format: include role marker for clarity
+        formatted_content = f"{role}: {content}" if content else content
+        chunk_text = f"{header}\n{formatted_content}" if header else formatted_content
+
+        formatted_chunks.append(
+            f'<chunk index="{idx}" role="{role}">\n{chunk_text}\n</chunk>'
+        )
+
     return (
         "<retrieved_context>\n"
         + "\n\n".join(formatted_chunks)
@@ -155,6 +179,45 @@ class TapeAgent(Agent):
     def forget(self, chunk: str) -> None:
         raise NotImplementedError
 
+    def memorize_conversation(self, sessions: Sequence[ConversationSession]) -> None:
+        """Memorize structured conversation sessions using handoff for session boundaries.
+
+        Each session gets its own handoff anchor. Messages are stored individually
+        with their role and content preserved. The session's chat_time is embedded
+        in each message's content for retrieval purposes.
+
+        Args:
+            sessions: Structured conversation sessions. Each session must have
+                     chat_time (str) and messages (Sequence with role/content) attributes.
+        """
+        for session in sessions:
+            session_id = f"session_{self._counter}"
+            self._active_tape.handoff(
+                session_id,
+                state={
+                    "type": "conversation_session",
+                    "chat_time": session.chat_time,
+                },
+            )
+            self._counter += 1
+
+            # Store each message with chat_time embedded in content
+            # This allows retrieval to include session context
+            for msg in session.messages:
+                content = f"[Session: {session.chat_time}]\n{msg.role}: {msg.content}"
+                self._active_tape.append(
+                    TapeEntry.message({"role": msg.role, "content": content})
+                )
+            # Add assistant acknowledgment
+            self._active_tape.append(
+                TapeEntry.message(
+                    {
+                        "role": "assistant",
+                        "content": "I have learned the conversation and I will answer the question you ask.",
+                    }
+                )
+            )
+
     # ==============================================================================
     # Retrieval Query Construction
     # ==============================================================================
@@ -173,9 +236,10 @@ class TapeAgent(Agent):
         deduped_tokens = _dedupe_preserving_order(selected_tokens)
         return deduped_tokens[:_MAX_QUERY_TERMS]
 
-    def _memorized_chunks(self) -> list[str]:
+    def _memorized_chunks(self) -> list[dict]:
+        """Returns list of {role, content, chat_time} dicts for retrieved chunks."""
         messages = self._active_tape.query.kinds("message").all()
-        chunks: list[str] = []
+        chunks: list[dict] = []
         for entry in messages:
             payload = entry.payload
             if not isinstance(payload, dict):
@@ -183,11 +247,40 @@ class TapeAgent(Agent):
             if payload.get("role") != "user":
                 continue
             content = payload.get("content")
-            if isinstance(content, str) and content.strip():
-                chunks.append(content)
+            if not isinstance(content, str) or not content.strip():
+                continue
+
+            # Parse chat_time from content prefix: "[Session: {chat_time}]\n..."
+            chat_time = ""
+            if content.startswith("[Session:"):
+                end_idx = content.find("]\n")
+                if end_idx != -1:
+                    chat_time = content[
+                        9:end_idx
+                    ]  # Extract text between "[Session: " and "]\n"
+                    # Also extract the actual message content after the prefix
+                    content = content[end_idx + 2 :]
+
+            # Also parse role from content if present: "{role}: {actual_content}"
+            role = payload.get("role", "user")
+            if content and ": " in content:
+                role_part, _, actual_content = content.partition(": ")
+                # Only override role if it looks like a valid role name
+                if role_part in ("user", "assistant", "system"):
+                    role = role_part
+                    content = actual_content
+
+            chunks.append(
+                {
+                    "role": role,
+                    "content": content,
+                    "chat_time": chat_time,
+                }
+            )
         return chunks
 
-    def _retrieve_chunks(self, question: str) -> list[str]:
+    def _retrieve_chunks(self, question: str) -> list[dict]:
+        """Retrieve chunks preserving structured data (role, content, chat_time)."""
         query_terms = self._build_query_terms(question)
         if not query_terms:
             return []
@@ -196,26 +289,26 @@ class TapeAgent(Agent):
         if not chunks:
             return []
 
-        unique_chunks: list[str] = []
+        # For BM25, we tokenize the content (which now includes chat_time prefix)
+        unique_chunks: list[dict] = []
         tokenized_chunks: list[list[str]] = []
         seen_chunks: set[str] = set()
         for chunk in chunks:
-            normalized_chunk = chunk.strip()
-            if not normalized_chunk or normalized_chunk in seen_chunks:
+            # Use role + content for deduplication
+            dedupe_key = f"{chunk.get('role', '')}:{chunk.get('content', '')}"
+            normalized_chunk = chunk.get("content", "").strip()
+            if not normalized_chunk or dedupe_key in seen_chunks:
                 continue
-            seen_chunks.add(normalized_chunk)
+            seen_chunks.add(dedupe_key)
             tokens = _word_tokens(normalized_chunk)
             if not tokens:
                 continue
-            unique_chunks.append(normalized_chunk)
+            unique_chunks.append(chunk)
             tokenized_chunks.append(tokens)
 
         if not tokenized_chunks:
             return []
 
-        # rank_bm25 deliberately leaves preprocessing to the caller, which fits
-        # this agent because query term extraction and chunk tokenization are
-        # domain-specific decisions we want to keep explicit.
         bm25 = BM25Okapi(tokenized_chunks)
         scores = bm25.get_scores(query_terms)
 
@@ -225,7 +318,7 @@ class TapeAgent(Agent):
             reverse=True,
         )
 
-        retrieved_chunks: list[str] = []
+        retrieved_chunks: list[dict] = []
         for idx in ranked_indices:
             if float(scores[idx]) <= 0:
                 continue

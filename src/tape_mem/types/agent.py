@@ -1,8 +1,31 @@
+from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Protocol, runtime_checkable
 
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.json import DataClassJSONMixin
+
+
+# ==============================================================================
+# Conversation Data Protocols
+# ==============================================================================
+#
+# These protocols define the structure of conversation data for agents that
+# support conversation-based datasets like LongMemEval.
+
+
+class ConversationMessage(Protocol):
+    """A single message in a conversation."""
+
+    role: str
+    content: str
+
+
+class ConversationSession(Protocol):
+    """One conversation session identified by a timestamp."""
+
+    chat_time: str
+    messages: Sequence[ConversationMessage]
 
 
 @dataclass(frozen=True)
@@ -63,6 +86,39 @@ class Agent(Protocol):
         NotImplementedError.
         """
         ...
+
+    def memorize_conversation(self, sessions: Sequence[ConversationSession]) -> None:
+        """Memorize structured conversation sessions.
+
+        Default implementation serializes sessions to plain text and calls
+        memorize() for each session. Agents with native conversation support
+        (e.g., TapeAgent with handoff) should override this method to preserve
+        the structured conversation data (role, content, timestamps).
+
+        Args:
+            sessions: Structured conversation sessions. Each session must have
+                     chat_time (str) and messages (Sequence[ConversationMessage])
+                     attributes.
+        """
+        for session in sessions:
+            chunk = self._serialize_session(session)
+            self.memorize(chunk)
+
+    def _serialize_session(self, session: ConversationSession) -> str:
+        """Serialize a session to text format.
+
+        Override this method to customize serialization format.
+
+        Args:
+            session: A session object with chat_time and messages attributes.
+
+        Returns:
+            Serialized text representation of the session.
+        """
+        lines = [session.chat_time]
+        for msg in session.messages:
+            lines.append(f"{msg.role}: {msg.content}")
+        return "\n".join(lines)
 
     def query(self, question: str) -> AgentResponse:
         """Ask the agent a question using its accumulated memory as context.
