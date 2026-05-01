@@ -38,7 +38,8 @@ class LongMemEvalQuestion(DataClassJSONMixin):
     """One aligned question together with its accepted gold answers."""
 
     question_id: str
-    text: str
+    question_text: str
+    time_info: str
     answer_candidates: tuple[str, ...]
 
 
@@ -173,13 +174,37 @@ def _build_questions(row: dict[str, Any]) -> tuple[LongMemEvalQuestion, ...]:
     return tuple(
         LongMemEvalQuestion(
             question_id=question_id,
-            text=question,
+            question_text=_extract_question_text(question),
+            time_info=_extract_time_info(question),
             answer_candidates=tuple(answer_candidates),
         )
         for question, answer_candidates, question_id in zip(
             questions, answers, qa_pair_ids, strict=True
         )
     )
+
+
+_TIME_INFO_PATTERN = "Current Date: "
+_QUESTION_PREFIX = "Now Answer the Question:"
+
+
+def _extract_time_info(text: str) -> str:
+    """Extract the time information from a question text."""
+    start = text.find(_TIME_INFO_PATTERN)
+    if start == -1:
+        return ""
+    end = text.find(",", start)
+    if end == -1:
+        return ""
+    return text[start:end].strip()
+
+
+def _extract_question_text(text: str) -> str:
+    """Extract the actual question text (without time info prefix)."""
+    idx = text.find(_QUESTION_PREFIX)
+    if idx == -1:
+        return text.strip()
+    return text[idx:].strip()
 
 
 def _require_mapping(container: dict[str, Any], field_name: str) -> dict[str, Any]:
