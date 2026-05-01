@@ -1,4 +1,6 @@
-from collections.abc import Sequence
+from typing import Iterable
+import chromadb
+from chromadb.api import ClientAPI
 
 import tiktoken
 from loguru import logger
@@ -17,15 +19,22 @@ import uuid
 
 
 class TapeAgent(Agent):
-    __slots__ = ("_llm", "_template", "_tokenizor", "_active_tape")
+    __slots__ = ("_llm", "_template", "_tokenizor", "_active_tape", "_collection")
 
-    def __init__(self, provider: ProviderConfig, template: Template):
+    def __init__(
+        self,
+        provider: ProviderConfig,
+        template: Template,
+        chroma_client: ClientAPI = chromadb.EphemeralClient(),
+    ):
         self._setup_llm_backend(provider)
         self._template = template
         # for token usage metric estimation
         self._tokenizor = tiktoken.get_encoding("o200k_base")
         # create a new tape and write on it
         self._active_tape = self._llm.tape("main")
+        # create a dedicated collection
+        self._collection = chroma_client.create_collection(name="tape_mem_collection")
 
     def _setup_llm_backend(self, provider: ProviderConfig):
         model = f"openai:{provider.model}"
@@ -61,7 +70,7 @@ class TapeAgent(Agent):
     def forget(self, chunk: str) -> None:
         raise NotImplementedError
 
-    def memorize_conversation(self, sessions: Sequence[ConversationSession]) -> None:
+    def memorize_conversation(self, sessions: Iterable[ConversationSession]) -> None:
         """Memorize structured conversation sessions using handoff for session boundaries.
 
         Each session gets its own handoff anchor. Messages are stored individually
@@ -74,6 +83,7 @@ class TapeAgent(Agent):
         """
         for session in sessions:
             session_id = f"session_{uuid.uuid6()}"
+            logger.info(f"handoff session: {session_id}")
             self._active_tape.handoff(
                 session_id,
                 state={
@@ -83,12 +93,24 @@ class TapeAgent(Agent):
             )
 
             # Store each message with chat_time in metadata for cleaner separation
-            for msg in session.messages:
+            for idx, msg in enumerate(session.messages):
+                msg_id = f"{session_id}_msg_{idx}"
+
+                logger.debug(f"adding message to tape: id={msg_id}, role={msg.role}")
                 self._active_tape.append(
                     TapeEntry.message(
                         {"role": msg.role, "content": msg.content},
                         chat_time=session.chat_time,
                     )
+                )
+
+                logger.debug(
+                    f"adding message to chroma db: id={msg_id}, role={msg.role}"
+                )
+                # store in the chroma db
+                self._collection.add(
+                    ids=msg_id,
+                    documents=msg.content,
                 )
 
     def query(self, question: str) -> AgentResponse:
