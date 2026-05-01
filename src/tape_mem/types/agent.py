@@ -1,10 +1,10 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Protocol, runtime_checkable
+from datetime import datetime
+from typing import Literal, Protocol, runtime_checkable
 
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.json import DataClassJSONMixin
-
 
 # ==============================================================================
 # Conversation Data Protocols
@@ -15,16 +15,24 @@ from mashumaro.mixins.json import DataClassJSONMixin
 
 
 class ConversationMessage(Protocol):
-    """A single message in a conversation."""
+    """A single message in a conversation.
 
-    role: str
+    The `role` is one of the common chat roles.
+    """
+
+    role: Literal["user", "assistant", "system"]
     content: str
 
 
 class ConversationSession(Protocol):
-    """One conversation session identified by a timestamp."""
+    """One conversation session identified by a timestamp.
 
-    chat_time: str
+    `chat_time` is represented as a `datetime` for stronger typing and easier
+    manipulation. Implementations that still use strings should accept them and
+    convert to `datetime` as needed.
+    """
+
+    chat_time: datetime
     messages: Sequence[ConversationMessage]
 
 
@@ -97,7 +105,7 @@ class Agent(Protocol):
 
         Args:
             sessions: Structured conversation sessions. Each session must have
-                     chat_time (str) and messages (Sequence[ConversationMessage])
+                     chat_time (datetime) and messages (Sequence[ConversationMessage])
                      attributes.
         """
         for session in sessions:
@@ -115,7 +123,10 @@ class Agent(Protocol):
         Returns:
             Serialized text representation of the session.
         """
-        lines = [session.chat_time]
+        # Ensure the timestamp is formatted as text when serializing.
+        time_str = session.chat_time.isoformat()
+
+        lines = [time_str]
         for msg in session.messages:
             lines.append(f"{msg.role}: {msg.content}")
         return "\n".join(lines)
