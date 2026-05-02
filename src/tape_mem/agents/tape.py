@@ -187,6 +187,7 @@ class TapeAgent(Agent):
         # 4. Estimate context token count
         context_str = "\n".join(m["content"] for m in context_messages)
         context_token_count = len(self._tokenizor.encode(context_str))
+        logger.debug(f"estimated context token count: {context_token_count}")
 
         # 5. Build messages with context prepended
         messages: list[dict[str, str]] = [
