@@ -1,5 +1,6 @@
 from tape_mem.types.conversation import Session, Message
 import hashlib
+import uuid
 from typing import Optional, cast, Collection
 
 import chromadb
@@ -33,7 +34,7 @@ class TapeAgent(Agent):
         self,
         provider: ProviderConfig,
         template: Template,
-        chroma_client: ClientAPI = chromadb.EphemeralClient(),
+        chroma_client: ClientAPI | None = None,
     ):
         self._setup_llm_backend(provider)
         self._template = template
@@ -41,8 +42,13 @@ class TapeAgent(Agent):
         self._tokenizor = tiktoken.get_encoding("o200k_base")
         # create a new tape and write on it
         self._active_tape = self._llm.tape("main")
-        # create a dedicated collection
-        self._collection = chroma_client.create_collection(name="tape_mem_collection")
+        # create a dedicated collection with a unique name to avoid collisions
+        # when multiple TapeAgent instances share an EphemeralClient
+        # todo: collection should be tied to the database, so we can reused the collection across different runs with the same database (e.g. persisted one) and still avoid collision. Current implementation will create a new collection for each agent instance, which is not ideal.
+        if chroma_client is None:
+            chroma_client = chromadb.EphemeralClient()
+        collection_name = f"tape_mem_collection_{uuid.uuid4().hex[:8]}"
+        self._collection = chroma_client.get_or_create_collection(name=collection_name)
         # list of anchor (in the order of tape store)
         self._anchors: list[str] = []
 
@@ -141,7 +147,6 @@ class TapeAgent(Agent):
                     documents=msg.content,
                     metadatas={
                         "session_id": session_id,
-                        "chat_time": str(session.chat_time),
                         "role": msg.role,
                     },
                 )
