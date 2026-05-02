@@ -37,6 +37,11 @@ class ConversationSession(Protocol):
     """
 
     @property
+    def session_id(self) -> str: ...
+
+    """Global unique identifier for the session"""
+
+    @property
     def chat_time(self) -> datetime: ...
 
     @property
