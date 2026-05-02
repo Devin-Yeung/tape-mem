@@ -1,4 +1,5 @@
 import ast
+import hashlib
 import re
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -11,6 +12,15 @@ from mashumaro.mixins.json import DataClassJSONMixin
 
 
 LongMemEvalVariant: TypeAlias = Literal["longmemeval_s*"]
+
+
+def _generate_session_id(messages: tuple[LongMemEvalMessage, ...]) -> str:
+    """Generate a unique session ID from the shasum of all message contents."""
+    hasher = hashlib.sha256()
+    for msg in messages:
+        hasher.update(f"{msg.role}:{msg.content}".encode("utf-8"))
+    return hasher.hexdigest()[:16]
+
 
 SUPPORTED_LONGMEMEVAL_VARIANTS: tuple[LongMemEvalVariant, ...] = ("longmemeval_s*",)
 
@@ -31,6 +41,8 @@ class LongMemEvalMessage(DataClassJSONMixin):
 class LongMemEvalSession(DataClassJSONMixin):
     """One chat session identified by a timestamp."""
 
+    # Unique identifier generated from the shasum of all message contents.
+    session_id: str
     # Preserve full datetime (date + time) when available.
     chat_time: datetime
     messages: tuple[LongMemEvalMessage, ...]
@@ -214,7 +226,11 @@ def _build_sessions(row: dict[str, Any]) -> tuple[LongMemEvalSession, ...]:
                 continue
 
             sessions.append(
-                LongMemEvalSession(chat_time=parsed_time, messages=tuple(messages))
+                LongMemEvalSession(
+                    session_id=_generate_session_id(tuple(messages)),
+                    chat_time=parsed_time,
+                    messages=tuple(messages),
+                )
             )
 
     return tuple(sessions)

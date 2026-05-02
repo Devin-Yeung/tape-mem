@@ -107,8 +107,8 @@ class TapeAgent(Agent):
                      chat_time (str) and messages (Sequence with role/content) attributes.
         """
         for session in sessions:
-            session_id = f"session_{uuid.uuid6()}"
-            self._anchors.append(session_id)
+            session_id = session.session_id
+            self._anchors.append(session.session_id)
             logger.info(f"handoff session: {session_id}")
 
             self._active_tape.handoff(
