@@ -1,7 +1,7 @@
 from tape_mem.types.provider import ProviderConfig
 import os
 import random
-from typing import Literal
+from typing import Literal, assert_never
 from typing import List
 import questionary
 
@@ -141,11 +141,13 @@ def main(
         examples = [e for e in examples if e.example_id == variant]
         template = EventQATemplate()
         use_conversation = False
-    else:
+    elif dataset_kind == "longmemeval":
         examples = load_longmemeval_examples()
         examples = [e for e in examples if e.example_id == variant]
         template = LongMemEvalTemplate()
         use_conversation = True
+    else:
+        assert_never(dataset_kind)
 
     # prepare the agent
     match agent_kind:
@@ -160,6 +162,8 @@ def main(
                 api_key=env.openai_compatible_api_key,
             )
             agent = TapeAgent(provider, template=template)
+        case _:
+            assert_never(agent_kind)
 
     logger.info(f"using agent: {agent.__class__.__name__}")
 
@@ -184,7 +188,7 @@ def main(
         # ask agent for question
         for i, question in enumerate(tqdm(selected)):
             logger.debug(f"processing question {i}")
-            resp = agent.query(question.question_text)
+            resp = agent.query(question.text)
             results.append(
                 LongMemEvalQueryResult(
                     question=question,

@@ -53,7 +53,7 @@ class LongMemEvalQuestion(DataClassJSONMixin):
     """One aligned question together with its accepted gold answers."""
 
     question_id: str
-    question_text: str
+    text: str
     time_info: str
     answer_candidates: tuple[str, ...]
 
@@ -250,7 +250,7 @@ def _build_questions(row: dict[str, Any]) -> tuple[LongMemEvalQuestion, ...]:
     return tuple(
         LongMemEvalQuestion(
             question_id=question_id,
-            question_text=_extract_question_text(question),
+            text=_extract_question_text(question),
             time_info=_extract_time_info(question),
             answer_candidates=tuple(answer_candidates),
         )
