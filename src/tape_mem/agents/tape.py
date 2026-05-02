@@ -1,5 +1,6 @@
-import uuid
-from typing import Iterable, Optional, cast
+from tape_mem.types.conversation import Session, Message
+import hashlib
+from typing import Optional, cast, Collection
 
 import chromadb
 import tiktoken
@@ -11,7 +12,7 @@ from tape_mem.dataset.templates import Template
 from tape_mem.types import Agent
 from tape_mem.types.agent import (
     AgentResponse,
-    ConversationSession,
+    AbstractSession,
     QueryMetadata,
     Stats,
 )
@@ -56,25 +57,17 @@ class TapeAgent(Agent):
         logger.info(f"using base url: {provider.base_url}")
 
     def memorize(self, chunk: str) -> None:
-        self._active_tape.handoff(f"chunk_{uuid.uuid6()}", state={"memorize": True})
-
-        # write the chunk on tape
-        self._active_tape.append(
-            TapeEntry.message(
-                # todo: using template (blocking by template refactoring)
-                {"role": "user", "content": chunk}
+        # todo: reuse memorize conversation
+        session = Session(
+            messages=(
+                Message(role="user", content=chunk),
+                Message(
+                    role="assistant",
+                    content="I have learned the documents and I will answer the question you ask.",
+                ),
             )
         )
-        # pretend that agent responses
-        self._active_tape.append(
-            TapeEntry.message(
-                # todo: using template (blocking by template refactoring)
-                {
-                    "role": "assistant",
-                    "content": "I have learned the documents and I will answer the question you ask.",
-                }
-            )
-        )
+        self.memorize_conversation([session])
 
     def forget(self, chunk: str) -> None:
         raise NotImplementedError
@@ -95,7 +88,15 @@ class TapeAgent(Agent):
             return self._anchors[idx + 1]
         return None
 
-    def memorize_conversation(self, sessions: Iterable[ConversationSession]) -> None:
+    def _message_id(self, session_id: str, msg: str) -> str:
+        """Generate a unique message ID based on session_id and message content."""
+        # hash content and then hash session_id
+        hasher = hashlib.sha256()
+        hasher.update(session_id.encode("utf-8"))
+        hasher.update(msg.encode("utf-8"))
+        return hasher.hexdigest()
+
+    def memorize_conversation(self, sessions: Collection[AbstractSession]) -> None:
         """Memorize structured conversation sessions using handoff for session boundaries.
 
         Each session gets its own handoff anchor. Messages are stored individually
@@ -120,10 +121,12 @@ class TapeAgent(Agent):
             )
 
             # Store each message with chat_time in metadata for cleaner separation
+            logger.info(
+                f"adding {len(session.messages)} to tape and chroma db for session_id={session_id}"
+            )
             for idx, msg in enumerate(session.messages):
-                msg_id = f"{session_id}_msg_{idx}"
+                msg_id = self._message_id(session_id, msg.content)
 
-                logger.debug(f"adding message to tape: id={msg_id}, role={msg.role}")
                 self._active_tape.append(
                     TapeEntry.message(
                         {"role": msg.role, "content": msg.content},
@@ -131,9 +134,6 @@ class TapeAgent(Agent):
                     )
                 )
 
-                logger.debug(
-                    f"adding message to chroma db: id={msg_id}, role={msg.role}"
-                )
                 # store in the chroma db with metadata for session mapping
                 # chat_time must be string for chromadb - datetime not accepted
                 self._collection.add(

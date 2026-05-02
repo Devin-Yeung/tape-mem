@@ -1,11 +1,10 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Literal, Protocol, runtime_checkable, Iterable
+from typing import Collection, Literal, Optional, Protocol, runtime_checkable
 
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.json import DataClassJSONMixin
-
 
 # ==============================================================================
 # Conversation Data Protocols
@@ -15,7 +14,7 @@ from mashumaro.mixins.json import DataClassJSONMixin
 # support conversation-based datasets like LongMemEval.
 
 
-class ConversationMessage(Protocol):
+class AbstractMessage(Protocol):
     """A single message in a conversation.
 
     The `role` is one of the common chat roles.
@@ -28,7 +27,7 @@ class ConversationMessage(Protocol):
     def content(self) -> str: ...
 
 
-class ConversationSession(Protocol):
+class AbstractSession(Protocol):
     """One conversation session identified by a timestamp.
 
     `chat_time` is represented as a `datetime` for stronger typing and easier
@@ -42,10 +41,14 @@ class ConversationSession(Protocol):
     """Global unique identifier for the session"""
 
     @property
-    def chat_time(self) -> datetime: ...
+    def chat_time(self) -> Optional[datetime]: ...
 
     @property
-    def messages(self) -> Iterable[ConversationMessage]: ...
+    def messages(
+        self,
+    ) -> Collection[
+        AbstractMessage
+    ]: ...  # collection is both iterable and sized, but not necessarily indexable
 
 
 @dataclass(frozen=True)
@@ -107,7 +110,7 @@ class Agent(Protocol):
         """
         ...
 
-    def memorize_conversation(self, sessions: Sequence[ConversationSession]) -> None:
+    def memorize_conversation(self, sessions: Sequence[AbstractSession]) -> None:
         """Memorize structured conversation sessions.
 
         Default implementation serializes sessions to plain text and calls
@@ -124,7 +127,7 @@ class Agent(Protocol):
             chunk = self._serialize_session(session)
             self.memorize(chunk)
 
-    def _serialize_session(self, session: ConversationSession) -> str:
+    def _serialize_session(self, session: AbstractSession) -> str:
         """Serialize a session to text format.
 
         Override this method to customize serialization format.
@@ -135,12 +138,17 @@ class Agent(Protocol):
         Returns:
             Serialized text representation of the session.
         """
-        # Ensure the timestamp is formatted as text when serializing.
-        time_str = session.chat_time.isoformat()
+        lines = []
 
-        lines = [time_str]
+        # check if chat_time is available and serialize it if so
+        if session.chat_time:
+            # Ensure the timestamp is formatted as text when serializing.
+            time_str = session.chat_time.isoformat()
+            lines.append(time_str)
+
         for msg in session.messages:
             lines.append(f"{msg.role}: {msg.content}")
+
         return "\n".join(lines)
 
     def query(self, question: str) -> AgentResponse:
