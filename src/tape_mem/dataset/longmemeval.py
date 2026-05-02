@@ -15,11 +15,17 @@ LongMemEvalVariant: TypeAlias = Literal["longmemeval_s*"]
 
 
 def _generate_session_id(messages: tuple[LongMemEvalMessage, ...]) -> str:
-    """Generate a unique session ID from the shasum of all message contents."""
+    """Generate a unique session ID from the shasum of all message contents.
+
+    Mirrors the canonical Session._generate_session_id algorithm in
+    src/tape_mem/types/conversation.py: updates the hasher separately with
+    role and content bytes for each message, then returns the full hexdigest.
+    """
     hasher = hashlib.sha256()
     for msg in messages:
-        hasher.update(f"{msg.role}:{msg.content}".encode("utf-8"))
-    return hasher.hexdigest()[:16]
+        hasher.update(msg.role.encode("utf-8"))
+        hasher.update(msg.content.encode("utf-8"))
+    return hasher.hexdigest()
 
 
 SUPPORTED_LONGMEMEVAL_VARIANTS: tuple[LongMemEvalVariant, ...] = ("longmemeval_s*",)
