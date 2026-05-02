@@ -1,8 +1,9 @@
-from typing import Iterable, cast
-import chromadb
-from chromadb.api import ClientAPI
+import uuid
+from typing import Iterable, Optional, cast
 
+import chromadb
 import tiktoken
+from chromadb.api import ClientAPI
 from loguru import logger
 from republic import LLM, TapeEntry
 
@@ -15,11 +16,17 @@ from tape_mem.types.agent import (
     Stats,
 )
 from tape_mem.types.provider import ProviderConfig
-import uuid
 
 
 class TapeAgent(Agent):
-    __slots__ = ("_llm", "_template", "_tokenizor", "_active_tape", "_collection")
+    __slots__ = (
+        "_llm",
+        "_template",
+        "_tokenizor",
+        "_active_tape",
+        "_collection",
+        "_anchors",
+    )
 
     def __init__(
         self,
@@ -35,6 +42,8 @@ class TapeAgent(Agent):
         self._active_tape = self._llm.tape("main")
         # create a dedicated collection
         self._collection = chroma_client.create_collection(name="tape_mem_collection")
+        # list of anchor (in the order of tape store)
+        self._anchors: list[str] = []
 
     def _setup_llm_backend(self, provider: ProviderConfig):
         model = f"openai:{provider.model}"
@@ -70,6 +79,22 @@ class TapeAgent(Agent):
     def forget(self, chunk: str) -> None:
         raise NotImplementedError
 
+    def _get_next_anchor(self, sid: str) -> Optional[str]:
+        """Get the next anchor (sid) for a conversation session.
+
+        Returns next anchor name or None if sid not found or sid is the last anchor.
+        """
+        try:
+            idx = self._anchors.index(sid)
+        except ValueError:
+            # sid not in list
+            return None
+
+        # return next if exists
+        if idx + 1 < len(self._anchors):
+            return self._anchors[idx + 1]
+        return None
+
     def memorize_conversation(self, sessions: Iterable[ConversationSession]) -> None:
         """Memorize structured conversation sessions using handoff for session boundaries.
 
@@ -83,7 +108,9 @@ class TapeAgent(Agent):
         """
         for session in sessions:
             session_id = f"session_{uuid.uuid6()}"
+            self._anchors.append(session_id)
             logger.info(f"handoff session: {session_id}")
+
             self._active_tape.handoff(
                 session_id,
                 state={
@@ -139,7 +166,21 @@ class TapeAgent(Agent):
         # 3. For each session_id, fetch full session from tape to preserve locality
         context_messages: list[dict[str, str]] = []
         for sid in session_ids:
-            entries = self._active_tape.query.after_anchor(sid).kinds("message").all()
+            next_sid = self._get_next_anchor(sid)
+            logger.info(
+                f"fetching messages between session_id={sid} next_sid={next_sid}"
+            )
+
+            if next_sid is None:
+                entries = (
+                    self._active_tape.query.after_anchor(sid).kinds("message").all()
+                )
+            else:
+                entries = (
+                    self._active_tape.query.between_anchors(sid, next_sid)
+                    .kinds("message")
+                    .all()
+                )
             for entry in entries:
                 context_messages.append(entry.payload)
 
