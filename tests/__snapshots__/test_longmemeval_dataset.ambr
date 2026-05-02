@@ -21,7 +21,7 @@
         '50',
       ]),
       'question_id': 'longmemeval_s*_no0',
-      'question_text': 'Now Answer the Question: How many hours do I work in a typical week during peak campaign seasons?',
+      'text': 'Now Answer the Question: How many hours do I work in a typical week during peak campaign seasons?',
       'time_info': 'Current Date: 2023/05/27 (Sat) 22:54',
     }),
     dict({
@@ -29,7 +29,7 @@
         '17',
       ]),
       'question_id': 'longmemeval_s*_no1',
-      'question_text': 'Now Answer the Question: How many fish are there in total in both of my aquariums?',
+      'text': 'Now Answer the Question: How many fish are there in total in both of my aquariums?',
       'time_info': 'Current Date: 2023/05/27 (Sat) 17:21',
     }),
     dict({
@@ -37,7 +37,7 @@
         'Two',
       ]),
       'question_id': 'longmemeval_s*_no2',
-      'question_text': "Now Answer the Question: How many free night's stays can I redeem at any Hilton property with my accumulated points?",
+      'text': "Now Answer the Question: How many free night's stays can I redeem at any Hilton property with my accumulated points?",
       'time_info': 'Current Date: 2023/06/23 (Fri) 07:47',
     }),
     dict({
@@ -45,7 +45,7 @@
         'Tomatoes',
       ]),
       'question_id': 'longmemeval_s*_no3',
-      'question_text': 'Now Answer the Question: Which seeds were started first, the tomatoes or the marigolds?',
+      'text': 'Now Answer the Question: Which seeds were started first, the tomatoes or the marigolds?',
       'time_info': 'Current Date: 2023/03/10 (Fri) 02:46',
     }),
     dict({
@@ -53,7 +53,7 @@
         'June 3rd',
       ]),
       'question_id': 'longmemeval_s*_no4',
-      'question_text': 'Now Answer the Question: What was the date on which I attended the first BBQ event in June?',
+      'text': 'Now Answer the Question: What was the date on which I attended the first BBQ event in June?',
       'time_info': 'Current Date: 2023/07/01 (Sat) 23:13',
     }),
     dict({
@@ -61,7 +61,7 @@
         "According to Borges, 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'",
       ]),
       'question_id': 'longmemeval_s*_no5',
-      'question_text': 'Now Answer the Question: I was going through our previous conversation about The Library of Babel, and I wanted to confirm - what did Borges say about the center and circumference of the Library?',
+      'text': 'Now Answer the Question: I was going through our previous conversation about The Library of Babel, and I wanted to confirm - what did Borges say about the center and circumference of the Library?',
       'time_info': 'Current Date: 2023/05/26 (Fri) 23:43',
     }),
     dict({
@@ -69,7 +69,7 @@
         'The user would prefer responses that acknowledge their desire for social interaction and collaboration while working remotely, utilizing their previous experiences with company initiatives and team collaborations. They might prefer suggestions of virtual team-building activities, regular check-ins, or joining interest-based groups within the company. The user may not prefer generic suggestions that do not take into account their specific work situation or previous attempts at staying connected with colleagues.',
       ]),
       'question_id': 'longmemeval_s*_no6',
-      'question_text': "Now Answer the Question: I've been thinking about ways to stay connected with my colleagues. Any suggestions?",
+      'text': "Now Answer the Question: I've been thinking about ways to stay connected with my colleagues. Any suggestions?",
       'time_info': 'Current Date: 2023/05/30 (Tue) 14:01',
     }),
     dict({
@@ -77,7 +77,7 @@
         '7 days. 8 days (including the last day) is also acceptable.',
       ]),
       'question_id': 'longmemeval_s*_no7',
-      'question_text': "Now Answer the Question: How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?",
+      'text': "Now Answer the Question: How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?",
       'time_info': 'Current Date: 2023/03/29 (Wed) 11:57',
     }),
     dict({
@@ -85,7 +85,7 @@
         '3 weeks ago',
       ]),
       'question_id': 'longmemeval_s*_no8',
-      'question_text': "Now Answer the Question: How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?",
+      'text': "Now Answer the Question: How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?",
       'time_info': 'Current Date: 2023/08/05 (Sat) 23:49',
     }),
     dict({
@@ -93,7 +93,7 @@
         'five',
       ]),
       'question_id': 'longmemeval_s*_no9',
-      'question_text': 'Now Answer the Question: How many sessions of the bereavement support group did I attend?',
+      'text': 'Now Answer the Question: How many sessions of the bereavement support group did I attend?',
       'time_info': 'Current Date: 2023/11/14 (Tue) 04:58',
     }),
     dict({
@@ -101,7 +101,7 @@
         'The user would prefer baking suggestions that take into account their previous success with the lemon poppyseed cake, such as variations of that recipe or other desserts that share similar qualities. They might prefer suggestions that balance impressiveness with manageability, considering their previous experience. The user may not prefer overly complex or unfamiliar recipes, or suggestions that do not build upon their existing baking experience.',
       ]),
       'question_id': 'longmemeval_s*_no10',
-      'question_text': "Now Answer the Question: I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
+      'text': "Now Answer the Question: I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
       'time_info': 'Current Date: 2023/05/27 (Sat) 23:31',
     }),
     dict({
@@ -109,7 +109,7 @@
         'I recommended using a Pilsner or Lager for the recipe.',
       ]),
       'question_id': 'longmemeval_s*_no11',
-      'question_text': "Now Answer the Question: I'm looking back at our previous conversation about the Seco de Cordero recipe from Ancash. You mentioned using a light or medium-bodied beer, but I was wondering if you could remind me what type of beer you specifically recommended?",
+      'text': "Now Answer the Question: I'm looking back at our previous conversation about the Seco de Cordero recipe from Ancash. You mentioned using a light or medium-bodied beer, but I was wondering if you could remind me what type of beer you specifically recommended?",
       'time_info': 'Current Date: 2023/05/23 (Tue) 07:05',
     }),
     dict({
@@ -117,7 +117,7 @@
         'Nu, pogodi!',
       ]),
       'question_id': 'longmemeval_s*_no12',
-      'question_text': 'Now Answer the Question: I was going through our previous conversation about political propaganda and humor, and I was wondering if you could remind me of that Soviet cartoon you mentioned that mocked Western culture?',
+      'text': 'Now Answer the Question: I was going through our previous conversation about political propaganda and humor, and I was wondering if you could remind me of that Soviet cartoon you mentioned that mocked Western culture?',
       'time_info': 'Current Date: 2023/05/29 (Mon) 23:18',
     }),
     dict({
@@ -125,7 +125,7 @@
         'The user would prefer responses that suggest healthy meal prep recipes, especially those that incorporate quinoa and roasted vegetables, and offer variations in protein sources. They might appreciate suggestions that build upon their existing preferences, such as new twists on chicken Caesar salads or turkey and avocado wraps. The user may not prefer responses that suggest unhealthy or high-calorie meal prep options, or those that deviate significantly from their established healthy eating habits.',
       ]),
       'question_id': 'longmemeval_s*_no13',
-      'question_text': "Now Answer the Question: I'm planning my meal prep next week, any suggestions for new recipes?",
+      'text': "Now Answer the Question: I'm planning my meal prep next week, any suggestions for new recipes?",
       'time_info': 'Current Date: 2023/05/29 (Mon) 10:41',
     }),
     dict({
@@ -133,7 +133,7 @@
         'three months',
       ]),
       'question_id': 'longmemeval_s*_no14',
-      'question_text': 'Now Answer the Question: How long have I been collecting vintage cameras?',
+      'text': 'Now Answer the Question: How long have I been collecting vintage cameras?',
       'time_info': 'Current Date: 2023/05/25 (Thu) 17:36',
     }),
     dict({
@@ -141,7 +141,7 @@
         '$800',
       ]),
       'question_id': 'longmemeval_s*_no15',
-      'question_text': 'Now Answer the Question: How much did I spend on a designer handbag?',
+      'text': 'Now Answer the Question: How much did I spend on a designer handbag?',
       'time_info': 'Current Date: 2023/05/29 (Mon) 21:17',
     }),
     dict({
@@ -149,7 +149,7 @@
         '4',
       ]),
       'question_id': 'longmemeval_s*_no16',
-      'question_text': 'Now Answer the Question: How many different art-related events did I attend in the past month?',
+      'text': 'Now Answer the Question: How many different art-related events did I attend in the past month?',
       'time_info': 'Current Date: 2023/03/08 (Wed) 22:33',
     }),
     dict({
@@ -157,7 +157,7 @@
         'Receiving the new phone case',
       ]),
       'question_id': 'longmemeval_s*_no17',
-      'question_text': 'Now Answer the Question: Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?',
+      'text': 'Now Answer the Question: Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?',
       'time_info': 'Current Date: 2023/05/29 (Mon) 09:14',
     }),
     dict({
@@ -165,7 +165,7 @@
         '9 months',
       ]),
       'question_id': 'longmemeval_s*_no18',
-      'question_text': 'Now Answer the Question: How long have I had my cat, Luna?',
+      'text': 'Now Answer the Question: How long have I had my cat, Luna?',
       'time_info': 'Current Date: 2023/11/30 (Thu) 03:32',
     }),
     dict({
@@ -173,7 +173,7 @@
         'The GR-90 trail.',
       ]),
       'question_id': 'longmemeval_s*_no19',
-      'question_text': "Now Answer the Question: I'm planning to go back to the Natural Park of Moncayo mountain in Aragón and I was wondering, what was the name of that hiking trail you recommended that takes you through the park's most stunning landscapes and offers panoramic views of the surrounding mountainside?",
+      'text': "Now Answer the Question: I'm planning to go back to the Natural Park of Moncayo mountain in Aragón and I was wondering, what was the name of that hiking trail you recommended that takes you through the park's most stunning landscapes and offers panoramic views of the surrounding mountainside?",
       'time_info': 'Current Date: 2023/05/29 (Mon) 19:48',
     }),
     dict({
@@ -181,7 +181,7 @@
         'The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.',
       ]),
       'question_id': 'longmemeval_s*_no20',
-      'question_text': 'Now Answer the Question: Can you suggest some activities I can do during my commute to work?',
+      'text': 'Now Answer the Question: Can you suggest some activities I can do during my commute to work?',
       'time_info': 'Current Date: 2023/05/28 (Sun) 21:56',
     }),
     dict({
@@ -189,7 +189,7 @@
         'The Glass Menagerie',
       ]),
       'question_id': 'longmemeval_s*_no21',
-      'question_text': 'Now Answer the Question: What play did I attend at the local community theater?',
+      'text': 'Now Answer the Question: What play did I attend at the local community theater?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 03:57',
     }),
     dict({
@@ -197,7 +197,7 @@
         '100',
       ]),
       'question_id': 'longmemeval_s*_no22',
-      'question_text': 'Now Answer the Question: How many points do I need to earn to redeem a free skincare product at Sephora?',
+      'text': 'Now Answer the Question: How many points do I need to earn to redeem a free skincare product at Sephora?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 01:16',
     }),
     dict({
@@ -205,7 +205,7 @@
         '43',
       ]),
       'question_id': 'longmemeval_s*_no23',
-      'question_text': 'Now Answer the Question: How many years older is my grandma than me?',
+      'text': 'Now Answer the Question: How many years older is my grandma than me?',
       'time_info': 'Current Date: 2024/02/05 (Mon) 08:25',
     }),
     dict({
@@ -213,7 +213,7 @@
         'Spanish classes',
       ]),
       'question_id': 'longmemeval_s*_no24',
-      'question_text': 'Now Answer the Question: Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?',
+      'text': 'Now Answer the Question: Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?',
       'time_info': 'Current Date: 2023/05/20 (Sat) 03:39',
     }),
     dict({
@@ -221,7 +221,7 @@
         '5',
       ]),
       'question_id': 'longmemeval_s*_no25',
-      'question_text': 'Now Answer the Question: How many fitness classes do I attend in a typical week?',
+      'text': 'Now Answer the Question: How many fitness classes do I attend in a typical week?',
       'time_info': 'Current Date: 2023/05/28 (Sun) 03:47',
     }),
     dict({
@@ -229,7 +229,7 @@
         'Roscioli',
       ]),
       'question_id': 'longmemeval_s*_no26',
-      'question_text': "Now Answer the Question: I'm planning to visit the Vatican again and I was wondering if you could remind me of the name of that famous deli near the Vatican that serves the best cured meats and cheeses?",
+      'text': "Now Answer the Question: I'm planning to visit the Vatican again and I was wondering if you could remind me of the name of that famous deli near the Vatican that serves the best cured meats and cheeses?",
       'time_info': 'Current Date: 2023/05/30 (Tue) 12:39',
     }),
     dict({
@@ -237,7 +237,7 @@
         '4',
       ]),
       'question_id': 'longmemeval_s*_no27',
-      'question_text': 'Now Answer the Question: How many bikes do I currently own?',
+      'text': 'Now Answer the Question: How many bikes do I currently own?',
       'time_info': 'Current Date: 2023/10/29 (Sun) 15:48',
     }),
     dict({
@@ -245,7 +245,7 @@
         'American Airlines',
       ]),
       'question_id': 'longmemeval_s*_no28',
-      'question_text': "Now Answer the Question: What was the airline that I flied with on Valentine's day?",
+      'text': "Now Answer the Question: What was the airline that I flied with on Valentine's day?",
       'time_info': 'Current Date: 2023/03/02 (Thu) 21:56',
     }),
     dict({
@@ -253,7 +253,7 @@
         'The information provided is not enough. You mentioned traveling for 10 days in Hawaii but did not mention abything about the trip to Seattle.',
       ]),
       'question_id': 'longmemeval_s*_no29',
-      'question_text': 'Now Answer the Question: How many days did I spend in total traveling in Hawaii and in Seattle?',
+      'text': 'Now Answer the Question: How many days did I spend in total traveling in Hawaii and in Seattle?',
       'time_info': 'Current Date: 2023/05/28 (Sun) 06:00',
     }),
     dict({
@@ -261,7 +261,7 @@
         '4',
       ]),
       'question_id': 'longmemeval_s*_no30',
-      'question_text': 'Now Answer the Question: How many weeks ago did I meet up with my aunt and receive the crystal chandelier?',
+      'text': 'Now Answer the Question: How many weeks ago did I meet up with my aunt and receive the crystal chandelier?',
       'time_info': 'Current Date: 2023/04/01 (Sat) 20:56',
     }),
     dict({
@@ -269,7 +269,7 @@
         "The information provided is not enough. You mentioned Alex becoming a parent in January, but you didn't mention anything about Tom.",
       ]),
       'question_id': 'longmemeval_s*_no31',
-      'question_text': 'Now Answer the Question: Who became a parent first, Tom or Alex?',
+      'text': 'Now Answer the Question: Who became a parent first, Tom or Alex?',
       'time_info': 'Current Date: 2023/03/17 (Fri) 16:37',
     }),
     dict({
@@ -277,7 +277,7 @@
         'Page Turners',
       ]),
       'question_id': 'longmemeval_s*_no32',
-      'question_text': "Now Answer the Question: Which group did I join first, 'Page Turners' or 'Marketing Professionals'?",
+      'text': "Now Answer the Question: Which group did I join first, 'Page Turners' or 'Marketing Professionals'?",
       'time_info': 'Current Date: 2023/05/25 (Thu) 07:58',
     }),
     dict({
@@ -285,7 +285,7 @@
         '18 days. 19 days (including the last day) is also acceptable.',
       ]),
       'question_id': 'longmemeval_s*_no33',
-      'question_text': "Now Answer the Question: How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?",
+      'text': "Now Answer the Question: How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?",
       'time_info': 'Current Date: 2023/02/10 (Fri) 14:44',
     }),
     dict({
@@ -293,7 +293,7 @@
         'The user would prefer dinner suggestions that incorporate their homegrown cherry tomatoes and herbs like basil and mint, highlighting recipes that showcase their garden produce. They might not prefer suggestions that do not utilize these specific ingredients or do not emphasize the use of homegrown elements.',
       ]),
       'question_id': 'longmemeval_s*_no34',
-      'question_text': 'Now Answer the Question: What should I serve for dinner this weekend with my homegrown ingredients?',
+      'text': 'Now Answer the Question: What should I serve for dinner this weekend with my homegrown ingredients?',
       'time_info': 'Current Date: 2023/05/24 (Wed) 10:29',
     }),
     dict({
@@ -301,7 +301,7 @@
         'five',
       ]),
       'question_id': 'longmemeval_s*_no35',
-      'question_text': 'Now Answer the Question: How many tops have I bought from H&M so far?',
+      'text': 'Now Answer the Question: How many tops have I bought from H&M so far?',
       'time_info': 'Current Date: 2023/10/20 (Fri) 18:28',
     }),
     dict({
@@ -309,7 +309,7 @@
         'Xfinity Center',
       ]),
       'question_id': 'longmemeval_s*_no36',
-      'question_text': 'Now Answer the Question: Where did I attend the Imagine Dragons concert?',
+      'text': 'Now Answer the Question: Where did I attend the Imagine Dragons concert?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 11:08',
     }),
     dict({
@@ -317,7 +317,7 @@
         'I visited three different doctors: a primary care physician, an ENT specialist, and a dermatologist.',
       ]),
       'question_id': 'longmemeval_s*_no37',
-      'question_text': 'Now Answer the Question: How many different doctors did I visit?',
+      'text': 'Now Answer the Question: How many different doctors did I visit?',
       'time_info': 'Current Date: 2023/05/28 (Sun) 06:34',
     }),
     dict({
@@ -325,7 +325,7 @@
         '2 days. 3 days (including the last day) is also acceptable.',
       ]),
       'question_id': 'longmemeval_s*_no38',
-      'question_text': 'Now Answer the Question: How many days did I spend on my solo camping trip to Yosemite National Park?',
+      'text': 'Now Answer the Question: How many days did I spend on my solo camping trip to Yosemite National Park?',
       'time_info': 'Current Date: 2023/06/01 (Thu) 12:42',
     }),
     dict({
@@ -333,7 +333,7 @@
         '17 days',
       ]),
       'question_id': 'longmemeval_s*_no39',
-      'question_text': 'Now Answer the Question: How many days did I take social media breaks in total?',
+      'text': 'Now Answer the Question: How many days did I take social media breaks in total?',
       'time_info': 'Current Date: 2023/03/14 (Tue) 22:35',
     }),
     dict({
@@ -341,7 +341,7 @@
         '20%',
       ]),
       'question_id': 'longmemeval_s*_no40',
-      'question_text': 'Now Answer the Question: What percentage discount did I get on the book from my favorite author?',
+      'text': 'Now Answer the Question: What percentage discount did I get on the book from my favorite author?',
       'time_info': 'Current Date: 2023/05/24 (Wed) 05:52',
     }),
     dict({
@@ -349,7 +349,7 @@
         'Serenity Yoga',
       ]),
       'question_id': 'longmemeval_s*_no41',
-      'question_text': 'Now Answer the Question: Where do I take yoga classes?',
+      'text': 'Now Answer the Question: Where do I take yoga classes?',
       'time_info': 'Current Date: 2023/05/26 (Fri) 15:21',
     }),
     dict({
@@ -357,7 +357,7 @@
         '30',
       ]),
       'question_id': 'longmemeval_s*_no42',
-      'question_text': "Now Answer the Question: How many videos of Corey Schafer's Python programming series have I completed so far?",
+      'text': "Now Answer the Question: How many videos of Corey Schafer's Python programming series have I completed so far?",
       'time_info': 'Current Date: 2023/05/26 (Fri) 16:53',
     }),
     dict({
@@ -365,7 +365,7 @@
         'The user would prefer responses that build upon their existing sources of inspiration, such as revisiting Instagram art accounts or exploring new techniques from online tutorials. They might also appreciate suggestions that revisit previous themes they found enjoyable, like painting flowers. The user would not prefer generic or vague suggestions for finding inspiration, and would likely appreciate responses that utilize their recent 30-day painting challenge experience.',
       ]),
       'question_id': 'longmemeval_s*_no43',
-      'question_text': "Now Answer the Question: I've been feeling a bit stuck with my paintings lately. Do you have any ideas on how I can find new inspiration?",
+      'text': "Now Answer the Question: I've been feeling a bit stuck with my paintings lately. Do you have any ideas on how I can find new inspiration?",
       'time_info': 'Current Date: 2023/05/27 (Sat) 01:37',
     }),
     dict({
@@ -373,7 +373,7 @@
         '$2,500',
       ]),
       'question_id': 'longmemeval_s*_no44',
-      'question_text': 'Now Answer the Question: What is the total amount I spent on luxury items in the past few months?',
+      'text': 'Now Answer the Question: What is the total amount I spent on luxury items in the past few months?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 23:17',
     }),
     dict({
@@ -381,7 +381,7 @@
         '500 Mbps',
       ]),
       'question_id': 'longmemeval_s*_no45',
-      'question_text': 'Now Answer the Question: What speed is my new internet plan?',
+      'text': 'Now Answer the Question: What speed is my new internet plan?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 05:53',
     }),
     dict({
@@ -389,7 +389,7 @@
         '16GB',
       ]),
       'question_id': 'longmemeval_s*_no46',
-      'question_text': 'Now Answer the Question: How much RAM did I upgrade my laptop to?',
+      'text': 'Now Answer the Question: How much RAM did I upgrade my laptop to?',
       'time_info': 'Current Date: 2023/05/27 (Sat) 21:08',
     }),
     dict({
@@ -397,7 +397,7 @@
         '3',
       ]),
       'question_id': 'longmemeval_s*_no47',
-      'question_text': 'Now Answer the Question: How many months ago did I attend the photography workshop?',
+      'text': 'Now Answer the Question: How many months ago did I attend the photography workshop?',
       'time_info': 'Current Date: 2024/02/01 (Thu) 22:41',
     }),
     dict({
@@ -405,7 +405,7 @@
         'train',
       ]),
       'question_id': 'longmemeval_s*_no48',
-      'question_text': 'Now Answer the Question: Which mode of transport did I use most recently, a bus or a train?',
+      'text': 'Now Answer the Question: Which mode of transport did I use most recently, a bus or a train?',
       'time_info': 'Current Date: 2023/05/02 (Tue) 14:37',
     }),
     dict({
@@ -413,7 +413,7 @@
         '$50',
       ]),
       'question_id': 'longmemeval_s*_no49',
-      'question_text': 'Now Answer the Question: What is the total cost of the new food bowl, measuring cup, dental chews, and flea and tick collar I got for Max?',
+      'text': 'Now Answer the Question: What is the total cost of the new food bowl, measuring cup, dental chews, and flea and tick collar I got for Max?',
       'time_info': 'Current Date: 2023/05/26 (Fri) 21:10',
     }),
     dict({
@@ -421,7 +421,7 @@
         '132 points',
       ]),
       'question_id': 'longmemeval_s*_no50',
-      'question_text': 'Now Answer the Question: What is my current highest score in Ticket to Ride?',
+      'text': 'Now Answer the Question: What is my current highest score in Ticket to Ride?',
       'time_info': 'Current Date: 2023/06/09 (Fri) 07:46',
     }),
     dict({
@@ -429,7 +429,7 @@
         '+49 (0) 62 32 / 14 23 - 0',
       ]),
       'question_id': 'longmemeval_s*_no51',
-      'question_text': "Now Answer the Question: I'm planning my trip to Speyer again and I wanted to confirm, what's the phone number of the Speyer tourism board that you provided me earlier?",
+      'text': "Now Answer the Question: I'm planning my trip to Speyer again and I wanted to confirm, what's the phone number of the Speyer tourism board that you provided me earlier?",
       'time_info': 'Current Date: 2023/05/29 (Mon) 10:13',
     }),
     dict({
@@ -437,7 +437,7 @@
         'lavender gin fizz',
       ]),
       'question_id': 'longmemeval_s*_no52',
-      'question_text': 'Now Answer the Question: What type of cocktail recipe did I try last weekend?',
+      'text': 'Now Answer the Question: What type of cocktail recipe did I try last weekend?',
       'time_info': 'Current Date: 2023/05/26 (Fri) 02:26',
     }),
     dict({
@@ -445,7 +445,7 @@
         '4',
       ]),
       'question_id': 'longmemeval_s*_no53',
-      'question_text': 'Now Answer the Question: How many health-related devices do I use in a day?',
+      'text': 'Now Answer the Question: How many health-related devices do I use in a day?',
       'time_info': 'Current Date: 2023/05/27 (Sat) 06:53',
     }),
     dict({
@@ -453,7 +453,7 @@
         'First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.',
       ]),
       'question_id': 'longmemeval_s*_no54',
-      'question_text': 'Now Answer the Question: What is the order of the sports events I watched in January?',
+      'text': 'Now Answer the Question: What is the order of the sports events I watched in January?',
       'time_info': 'Current Date: 2023/01/30 (Mon) 01:51',
     }),
     dict({
@@ -461,7 +461,7 @@
         '7',
       ]),
       'question_id': 'longmemeval_s*_no55',
-      'question_text': 'Now Answer the Question: How many shirts did I pack for my 5-day trip to Costa Rica?',
+      'text': 'Now Answer the Question: How many shirts did I pack for my 5-day trip to Costa Rica?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 20:28',
     }),
     dict({
@@ -469,7 +469,7 @@
         '$420',
       ]),
       'question_id': 'longmemeval_s*_no56',
-      'question_text': 'Now Answer the Question: How much did I earn at the Downtown Farmers Market on my most recent visit?',
+      'text': 'Now Answer the Question: How much did I earn at the Downtown Farmers Market on my most recent visit?',
       'time_info': 'Current Date: 2023/10/02 (Mon) 04:40',
     }),
     dict({
@@ -477,7 +477,7 @@
         '1 year and 5 months',
       ]),
       'question_id': 'longmemeval_s*_no57',
-      'question_text': 'Now Answer the Question: How long have I been working in my current role?',
+      'text': 'Now Answer the Question: How long have I been working in my current role?',
       'time_info': 'Current Date: 2023/05/30 (Tue) 03:15',
     }),
     dict({
@@ -485,7 +485,7 @@
         '3',
       ]),
       'question_id': 'longmemeval_s*_no58',
-      'question_text': 'Now Answer the Question: How many pieces of jewelry did I acquire in the last two months?',
+      'text': 'Now Answer the Question: How many pieces of jewelry did I acquire in the last two months?',
       'time_info': 'Current Date: 2023/05/29 (Mon) 17:44',
     }),
     dict({
@@ -493,7 +493,7 @@
         'nine months',
       ]),
       'question_id': 'longmemeval_s*_no59',
-      'question_text': 'Now Answer the Question: How long have my parents been staying with me in the US?',
+      'text': 'Now Answer the Question: How long have my parents been staying with me in the US?',
       'time_info': 'Current Date: 2023/10/22 (Sun) 20:20',
     }),
   ])
