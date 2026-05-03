@@ -629,6 +629,636 @@
           "model_name": "custom/gpt-5-nano"
         }
       }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no41",
+        "text": "Now Answer the Question: Where do I take yoga classes?",
+        "time_info": "Current Date: 2023/05/26 (Fri) 15:21",
+        "answer_candidates": [
+          "Serenity Yoga"
+        ]
+      },
+      "response": {
+        "answer": "Serenity Yoga.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21011,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no9",
+        "text": "Now Answer the Question: How many sessions of the bereavement support group did I attend?",
+        "time_info": "Current Date: 2023/11/14 (Tue) 04:58",
+        "answer_candidates": [
+          "five"
+        ]
+      },
+      "response": {
+        "answer": "5",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22236,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no0",
+        "text": "Now Answer the Question: How many hours do I work in a typical week during peak campaign seasons?",
+        "time_info": "Current Date: 2023/05/27 (Sat) 22:54",
+        "answer_candidates": [
+          "50"
+        ]
+      },
+      "response": {
+        "answer": "50 hours per week",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21047,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no49",
+        "text": "Now Answer the Question: What is the total cost of the new food bowl, measuring cup, dental chews, and flea and tick collar I got for Max?",
+        "time_info": "Current Date: 2023/05/26 (Fri) 21:10",
+        "answer_candidates": [
+          "$50"
+        ]
+      },
+      "response": {
+        "answer": "The total cost is $50.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20855,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no20",
+        "text": "Now Answer the Question: Can you suggest some activities I can do during my commute to work?",
+        "time_info": "Current Date: 2023/05/28 (Sun) 21:56",
+        "answer_candidates": [
+          "The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics."
+        ]
+      },
+      "response": {
+        "answer": "- Listen to podcasts or audiobooks (history, science, fiction) to learn or be entertained during your commute.\n- Learn a language with audio lessons or language-specific podcasts.\n- Practice mindfulness or a quick guided meditation to start the day calmly.\n- Plan your day or week by recording voice memos with your to-dos and priorities.\n- Dictate quick journal entries or brainstorm ideas for projects.\n- Do a micro-learning session from an online course (10\u201320 minutes) and take notes later.\n- Rehearse a presentation or sales pitch aloud to build confidence.\n- Review and summarize meeting notes or emails using hands-free voice notes.\n- Play brain games or solve puzzles that are audio-friendly (or use audio prompts in apps).\n- Create or adjust a content outline or report outline via voice memo.\n- Curate mood-boosting music or a workout playlist to set your mindset for the day.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23579,
+            "cache_read_tokens": 3840
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no19",
+        "text": "Now Answer the Question: I'm planning to go back to the Natural Park of Moncayo mountain in Arag\u00f3n and I was wondering, what was the name of that hiking trail you recommended that takes you through the park's most stunning landscapes and offers panoramic views of the surrounding mountainside?",
+        "time_info": "Current Date: 2023/05/29 (Mon) 19:48",
+        "answer_candidates": [
+          "The GR-90 trail."
+        ]
+      },
+      "response": {
+        "answer": "GR-90",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20893,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no50",
+        "text": "Now Answer the Question: What is my current highest score in Ticket to Ride?",
+        "time_info": "Current Date: 2023/06/09 (Fri) 07:46",
+        "answer_candidates": [
+          "132 points"
+        ]
+      },
+      "response": {
+        "answer": "132 points",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21306,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no10",
+        "text": "Now Answer the Question: I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
+        "time_info": "Current Date: 2023/05/27 (Sat) 23:31",
+        "answer_candidates": [
+          "The user would prefer baking suggestions that take into account their previous success with the lemon poppyseed cake, such as variations of that recipe or other desserts that share similar qualities. They might prefer suggestions that balance impressiveness with manageability, considering their previous experience. The user may not prefer overly complex or unfamiliar recipes, or suggestions that do not build upon their existing baking experience."
+        ]
+      },
+      "response": {
+        "answer": "Here are crowd-pleasing bake ideas for a small gathering (easy to batch, travels well, and pairs with coffee or tea):\n- Classic Chocolate Chip Cookies: always a hit; bake in batches and consider a sprinkle of flaky salt on top for depth.\n- Fudgy Brownies (or Blondies): cut into small squares for easy sharing; add walnuts or sea salt on top for variation.\n- Lemon Bars: bright, light; use a sheet pan for easy portioning and dust with powdered sugar.\n- Banana Bread or Banana Muffins: forgiving; add chocolate chips or nuts; great for stretching over several days.\n- Blueberry Muffins with Crumble Topping: seasonal and crowd-pleasing; can be made in muffins or a big tray with crumb topping.\n- Savory Puff Pastry Bites: cheese and herbs, or spinach-feta bites; bake once and serve warm or at room temp.\n- Apple Crumble Bars or Peach Crisp Bars: comforting fruit option with a crumb topping; easy to portion.\nTips: pick 2\u20133 items to bake ahead; store in airtight containers; label with common allergens; offer a gluten-free option like almond flour cookies or a GF brownie if needed; consider making some items a day ahead to reduce day-of workload.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 19892,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no58",
+        "text": "Now Answer the Question: How many pieces of jewelry did I acquire in the last two months?",
+        "time_info": "Current Date: 2023/05/29 (Mon) 17:44",
+        "answer_candidates": [
+          "3"
+        ]
+      },
+      "response": {
+        "answer": "2",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22631,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no33",
+        "text": "Now Answer the Question: How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?",
+        "time_info": "Current Date: 2023/02/10 (Fri) 14:44",
+        "answer_candidates": [
+          "18 days. 19 days (including the last day) is also acceptable."
+        ]
+      },
+      "response": {
+        "answer": "148 days",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22513,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no4",
+        "text": "Now Answer the Question: What was the date on which I attended the first BBQ event in June?",
+        "time_info": "Current Date: 2023/07/01 (Sat) 23:13",
+        "answer_candidates": [
+          "June 3rd"
+        ]
+      },
+      "response": {
+        "answer": "3rd of June",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20708,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no36",
+        "text": "Now Answer the Question: Where did I attend the Imagine Dragons concert?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 11:08",
+        "answer_candidates": [
+          "Xfinity Center"
+        ]
+      },
+      "response": {
+        "answer": "Xfinity Center",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23686,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no25",
+        "text": "Now Answer the Question: How many fitness classes do I attend in a typical week?",
+        "time_info": "Current Date: 2023/05/28 (Sun) 03:47",
+        "answer_candidates": [
+          "5"
+        ]
+      },
+      "response": {
+        "answer": "5",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23425,
+            "cache_read_tokens": 3456
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no3",
+        "text": "Now Answer the Question: Which seeds were started first, the tomatoes or the marigolds?",
+        "time_info": "Current Date: 2023/03/10 (Fri) 02:46",
+        "answer_candidates": [
+          "Tomatoes"
+        ]
+      },
+      "response": {
+        "answer": "Marigolds",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23644,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no55",
+        "text": "Now Answer the Question: How many shirts did I pack for my 5-day trip to Costa Rica?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 20:28",
+        "answer_candidates": [
+          "7"
+        ]
+      },
+      "response": {
+        "answer": "7 shirts",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23666,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no31",
+        "text": "Now Answer the Question: Who became a parent first, Tom or Alex?",
+        "time_info": "Current Date: 2023/03/17 (Fri) 16:37",
+        "answer_candidates": [
+          "The information provided is not enough. You mentioned Alex becoming a parent in January, but you didn't mention anything about Tom."
+        ]
+      },
+      "response": {
+        "answer": "Alex",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21220,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no44",
+        "text": "Now Answer the Question: What is the total amount I spent on luxury items in the past few months?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 23:17",
+        "answer_candidates": [
+          "$2,500"
+        ]
+      },
+      "response": {
+        "answer": "Total luxury item spend in the past few months: $2,500.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20557,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no59",
+        "text": "Now Answer the Question: How long have my parents been staying with me in the US?",
+        "time_info": "Current Date: 2023/10/22 (Sun) 20:20",
+        "answer_candidates": [
+          "nine months"
+        ]
+      },
+      "response": {
+        "answer": "nine months",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22948,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no52",
+        "text": "Now Answer the Question: What type of cocktail recipe did I try last weekend?",
+        "time_info": "Current Date: 2023/05/26 (Fri) 02:26",
+        "answer_candidates": [
+          "lavender gin fizz"
+        ]
+      },
+      "response": {
+        "answer": "Lavender gin fizz.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21619,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no21",
+        "text": "Now Answer the Question: What play did I attend at the local community theater?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 03:57",
+        "answer_candidates": [
+          "The Glass Menagerie"
+        ]
+      },
+      "response": {
+        "answer": "The Glass Menagerie",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23675,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no30",
+        "text": "Now Answer the Question: How many weeks ago did I meet up with my aunt and receive the crystal chandelier?",
+        "time_info": "Current Date: 2023/04/01 (Sat) 20:56",
+        "answer_candidates": [
+          "4"
+        ]
+      },
+      "response": {
+        "answer": "0 weeks ago",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20565,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no23",
+        "text": "Now Answer the Question: How many years older is my grandma than me?",
+        "time_info": "Current Date: 2024/02/05 (Mon) 08:25",
+        "answer_candidates": [
+          "43"
+        ]
+      },
+      "response": {
+        "answer": "I don't have your age, so I can't determine the exact age difference.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20936,
+            "cache_read_tokens": 3840
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no24",
+        "text": "Now Answer the Question: Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?",
+        "time_info": "Current Date: 2023/05/20 (Sat) 03:39",
+        "answer_candidates": [
+          "Spanish classes"
+        ]
+      },
+      "response": {
+        "answer": "The start of your Spanish classes happened first.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23906,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no11",
+        "text": "Now Answer the Question: I'm looking back at our previous conversation about the Seco de Cordero recipe from Ancash. You mentioned using a light or medium-bodied beer, but I was wondering if you could remind me what type of beer you specifically recommended?",
+        "time_info": "Current Date: 2023/05/23 (Tue) 07:05",
+        "answer_candidates": [
+          "I recommended using a Pilsner or Lager for the recipe."
+        ]
+      },
+      "response": {
+        "answer": "a pilsner or lager.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22506,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no16",
+        "text": "Now Answer the Question: How many different art-related events did I attend in the past month?",
+        "time_info": "Current Date: 2023/03/08 (Wed) 22:33",
+        "answer_candidates": [
+          "4"
+        ]
+      },
+      "response": {
+        "answer": "1 art-related event",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21937,
+            "cache_read_tokens": 3840
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no45",
+        "text": "Now Answer the Question: What speed is my new internet plan?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 05:53",
+        "answer_candidates": [
+          "500 Mbps"
+        ]
+      },
+      "response": {
+        "answer": "500 Mbps",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23416,
+            "cache_read_tokens": 3840
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no54",
+        "text": "Now Answer the Question: What is the order of the sports events I watched in January?",
+        "time_info": "Current Date: 2023/01/30 (Mon) 01:51",
+        "answer_candidates": [
+          "First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs."
+        ]
+      },
+      "response": {
+        "answer": "First the College Football National Championship (Georgia vs. Alabama), then the NFL Divisional Round game (Kansas City Chiefs vs. Buffalo Bills).",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 18126,
+            "cache_read_tokens": 3840
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no22",
+        "text": "Now Answer the Question: How many points do I need to earn to redeem a free skincare product at Sephora?",
+        "time_info": "Current Date: 2023/05/30 (Tue) 01:16",
+        "answer_candidates": [
+          "100"
+        ]
+      },
+      "response": {
+        "answer": "300 points",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 22369,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no29",
+        "text": "Now Answer the Question: How many days did I spend in total traveling in Hawaii and in Seattle?",
+        "time_info": "Current Date: 2023/05/28 (Sun) 06:00",
+        "answer_candidates": [
+          "The information provided is not enough. You mentioned traveling for 10 days in Hawaii but did not mention abything about the trip to Seattle."
+        ]
+      },
+      "response": {
+        "answer": "Not specified in the conversation.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 21249,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "longmemeval_s*_no38",
+        "text": "Now Answer the Question: How many days did I spend on my solo camping trip to Yosemite National Park?",
+        "time_info": "Current Date: 2023/06/01 (Thu) 12:42",
+        "answer_candidates": [
+          "2 days. 3 days (including the last day) is also acceptable."
+        ]
+      },
+      "response": {
+        "answer": "Not specified in the conversation.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 23135,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
     }
   ]
 }
