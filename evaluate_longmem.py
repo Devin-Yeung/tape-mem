@@ -5,8 +5,8 @@ import numpy as np
 from tqdm import tqdm
 from dotenv import load_dotenv
 from openai import OpenAI
-import matplotlib.pyplot as plt
 from collections import defaultdict
+from typing import Dict, Any
 
 # =========================
 # LLM config
@@ -124,7 +124,7 @@ Answer: {ans}
         match = re.search(r"\{.*\}", text, re.DOTALL)
         if match:
             return json.loads(match.group())
-    except:
+    except Exception as e:
         pass
 
     return {
@@ -135,13 +135,15 @@ Answer: {ans}
         "error_type": "unknown"
     }
 
+
 # =========================
 # load
 # =========================
-def load(path):
+def load(path: str) -> Dict[str, Any]:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)["results"]
     return {x["question"]["question_id"]: x for x in data}
+
 
 # =========================
 # evaluation
@@ -210,6 +212,7 @@ def evaluate(rag, tape):
         print(f"Faithfulness:  {avg(s['faithfulness']):.3f}")
         print(f"Completeness:  {avg(s['completeness']):.3f}")
         print(f"Reasoning:     {avg(s['reasoning']):.3f}\n")
+
 
 # =========================
 # run
