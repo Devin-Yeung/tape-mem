@@ -1,11 +1,9 @@
-from tape_mem.types.provider import ProviderConfig
 import os
 import random
 from typing import Literal, assert_never
-from typing import List
-import questionary
 
 import click
+import questionary
 from loguru import logger
 from mirascope import llm
 from tqdm import tqdm
@@ -14,12 +12,22 @@ from tape_mem.agents import FullContextAgent
 from tape_mem.agents.rag import RagAgent
 from tape_mem.agents.tape import TapeAgent
 from tape_mem.chunker import SentenceAwareChunker
-from tape_mem.dataset import load_eventqa_examples
-from tape_mem.dataset import load_longmemeval_examples
-from tape_mem.dataset.templates import EventQATemplate
-from tape_mem.dataset.templates import LongMemEvalTemplate
-from tape_mem.types.experiment import LongMemEvalExperiment
-from tape_mem.types.experiment import LongMemEvalQueryResult
+from tape_mem.dataset import (
+    EventQAQuestion,
+    LongMemEvalQuestion,
+    load_eventqa_examples,
+    load_longmemeval_examples,
+)
+from tape_mem.dataset.eventqa import EventQAExample
+from tape_mem.dataset.longmemeval import LongMemEvalExample
+from tape_mem.dataset.templates import EventQATemplate, LongMemEvalTemplate
+from tape_mem.types.experiment import (
+    EventQAQueryResult,
+    LongMemEvalExperiment,
+    LongMemEvalQueryResult,
+)
+from tape_mem.types.provider import ProviderConfig
+
 from .settings.env import Env
 
 EVENTQA_VARIANTS = [
@@ -90,6 +98,12 @@ LONGMEMEVAL_VARIANTS = [
     default=42,
     show_default=True,
 )
+@click.option(
+    "--resume",
+    type=click.Path(exists=True, dir_okay=False),
+    default=None,
+    help="Path to result JSON to resume from (skips already answered questions)",
+)
 def main(
     model_override: str | None,
     dataset_kind: Literal["eventqa", "longmemeval"],
@@ -97,6 +111,7 @@ def main(
     agent_kind: Literal["full", "rag", "tape"],
     question_percent: float,
     seed: int,
+    resume: str | None,
 ) -> int:
     env = Env()  # ty:ignore[missing-argument]
 
@@ -140,12 +155,10 @@ def main(
         examples = load_eventqa_examples()
         examples = [e for e in examples if e.example_id == variant]
         template = EventQATemplate()
-        use_conversation = False
     elif dataset_kind == "longmemeval":
         examples = load_longmemeval_examples()
         examples = [e for e in examples if e.example_id == variant]
         template = LongMemEvalTemplate()
-        use_conversation = True
     else:
         assert_never(dataset_kind)
 
@@ -170,14 +183,12 @@ def main(
     for subset_idx, subset in enumerate(tqdm(examples)):
         logger.info(f"processing {subset_idx} th subset of {variant}")
 
-        # memorize context based on dataset type
-        if use_conversation:
-            results: List[LongMemEvalQueryResult] = []
-            agent.memorize_conversation(list(subset.sessions))
-        else:
-            results = []
-            for chunk in chunker.chunk(subset.context):
-                agent.memorize(chunk)
+        match subset:
+            case EventQAExample():
+                for chunk in chunker.chunk(subset.context):
+                    agent.memorize(chunk)
+            case LongMemEvalExample():
+                agent.memorize_conversation(list(subset.sessions))
 
         # sample questions
         n_selected = int(len(subset.questions) * (question_percent / 100.0))
@@ -185,16 +196,28 @@ def main(
         rng = random.Random(seed)
         selected = rng.sample(subset.questions, n_selected)
 
+        results = []
+
         # ask agent for question
         for i, question in enumerate(tqdm(selected)):
-            logger.debug(f"processing question {i}")
+            logger.debug(f"processing question {question.question_id}")
             resp = agent.query(question.text)
-            results.append(
-                LongMemEvalQueryResult(
-                    question=question,
-                    response=resp,
-                )
-            )
+
+            match question:
+                case EventQAQuestion():
+                    results.append(
+                        EventQAQueryResult(
+                            question=question,
+                            response=resp,
+                        )
+                    )
+                case LongMemEvalQuestion():
+                    results.append(
+                        LongMemEvalQueryResult(
+                            question=question,
+                            response=resp,
+                        )
+                    )
 
         experiment = LongMemEvalExperiment(results=results)
         json = experiment.to_json()
