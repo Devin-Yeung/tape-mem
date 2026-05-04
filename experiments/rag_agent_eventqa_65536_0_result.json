@@ -69,7 +69,7 @@
         ]
       },
       "response": {
-        "answer": "Lucian summoned the chef.",
+        "answer": "Lucian dismissed the coachman.",
         "metadata": {
           "stats": {
             "estimated_context_tokens": 0,
@@ -94,7 +94,7 @@
           "stats": {
             "estimated_context_tokens": 0,
             "total_input_tokens": 20872,
-            "cache_read_tokens": 0
+            "cache_read_tokens": 4096
           },
           "model_name": "custom/gpt-5-nano"
         }
@@ -134,7 +134,7 @@
           "stats": {
             "estimated_context_tokens": 0,
             "total_input_tokens": 20860,
-            "cache_read_tokens": 0
+            "cache_read_tokens": 12288
           },
           "model_name": "custom/gpt-5-nano"
         }
@@ -194,7 +194,407 @@
           "stats": {
             "estimated_context_tokens": 0,
             "total_input_tokens": 20819,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no69",
+        "text": "These are the events that have already occurred:\n\n...\n66. Marianne's rough manner of speech did not give offense to young men.\n67. Marianne expressed a desire for a wife to manage Tara.\n68. Marianne planned to travel to Savannah for advice on marriage.\n69. Marianne expressed his interest in Miss Lucian Robillard.\n70. Marianne was informed that Lucian's father would not approve of him as a son-in-law.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Marianne realized Isaac's admiration for her best friend, Sophie Manette.\", \"Marianne uncovered Noah's feelings for her distant relative, Am\u00e9lie Chastain.\", \"Marianne discovered Antoine's fascination with her sister, Claire Dubois.\", \"Marianne caught wind of Gabriel's longing for her partner, Julienne Lemaitre.\", \"Marianne found out Pierre's affection for her childhood neighbor, Elise Moreau.\", \"Marianne learned of Lucian's love for her cousin, Philippe Robillard.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne learned of Lucian's love for her cousin, Philippe Robillard."
+        ]
+      },
+      "response": {
+        "answer": "Marianne learned of Lucian's love for her cousin, Philippe Robillard.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20823,
             "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no11",
+        "text": "These are the events that have already occurred:\n\n...\n8. Debbie learned about the engagement announcement during the ball.\n9. Stuart revealed the engagement announcement for Kali to Charlie's sister.\n10. Debbie agreed to eat supper with the Tarleton twins.\n11. Debbie promised to dance all the waltzes with the Tarleton twins.\n12. The Tarleton twins told Debbie they would be over at the Abriannaes' early in the morning.\n\n\nBelow is a list of possible subsequent events:\n\n['Brent questioned why Debbie chose to leave the party early without saying goodbye.', 'Brent wondered what prompted Debbie to avoid discussing their plans for the weekend.', \"Brent remarked on how strange it was that Debbie didn't invite them to the movie night.\", \"Brent voiced his confusion over Debbie's decision not to include them in the group outing.\", 'Brent expressed his puzzlement about why Debbie did not ask them to stay for supper.', 'Brent reflected on why Debbie seemed uninterested in their conversation during lunch.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Brent expressed his puzzlement about why Debbie did not ask them to stay for supper."
+        ]
+      },
+      "response": {
+        "answer": "Brent wondered what prompted Debbie to avoid discussing their plans for the weekend.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20901,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no75",
+        "text": "These are the events that have already occurred:\n\n...\n72. Lucian decided to marry Marianne after a personal crisis.\n73. Lucian's father reluctantly accepted her marriage to Marianne.\n74. Lucian left Savannah to journey to Tara with Marianne.\n75. Marianne celebrated the birth of his daughter, Katie Debbie.\n76. Marianne served rum to every slave at Tara in celebration.\n\n\nBelow is a list of possible subsequent events:\n\n['Lucian adjusted to life in north Georgia after leaving Savannah.', 'Lucian embraced the challenges of rural living after moving from Atlanta.', 'Lucian adapted to the slower pace of small-town life after transitioning from Athens.', 'Lucian found comfort in the tranquility of the mountains after his shift from Columbus.', 'Lucian settled into the community of north Georgia after departing from Macon.', 'Lucian acclimated to the rhythms of daily life after relocating from Decatur.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Lucian adjusted to life in north Georgia after leaving Savannah."
+        ]
+      },
+      "response": {
+        "answer": "Lucian adjusted to life in north Georgia after leaving Savannah.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20804,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no54",
+        "text": "These are the events that have already occurred:\n\n...\n51. Marianne felt joy and a sense of ownership standing on the foundation of his new plantation.\n52. Marianne bought field hands and moved to Tara to live.\n53. Marianne cleared fields and planted cotton on his plantation.\n54. Marianne's plantation, Tara, was built by slave labor.\n55. Marianne maintained his plantation's lawn and grounds.\n\n\nBelow is a list of possible subsequent events:\n\n['Marianne experienced contentment while watching her orchard bloom under the golden sun.', 'Marianne enjoyed fulfillment while witnessing her fields sway gently in the summer breeze.', 'Marianne found solace while gazing at her vineyard stretching across rolling hills.', 'Marianne reveled in happiness upon discovering her flower beds bursting with life after the rain.', 'Marianne sensed joy as she observed her garden flourishing amidst vibrant colors.', \"Marianne felt pride upon seeing his plantation's house rising through green branches.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne felt pride upon seeing his plantation's house rising through green branches."
+        ]
+      },
+      "response": {
+        "answer": "Marianne felt pride upon seeing his plantation's house rising through green branches.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20821,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no4",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n2. Debbie wore a new green flowered-muslin dress that matched her slippers.\n3. Debbie expressed her boredom with the talk of war.\n4. Debbie mentioned her mother, Lucian O'Kerry, during the conversation.\n5. Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie anticipated it wouldn\u2019t be windy on the day of the outdoor concert.', 'Debbie worried it wouldn\u2019t be warm on the day of the beach outing.', 'Debbie feared it wouldn\u2019t be sunny on the day of the parade.', 'Debbie hoped it would not rain on the day of the barbecue.', 'Debbie wished it wouldn\u2019t snow on the day of the picnic.', 'Debbie prayed it wouldn\u2019t hail on the day of the family reunion.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie hoped it would not rain on the day of the barbecue."
+        ]
+      },
+      "response": {
+        "answer": "Debbie hoped it would not rain on the day of the barbecue.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20903,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no97",
+        "text": "These are the events that have already occurred:\n\n...\n94. Debbie longed to be alone with Lucian.\n95. Sue followed Lucian, carrying a leather bag.\n96. Lucian dismissed the coachman.\n97. Debbie associated the fragrance of lemon verbena sachet with her mother.\n98. Lucian patted Debbie's cheek as she handed her mother her shawl.\n\n\nBelow is a list of possible subsequent events:\n\n['Lucian questioned the blessings of the seer and reflected on its impact.', 'Lucian celebrated the marriage of the maiden and revealed its complications.', 'Lucian announced the festival of the beast and described its chaos.', 'Lucian denied the arrival of the envoy and hinted at its failure.', 'Lucian proposed the trial of the merchant and elaborated on its challenges.', 'Lucian confirmed the baptism of the brat and mentioned its death.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Lucian confirmed the baptism of the brat and mentioned its death."
+        ]
+      },
+      "response": {
+        "answer": "Lucian confirmed the baptism of the brat and mentioned its death.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20854,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no88",
+        "text": "These are the events that have already occurred:\n\n...\n85. Lucian taught Debbie how to be more gentle and sedate.\n86. Sue advised Debbie on how to attract gentlemen.\n87. Debbie planned to marry Kali.\n88. Debbie felt lost and alone without her mother, Lucian.\n89. Marianne dominated the supper conversation.\n\n\nBelow is a list of possible subsequent events:\n\n['Dilcey congratulated Marianne for hosting a memorable event for her and her colleagues.', 'Dilcey praised Marianne for treating her and her husband to a wonderful dinner.', 'Dilcey expressed her gratitude to Marianne for organizing a surprise party for her and her family.', 'Dilcey acknowledged Marianne for arranging a lovely outing for her and her friends.', 'Dilcey thanked Marianne for buying her and her daughter.', \"Dilcey appreciated Marianne for gifting her and her neighbor's children a delightful picnic.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Dilcey thanked Marianne for buying her and her daughter."
+        ]
+      },
+      "response": {
+        "answer": "Dilcey thanked Marianne for buying her and her daughter.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20886,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no27",
+        "text": "These are the events that have already occurred:\n\n...\n24. Debbie felt confused by Kali's complex nature.\n25. Debbie feared Kali's engagement to Edgar.\n26. Debbie recalled Kali's words about having something important to tell her.\n27. Debbie waited for her father, Marianne, at Tara.\n28. Marianne rode home at top speed on his horse.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie ribbed Marianne over prying into his text messages.', 'Debbie mocked Marianne for secretly following him around town.', 'Debbie laughed with Marianne about watching him from the window.', 'Debbie teased Marianne for snooping through her phone.', 'Debbie teased Marianne about spying on him.', 'Debbie joked with Marianne about eavesdropping on her conversations.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie teased Marianne about spying on him."
+        ]
+      },
+      "response": {
+        "answer": "Debbie teased Marianne about spying on him.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20885,
+            "cache_read_tokens": 12288
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no29",
+        "text": "These are the events that have already occurred:\n\n...\n26. Debbie recalled Kali's words about having something important to tell her.\n27. Debbie waited for her father, Marianne, at Tara.\n28. Marianne rode home at top speed on his horse.\n29. Debbie teased Marianne about spying on him.\n30. Marianne bought Dilcey and her child Israel.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Debbie expressed disapproval of Marianne's purchase of Israel.\", \"Debbie criticized Marianne's decision to adopt a pet tarantula.\", \"Debbie lamented Marianne's enthusiasm for extreme ironing competitions.\", \"Debbie voiced her concerns over Marianne's interest in competitive jump roping.\", \"Debbie questioned Marianne's choice to invest in a vintage sock collection.\", \"Debbie was skeptical of Marianne's plan to start a goat yoga business.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie expressed disapproval of Marianne's purchase of Israel."
+        ]
+      },
+      "response": {
+        "answer": "Debbie expressed disapproval of Marianne's purchase of Israel.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20885,
+            "cache_read_tokens": 16384
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no64",
+        "text": "These are the events that have already occurred:\n\n...\n61. Marianne described the Claudias as poor white and lacking respect.\n62. Marianne noted that Tom Claudia owned no slaves.\n63. Marianne reflected on the misery of Tom Claudia's existence.\n64. Marianne was on terms of amity and intimacy with the County people.\n65. Marianne rode his horse to visit neighbors, receiving smiles and signals for drinks.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Marianne's abrupt conversation starters did not alienate the attendees at the event.\", \"Marianne's unconventional fashion choices did not discourage her from making friends.\", \"Marianne's rough manner of speech did not give offense to young men.\", \"Marianne's unconventional cooking style did not prevent her from impressing the guests.\", \"Marianne's blunt opinions did not deter her colleagues from seeking her advice.\", \"Marianne's distinctive laughter did not intimidate the children at the party.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne's rough manner of speech did not give offense to young men."
+        ]
+      },
+      "response": {
+        "answer": "Marianne's rough manner of speech did not give offense to young men.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20840,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no77",
+        "text": "These are the events that have already occurred:\n\n...\n74. Lucian left Savannah to journey to Tara with Marianne.\n75. Marianne celebrated the birth of his daughter, Katie Debbie.\n76. Marianne served rum to every slave at Tara in celebration.\n77. Lucian adjusted to life in north Georgia after leaving Savannah.\n78. Lucian devoted herself to the service of her child, household, and husband.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Lucian's father, Henry James, celebrated his 75th birthday with a family reunion.\", 'Lucian\\'s art exhibit, \"Reflections of Time,\" opened at the city gallery.', 'Lucian\\'s first novel, \"Whispers in the Dark,\" was published.', \"Lucian's second child, Susan Elinor, was born.\", \"Lucian's pet dog, Max, won a local agility competition.\", \"Lucian's sister, Claudia Marie, graduated from medical school.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Lucian's second child, Susan Elinor, was born."
+        ]
+      },
+      "response": {
+        "answer": "Lucian's second child, Susan Elinor, was born.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20818,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no84",
+        "text": "These are the events that have already occurred:\n\n...\n81. Lucian's three little boys died before learning to walk.\n82. Lucian transformed Tara into a beautiful home.\n83. Debbie played with the negro children on the plantation.\n84. Debbie struggled with the expectations of becoming a lady.\n85. Lucian taught Debbie how to be more gentle and sedate.\n\n\nBelow is a list of possible subsequent events:\n\n['Sue coached Debbie on how to impress potential employers.', 'Sue advised Debbie on how to attract gentlemen.', 'Sue guided Debbie on how to entice creative collaborators.', 'Sue helped Debbie on how to captivate intellectual peers.', 'Sue trained Debbie on how to appeal to adventurous travelers.', 'Sue instructed Debbie on how to charm influential friends.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Sue advised Debbie on how to attract gentlemen."
+        ]
+      },
+      "response": {
+        "answer": "Sue advised Debbie on how to attract gentlemen.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20820,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no71",
+        "text": "These are the events that have already occurred:\n\n...\n68. Marianne planned to travel to Savannah for advice on marriage.\n69. Marianne expressed his interest in Miss Lucian Robillard.\n70. Marianne was informed that Lucian's father would not approve of him as a son-in-law.\n71. Marianne learned of Lucian's love for her cousin, Philippe Robillard.\n72. Lucian decided to marry Marianne after a personal crisis.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Lucian's cousin quietly questioned his choice of Marianne as partner.\", \"Lucian's best friend secretly envied his bond with Marianne.\", \"Lucian's siblings openly dismissed her relationship with Marianne.\", \"Lucian's mother cautiously supported his decision to be with Marianne.\", \"Lucian's aunt unexpectedly celebrated their engagement with Marianne.\", \"Lucian's father reluctantly accepted her marriage to Marianne.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Lucian's father reluctantly accepted her marriage to Marianne."
+        ]
+      },
+      "response": {
+        "answer": "Lucian's father reluctantly accepted her marriage to Marianne.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20827,
+            "cache_read_tokens": 0
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no25",
+        "text": "These are the events that have already occurred:\n\n...\n22. Debbie expressed disbelief about Kali being in love with Edgar.\n23. Debbie observed that Kali loved her despite his aloofness.\n24. Debbie felt confused by Kali's complex nature.\n25. Debbie feared Kali's engagement to Edgar.\n26. Debbie recalled Kali's words about having something important to tell her.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie called her friend, Marianne, on the phone.', 'Debbie met her cousin, Marianne, at the park.', 'Debbie greeted her coworker, Marianne, at the caf\u00e9.', 'Debbie waited for her father, Marianne, at Tara.', 'Debbie searched for her sister, Marianne, at the lake.', 'Debbie prepared a surprise for her mother, Marianne, at home.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie waited for her father, Marianne, at Tara."
+        ]
+      },
+      "response": {
+        "answer": "Debbie waited for her father, Marianne, at Tara.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20867,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no89",
+        "text": "These are the events that have already occurred:\n\n...\n86. Sue advised Debbie on how to attract gentlemen.\n87. Debbie planned to marry Kali.\n88. Debbie felt lost and alone without her mother, Lucian.\n89. Marianne dominated the supper conversation.\n90. Dilcey thanked Marianne for buying her and her daughter.\n\n\nBelow is a list of possible subsequent events:\n\n['Dilcey entrusted her daughter Ruth to Debbie as a cook.', 'Dilcey gifted her son Samuel to Debbie as a handyman.', 'Dilcey assigned her son Jacob to Debbie as a chauffeur.', 'Dilcey proposed her son Marcus to Debbie as a gardener.', 'Dilcey offered her daughter Israel to Debbie as a maid.', 'Dilcey suggested her daughter Anna to Debbie as a helper.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Dilcey offered her daughter Israel to Debbie as a maid."
+        ]
+      },
+      "response": {
+        "answer": "Dilcey offered her daughter Israel to Debbie as a maid.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20872,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no53",
+        "text": "These are the events that have already occurred:\n\n...\n50. Marianne won a plantation in a poker game with a stranger.\n51. Marianne felt joy and a sense of ownership standing on the foundation of his new plantation.\n52. Marianne bought field hands and moved to Tara to live.\n53. Marianne cleared fields and planted cotton on his plantation.\n54. Marianne's plantation, Tara, was built by slave labor.\n\n\nBelow is a list of possible subsequent events:\n\n['Marianne arranged the estate\u2019s garden and flower beds.', \"Marianne managed the orchard's production and seasonal harvests.\", \"Marianne maintained his plantation's lawn and grounds.\", \"Marianne orchestrated the estate's events and social gatherings.\", \"Marianne cultivated the vineyard's grapes and wine selection.\", \"Marianne oversaw the mansion's upkeep and structural integrity.\"]\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne maintained his plantation's lawn and grounds."
+        ]
+      },
+      "response": {
+        "answer": "Marianne maintained his plantation's lawn and grounds.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20851,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no93",
+        "text": "These are the events that have already occurred:\n\n...\n90. Dilcey thanked Marianne for buying her and her daughter.\n91. Dilcey offered her daughter Israel to Debbie as a maid.\n92. Debbie reflected on her heartbreak during supper.\n93. Lucian entered the room, looking tired and sad.\n94. Debbie longed to be alone with Lucian.\n\n\nBelow is a list of possible subsequent events:\n\n['Sue walked alongside Lucian, holding a canvas pouch.', 'Sue followed Lucian, carrying a leather bag.', 'Sue trailed Lucian, grasping a denim satchel.', 'Sue accompanied Lucian, clutching a fabric backpack.', 'Sue strolled with Lucian, wielding a woolen tote.', 'Sue hiked with Lucian, toting a nylon briefcase.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Sue followed Lucian, carrying a leather bag."
+        ]
+      },
+      "response": {
+        "answer": "Sue followed Lucian, carrying a leather bag.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20876,
+            "cache_read_tokens": 16512
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no57",
+        "text": "These are the events that have already occurred:\n\n...\n54. Marianne's plantation, Tara, was built by slave labor.\n55. Marianne maintained his plantation's lawn and grounds.\n56. Marianne felt pride upon seeing his plantation's house rising through green branches.\n57. Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.\n58. Marianne expressed his dislike for the MacIntosh family.\n\n\nBelow is a list of possible subsequent events:\n\n['Marianne detected whispers of Libertarian principles did not boost the influence of the Thompsons.', 'Marianne perceived talk of Feminist ideologies did not increase the favor of the Johnsons.', 'Marianne observed rumors of Abolitionist sympathies did not enhance the popularity of the MacIntoshs.', 'Marianne discovered claims of Environmentalist leanings did not raise the standing of the Parkers.', 'Marianne witnessed chatter regarding Socialist inclinations did not elevate the status of the Hendersons.', 'Marianne noted speculation about Radical Progressive affiliations did not improve the reputation of the Caldwells.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Marianne observed rumors of Abolitionist sympathies did not enhance the popularity of the MacIntoshs."
+        ]
+      },
+      "response": {
+        "answer": "Marianne observed rumors of Abolitionist sympathies did not enhance the popularity of the MacIntoshs.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20870,
+            "cache_read_tokens": 4096
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no95",
+        "text": "These are the events that have already occurred:\n\n...\n92. Debbie reflected on her heartbreak during supper.\n93. Lucian entered the room, looking tired and sad.\n94. Debbie longed to be alone with Lucian.\n95. Sue followed Lucian, carrying a leather bag.\n96. Lucian dismissed the coachman.\n\n\nBelow is a list of possible subsequent events:\n\n[\"Lucian connected the taste of roasted chestnuts with his grandfather's stories.\", 'Debbie associated the fragrance of lemon verbena sachet with her mother.', 'Lucian related the sight of flickering candles with the evenings shared over board games.', 'Debbie linked the sound of ocean waves with her childhood summers.', 'Debbie identified the color of autumn leaves with her first day at school.', 'Debbie remembered the warmth of a woolen blanket from winter nights spent with her family.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie associated the fragrance of lemon verbena sachet with her mother."
+        ]
+      },
+      "response": {
+        "answer": "Debbie associated the fragrance of lemon verbena sachet with her mother.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20860,
+            "cache_read_tokens": 8192
+          },
+          "model_name": "custom/gpt-5-nano"
+        }
+      }
+    },
+    {
+      "question": {
+        "question_id": "eventqa_65536_no0",
+        "text": "These are the events that have already occurred:\n\n1. Debbie sat with Stuart and Brent Tarleton on the porch of Tara.\n\n\nBelow is a list of possible subsequent events:\n\n['Debbie sported a lovely yellow paisley wrap that accompanied her flip-flops.', 'Debbie dressed in a vibrant orange spotted tunic that suited her canvas shoes.', 'Debbie adorned herself in a sleek purple chequered blouse that paired with her loafers.', 'Debbie wore a bright blue polka-dotted kimono that complemented her sandals.', 'Debbie wore a new green flowered-muslin dress that matched her slippers.', 'Debbie donned a chic red striped sundress that highlighted her espadrilles.']\n\n Your task is to choose from the above events which event happens next based on the book excerpt. In your response to me, only include the answer without anything else. ",
+        "answer_candidates": [
+          "Debbie wore a new green flowered-muslin dress that matched her slippers."
+        ]
+      },
+      "response": {
+        "answer": "Debbie wore a new green flowered-muslin dress that matched her slippers.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 0,
+            "total_input_tokens": 20812,
+            "cache_read_tokens": 8192
           },
           "model_name": "custom/gpt-5-nano"
         }
