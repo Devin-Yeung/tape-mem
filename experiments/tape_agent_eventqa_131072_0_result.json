@@ -12,8 +12,8 @@
         "answer": "Madelyn Yelena advanced towards Debbie with a mocking smile.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37126,
-            "total_input_tokens": 37406,
+            "estimated_context_tokens": 37060,
+            "total_input_tokens": 37340,
             "cache_read_tokens": 0
           }
         }
@@ -31,8 +31,8 @@
         "answer": "Marianne described the Claudias as poor white and lacking respect.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37008,
-            "total_input_tokens": 37260,
+            "estimated_context_tokens": 40945,
+            "total_input_tokens": 41197,
             "cache_read_tokens": 0
           }
         }
@@ -47,11 +47,11 @@
         ]
       },
       "response": {
-        "answer": "Debbie's father, John Abrianna, donated equipment to enhance the troop's outdoor skills.",
+        "answer": "Debbie's father, John Abrianna, contributed money to outfit the Troop.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37092,
-            "total_input_tokens": 37372,
+            "estimated_context_tokens": 37126,
+            "total_input_tokens": 37406,
             "cache_read_tokens": 0
           }
         }
@@ -69,8 +69,8 @@
         "answer": "Debbie attended parties and danced, behaving as she did before her marriage.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40923,
-            "total_input_tokens": 41205,
+            "estimated_context_tokens": 40971,
+            "total_input_tokens": 41253,
             "cache_read_tokens": 0
           }
         }
@@ -88,8 +88,8 @@
         "answer": "Debbie expressed excitement about eating barbecue with Kamala.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40965,
-            "total_input_tokens": 41202,
+            "estimated_context_tokens": 40885,
+            "total_input_tokens": 41122,
             "cache_read_tokens": 0
           }
         }
@@ -104,11 +104,11 @@
         ]
       },
       "response": {
-        "answer": "Debbie found herself captivated by the melodies played at the local music festival.",
+        "answer": "Debbie felt a surge of affection for her father.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40957,
-            "total_input_tokens": 41194,
+            "estimated_context_tokens": 40911,
+            "total_input_tokens": 41148,
             "cache_read_tokens": 0
           }
         }
@@ -126,8 +126,8 @@
         "answer": "Debbie argued with Sue about her eating habits.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40951,
-            "total_input_tokens": 41170,
+            "estimated_context_tokens": 40919,
+            "total_input_tokens": 41138,
             "cache_read_tokens": 0
           }
         }
@@ -142,7 +142,14 @@
         ]
       },
       "response": {
-        "answer": ""
+        "answer": "Lucian's father reluctantly accepted her marriage to Marianne.",
+        "metadata": {
+          "stats": {
+            "estimated_context_tokens": 37032,
+            "total_input_tokens": 37277,
+            "cache_read_tokens": 0
+          }
+        }
       }
     },
     {
@@ -157,8 +164,8 @@
         "answer": "Marianne was on excellent terms with his neighbors except for the MacIntoshs and the Claudias.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37022,
-            "total_input_tokens": 37303,
+            "estimated_context_tokens": 40926,
+            "total_input_tokens": 41207,
             "cache_read_tokens": 0
           }
         }
@@ -173,11 +180,11 @@
         ]
       },
       "response": {
-        "answer": "Marla announced her decision to bake cookies all afternoon to avoid her neighbor.",
+        "answer": "Marla declared her intention to lie down all day to avoid her father.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37150,
-            "total_input_tokens": 37411,
+            "estimated_context_tokens": 37146,
+            "total_input_tokens": 37407,
             "cache_read_tokens": 0
           }
         }
@@ -192,11 +199,11 @@
         ]
       },
       "response": {
-        "answer": "Debbie leaned on the counter in defiance of Sue's admonitions.",
+        "answer": "Debbie rolled her eyes at Sue's endless complaints.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40928,
-            "total_input_tokens": 41185,
+            "estimated_context_tokens": 37165,
+            "total_input_tokens": 37422,
             "cache_read_tokens": 0
           }
         }
@@ -211,11 +218,11 @@
         ]
       },
       "response": {
-        "answer": "Marianne proposed a game of poker to the stranger.",
+        "answer": "Marianne proposed a game of poker to the Stranger.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40902,
-            "total_input_tokens": 41124,
+            "estimated_context_tokens": 40865,
+            "total_input_tokens": 41087,
             "cache_read_tokens": 0
           }
         }
@@ -233,8 +240,8 @@
         "answer": "Debbie expressed that she thought the man was horrid.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37129,
-            "total_input_tokens": 37361,
+            "estimated_context_tokens": 37106,
+            "total_input_tokens": 37338,
             "cache_read_tokens": 0
           }
         }
@@ -252,8 +259,8 @@
         "answer": "Debbie expressed concern about Israel's ability to administer her medication correctly.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 41003,
-            "total_input_tokens": 41246,
+            "estimated_context_tokens": 40903,
+            "total_input_tokens": 41146,
             "cache_read_tokens": 0
           }
         }
@@ -268,11 +275,11 @@
         ]
       },
       "response": {
-        "answer": "Debbie\u2019s mind raced with anticipation as she daydreamed about Kali.",
+        "answer": "Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40950,
-            "total_input_tokens": 41217,
+            "estimated_context_tokens": 37158,
+            "total_input_tokens": 37425,
             "cache_read_tokens": 0
           }
         }
@@ -287,11 +294,11 @@
         ]
       },
       "response": {
-        "answer": "Madelyn arranged a flower arranging workshop specifically for Mrs. Merriwether\u2019s gardening club.",
+        "answer": "Madelyn led a photography session centered on portrait skills for Mrs. Merriwether\u2019s amateur photographer friends.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37111,
-            "total_input_tokens": 37403,
+            "estimated_context_tokens": 37116,
+            "total_input_tokens": 37408,
             "cache_read_tokens": 0
           }
         }
@@ -309,8 +316,8 @@
         "answer": "Marianne mentioned that Brent is now a lieutenant.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37137,
-            "total_input_tokens": 37381,
+            "estimated_context_tokens": 37174,
+            "total_input_tokens": 37418,
             "cache_read_tokens": 0
           }
         }
@@ -328,8 +335,8 @@
         "answer": "Debbie imagined herself as Mrs. Kali Abrianna.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40902,
-            "total_input_tokens": 41144,
+            "estimated_context_tokens": 40913,
+            "total_input_tokens": 41155,
             "cache_read_tokens": 0
           }
         }
@@ -347,8 +354,8 @@
         "answer": "Debbie sopped the wheat cake in gravy and put it in her mouth.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40985,
-            "total_input_tokens": 41227,
+            "estimated_context_tokens": 40913,
+            "total_input_tokens": 41155,
             "cache_read_tokens": 0
           }
         }
@@ -366,8 +373,8 @@
         "answer": "Debbie suggested to Mrs. Merriwether and Mrs. Elsing that they should go help at the bazaar.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37128,
-            "total_input_tokens": 37461,
+            "estimated_context_tokens": 37059,
+            "total_input_tokens": 37392,
             "cache_read_tokens": 0
           }
         }
@@ -385,8 +392,8 @@
         "answer": "Debbie was perplexed by Melly's unexpected choices in the project.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37140,
-            "total_input_tokens": 37395,
+            "estimated_context_tokens": 37078,
+            "total_input_tokens": 37333,
             "cache_read_tokens": 0
           }
         }
@@ -404,8 +411,8 @@
         "answer": "Edgar reassured Debbie after the false alarm about Kali.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37109,
-            "total_input_tokens": 37357,
+            "estimated_context_tokens": 37084,
+            "total_input_tokens": 37332,
             "cache_read_tokens": 0
           }
         }
@@ -423,8 +430,8 @@
         "answer": "Dr. Meade greeted the girls at their booth.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37142,
-            "total_input_tokens": 37385,
+            "estimated_context_tokens": 37161,
+            "total_input_tokens": 37404,
             "cache_read_tokens": 0
           }
         }
@@ -442,8 +449,8 @@
         "answer": "Debbie reflected on her feelings for Kali during prayers.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40902,
-            "total_input_tokens": 41153,
+            "estimated_context_tokens": 40919,
+            "total_input_tokens": 41170,
             "cache_read_tokens": 0
           }
         }
@@ -461,8 +468,8 @@
         "answer": "Debbie overheard Marianne singing in a drunken state upon returning home.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37052,
-            "total_input_tokens": 37313,
+            "estimated_context_tokens": 37094,
+            "total_input_tokens": 37355,
             "cache_read_tokens": 0
           }
         }
@@ -480,8 +487,8 @@
         "answer": "Debbie thought Atlanta would be less boring than previous locations.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40954,
-            "total_input_tokens": 41201,
+            "estimated_context_tokens": 40886,
+            "total_input_tokens": 41133,
             "cache_read_tokens": 0
           }
         }
@@ -499,8 +506,8 @@
         "answer": "Debbie began singing 'When This Cruel War Is Over' halfway down the stairs.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37104,
-            "total_input_tokens": 37368,
+            "estimated_context_tokens": 40933,
+            "total_input_tokens": 41197,
             "cache_read_tokens": 0
           }
         }
@@ -518,8 +525,8 @@
         "answer": "Debbie promised various ladies to join their committees while passing through the streets.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40885,
-            "total_input_tokens": 41149,
+            "estimated_context_tokens": 40879,
+            "total_input_tokens": 41143,
             "cache_read_tokens": 0
           }
         }
@@ -537,8 +544,8 @@
         "answer": "Debbie noticed an odd pull towards Madelyn, even while she grappled with irritation.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 40938,
-            "total_input_tokens": 41223,
+            "estimated_context_tokens": 40941,
+            "total_input_tokens": 41226,
             "cache_read_tokens": 0
           }
         }
@@ -556,8 +563,8 @@
         "answer": "Debbie's mother, Beatrice Tarleton, handled the new stallion in the stable.",
         "metadata": {
           "stats": {
-            "estimated_context_tokens": 37084,
-            "total_input_tokens": 37306,
+            "estimated_context_tokens": 37139,
+            "total_input_tokens": 37361,
             "cache_read_tokens": 0
           }
         }
